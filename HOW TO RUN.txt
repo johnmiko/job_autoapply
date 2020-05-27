@@ -1,0 +1,7 @@
+Install Edge webdriver
+    - have more details, can ask
+Run code (it will crash)
+    - In the window that's open, sign in to linkedin (edge saves your credentials)
+    - Boom, now the webdriver is signed in
+
+In terminal do pip install requirements.txt -r
