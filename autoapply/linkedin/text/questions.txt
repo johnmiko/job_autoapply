@@ -1,0 +1,632 @@
+question,answer,times_asked
+city,"Montreal, Quebec, Canada",1110.0
+python (programming language),8.0,910.0
+phone country code,Canada (+1),620.0
+amazon web services (aws),1.0,620.0
+completed the following level education bachelor's degree,Yes,599.0
+street address line 1,Montreal,463.0
+java,2,450.0
+level proficiency english,Native or bilingual,442.0
+phone country code:select an option^afghanistan (+93)^aland islands (+358)^albania (+355)^algeria (+213)^american samoa (+1)^andorra (+376)^angola (+244)^anguilla (+1)^antarctica (+0)^antigua and barbuda (+1)^argentina (+54)^armenia (+374)^aruba (+297)^australia (+61)^austria (+43)^azerbaijan (+994)^bahamas (+1)^bahra(+973)^bangladesh (+880)^barbados (+1)^belarus (+375)^belgium (+32)^belize (+501)^ben(+229)^bermuda (+1)^bhutan (+975)^bolivia (+591)^bosnia and herzegovina (+387)^botswana (+267)^bouvet island (+0)^brazil (+55)^british indian ocean territory (+246)^brunei darussalam (+673)^bulgaria (+359)^burkina faso (+226)^burundi (+257)^cambodia (+855)^cameroon (+237)^canada (+1)^canada (+1)^cape verde (+238)^caribbean nations (+0)^cayman islands (+1)^central african republic (+236)^chad (+235)^chile (+56)^china (+86)^christmas island (+61)^cocos (keeling) islands (+61)^colombia (+57)^comoros (+269)^congo (+242)^cook islands (+682)^costa rica (+506)^cote divoire (ivory coast) (+225)^croatia (+385)^cuba (+53)^cyprus (+357)^czech republic (+420)^democratic republic the congo (+243)^denmark (+45)^djibouti (+253)^dominica (+1)^dominican republic (+1)^ecuador (+593)^egypt (+20)^el salvador (+503)^equatorial guinea (+240)^eritrea (+291)^estonia (+372)^ethiopia (+251)^falkland islands (malvinas) (+500)^faroe islands (+298)^federated states micronesia (+691)^fiji (+679)^finland (+358)^france (+33)^french guiana (+594)^french polynesia (+689)^french southern territories (+0)^gabon (+241)^gambia (+220)^georgia (+995)^germany (+49)^ghana (+233)^gibraltar (+350)^greece (+30)^greenland (+299)^grenada (+1)^guadeloupe (+590)^guam (+1)^guatemala (+502)^guernsey (+44)^guinea (+224)^guinea-bissau (+245)^guyana (+592)^haiti (+509)^heard island and mcdonald islands (+0)^honduras (+504)^hong kong (+852)^hungary (+36)^iceland (+354)^india (+91)^indonesia (+62)^iran (+98)^iraq (+964)^ireland (+353)^isle man (+44)^israel (+972)^italy (+39)^jamaica (+1)^japan (+81)^jersey (+44)^jordan (+962)^kazakhstan (+7)^kenya (+254)^kiribati (+686)^korea (+82)^korea (north) (+850)^kosovo (+383)^kuwait (+965)^kyrgyzstan (+996)^laos (+856)^latvia (+371)^lebanon (+961)^lesotho (+266)^liberia (+231)^libya (+218)^liechtenste(+423)^lithuania (+370)^luxembourg (+352)^macao (+853)^macedonia (+389)^madagascar (+261)^malawi (+265)^malaysia (+60)^maldives (+960)^mali (+223)^malta (+356)^marshall islands (+692)^martinique (+596)^mauritania (+222)^mauritius (+230)^mayotte (+262)^mexico (+52)^moldova (+373)^monaco (+377)^mongolia (+976)^montenegro (+382)^montserrat (+1)^morocco (+212)^mozambique (+258)^myanmar (+95)^namibia (+264)^nauru (+674)^nepal (+977)^netherlands (+31)^netherlands antilles (+0)^new caledonia (+687)^new zealand (+64)^nicaragua (+505)^niger (+227)^nigeria (+234)^niue (+683)^norfolk island (+672)^northern mariana islands (+1)^norway (+47)^pakistan (+92)^palau (+680)^palestinian territory (+970)^panama (+507)^papua new guinea (+675)^paraguay (+595)^peru (+51)^philippines (+63)^pitcairn (+0)^poland (+48)^portugal (+351)^puerto rico (+1)^qatar (+974)^reunion (+262)^romania (+40)^russian federation (+7)^rwanda (+250)^s. georgia and s. sandwich islands (+0)^saint helena (+290)^saint kitts and nevis (+1)^saint lucia (+1)^saint pierre and miquelon (+508)^saint vincent and the grenadines (+1)^samoa (+685)^san marino (+378)^sao tome and principe (+239)^saudi arabia (+966)^senegal (+221)^serbia (+381)^serbia and montenegro (+0)^seychelles (+248)^sierra leone (+232)^singapore (+65)^slovak republic (+421)^slovenia (+386)^solomon islands (+677)^somalia (+252)^south africa (+27)^south sudan (+211)^spa(+34)^sri lanka (+94)^sudan (+249)^sultanate oman (+968)^suriname (+597)^svalbard and jan mayen (+47)^swaziland (+268)^sweden (+46)^switzerland (+41)^syria (+963)^taiwan (+886)^tajikistan (+992)^tanzania (+255)^thailand (+66)^timor-leste (+670)^togo (+228)^tokelau (+690)^tonga (+676)^trinidad and tobago (+1)^tunisia (+216)^turkey (+90)^turkmenistan (+993)^turks and caicos islands (+1)^tuvalu (+688)^uganda (+256)^ukraine (+380)^united arab emirates (+971)^united kingdom (+44)^united states (+1)^uruguay (+598)^uzbekistan (+998)^vanuatu (+678)^vatican city state (holy see) (+39)^venezuela (+58)^vietnam (+84)^virgislands (british) (+1)^virgislands (u.s.) (+1)^wallis and futuna (+681)^western sahara (+212)^yemen (+967)^zambia (+260)^zimbabwe (+263),canada (+1),398.0
+will now or the future require sponsorship for employment visa status,No,384.0
+how did hear about this job,linkedin,377.0
+level proficiency english:select an option^none^conversational^professional^native or bilingual,native or bilingual,348.0
+numéro de téléphone portable,1-587-700-2734,327.0
+react.js,3,309.0
+adresse e-mail:select an option^johnmiko4@gmail.com,johnmiko4@gmail.com,292.0
+c#,2,291.0
+zip / postal code,H4C 3A2,281.0
+javascript,3.0,263.0
+node.js,1,250.0
+are comfortable commuting to this job's location,Yes,234.0
+"will now, or the future, require sponsorship for employment visa status (e.g. h-1b visa status):yes^no",no,212.0
+sql,3.0,208.0
+are legally authorized to work the united states:yes^no,yes,190.0
+are comfortable working a remote setting,Yes,184.0
+state,Quebec,181.0
+mobile phone number,5877002734,169.0
+"disabilityform cc-305omb control number 1250-0005expires 05/31/2023why are being asked to complete this form:yes, i a disability, or a history/record having a disability^no, i don't a disability, or a history/record having a disability^i don't wish to answer","yes, i a disability, or a history/record having a disability",160.0
+quel est votre niveau en français:select an option^inexistant^conversationnel^professionnel^natif ou bilingue,conversationnel,151.0
+are comfortable working an onsite setting:yes^no,yes,150.0
+gendermalefemalei prefer not to specify:male^female^i prefer not to specify,male,150.0
+"race/ethnicityrace categories are defined as followshispanic or latino - a person cuban, mexican, puerto rican, south or central american, or other spanish culture or origregardless racewhite (not hispanic or latino) - a person having origins any the original peoples europe, the middle east, or north africablack or african american (not hispanic or latino) - a person having origins any the black racial groups africanative hawaiian or other pacific islander (not hispanic or latino) - a person having origins any the peoples hawaii, guam, samoa, or other pacific islandsasian (not hispanic or latino) - a person having origins any the original peoples the far east, southeast asia, or the indian subcontinent, including, for example, cambodia, china, india, japan, korea, malaysia, pakistan, the philippine islands, thailand, and vietnamamerican indian or alaska native (not hispanic or latino) - a person having origins any the original peoples north and south america (including central america), and who maintatribal affiliation or community attachmenttwo or more races - all persons who identify more than one the above five races. (not hispanic or latino)hispanic or latinoamerican indian or alaska native (not hispanic or latino)asian (not hispanic or latino)black or african american (not hispanic or latino)native hawaiian or other pacific islander (not hispanic or latino)two or more races (not hispanic or latino)white (not hispanic or latino)i prefer not to specify:hispanic or latino^american indian or alaska native (not hispanic or latino)^asian (not hispanic or latino)^black or african american (not hispanic or latino)^native hawaiian or other pacific islander (not hispanic or latino)^two or more races (not hispanic or latino)^white (not hispanic or latino)^i prefer not to specify",white (not hispanic or latino),150.0
+level proficiency french,None,143.0
+veteran statuswhy are being asked to complete this form:i identify as one or more the classifications protected veteran listed above^i am not a protected veteran^i prefer not to specify,i am not a protected veteran,142.0
+linkedprofileex https//www.linkedin.com/in/xxx-xxx-xxx,https://www.linkedin.com/in/john-miko/,135.0
+.net framework,2,134.0
+microsoft azure,1,130.0
+"what state or territory reside in:select an option^ak^al^ar^az^ca^co^ct^dc^de^fl^ga^hi^ia^id^il^in^ks^ky^la^ma^md^me^mi^mn^mo^ms^mt^nc^nd^ne^nh^nj^nm^nv^ny^oh^ok^or^pa^ri^sc^sd^tn^tx^ut^va^vt^wa^wi^wv^wy^ontario, canada^other",other,127.0
+"are a us citizen, lawful permanent resident, green card holder, or asylee/refugee:select an option^no^yes",no,123.0
+email:select an option^johnmiko4@gmail.com,johnmiko4@gmail.com,123.0
+website,https://github.com/johnmiko,122.0
+will now or the future require mission lane to commence or sponsor an immigration case order to employ (for example h1-b or other employment based immigration) either the united states or canada:select an option^no^yes,no,116.0
+form cc-305omb control number 1250-0005expires 1/31/2020voluntary self-identification disabilitywhy are being asked to complete this form:,yes,108.0
+if offered this position would be able to fill the position one the countries listed on the job posting without relocation assistance from mozilla:select an option^no^yes,yes,107.0
+django,1,107.0
+teléfono móvil,1-587-700-2734,106.0
+spring boot,0.0,106.0
+"are willing to undergo a background check, accordance local law/regulations:yes^no",yes,98.0
+email address,johnmiko4@gmail.com,95.0
+ruby on rails,0,94.0
+software development,6.0,93.0
+are legally eligible to work canada:select an option^yes^no,yes,93.0
+are authorized to work lawfully the country to which are applying for mozilla:select an option^yes^no,yes,90.0
+preferred name,John,90.0
+applicant privacy notice:select an option^yes,yes,90.0
+"what are your total compensation expectations for your next role (base salary, bonus, equity):select an option^<$60,000^$60,000-$70,000^$70,000-$80,000^$80,000 - $90,000^$90,000 - $100,000^$100,000 - $120,000^$120,000 - $130,000^$130,000 - $140,000^$140,000 - $150,000^$150,000 - $160,000^$160,000 - $170,000^$170,000 - $180,000^$180,000-$190,000^$190,000-$200,000^$210,000-$220,000^$220,000-$230,000^$230,000-$240,000^$250,000-$260,000^$260,000-$270,000^$270,000-$280,000^$290,000-$300,000^>$300,000","$100,000 - $120,000",89.0
+c++,1.0,89.0
+engineering,9,86.0
+are legally authorized to work canada,Yes,86.0
+angular,0,83.0
+linux,2,80.0
+quel est votre niveau en anglais:select an option^inexistant^conversationnel^professionnel^natif ou bilingue,natif ou bilingue,78.0
+rest apis,2,78.0
+php,1.0,77.0
+momentive is registered to hire the following provinces withcanada. please choose the province would be working from.:select an option^ontario^alberta^i am not one these provinces but am open to relocating.^i am not one these provinces and am not willing to relocate.,i am not one these provinces and am not willing to relocate.,77.0
+if reside the united states california consumer privacy act notification:select an option^i acknowledge receipt the above ccpa notice.^i reside canada.,i reside canada.,75.0
+race,White,75.0
+docker products,3,73.0
+"avez-vous besoin, ou aurez-vous besoplus tard, dun parrainage dimmigration pour obtenir une autorisation de travail:oui^non",non,73.0
+what are your salary expectations,100000.0,72.0
+"race:select an option^decline to answer^hispanic or latino^white, not hispanic or latino^black or african-american, not hispanic or latino^asian, not hispanic or latino^native hawaiian or other pacific islander, not hispanic or latino^american indian or alaskan native, not hispanic or latino^two or more races, not hispanic or latino","white, not hispanic or latino",70.0
+level proficiency french:select an option^none^conversational^professional^native or bilingual,conversational,67.0
+.net core,2,62.0
+git,8.0,60.0
+desired salary,100000,60.0
+"¿cuál es tu nivel de inglés:select an option^ninguno^conversación^profesional^""nativo o bilingüe","nativo o bilingüe""",59.0
+postgresql,3,59.0
+"are willing to take a drug test, accordance local law/regulations:yes^no",yes,57.0
+are a canadian resident and currently living canada:select an option^yes^no,yes,57.0
+a valid driver's license:yes^no,yes,57.0
+¿cuántos años de experiencia tienes con python,8,57.0
+databases,5,55.0
+street address line 2,-,55.0
+are comfortable working a hybrid setting:yes^no,yes,54.0
+current location:select an option^afghanistan^albania^algeria^andorra^angola^antigua and barbuda^argentina^armenia^australia^austria^azerbaijan^bahamas^bahrain^bangladesh^barbados^belarus^belgium^belize^benin^bhutan^bolivia^bosnia and herzegovina^botswana^brazil^brunei^bulgaria^burkina faso^burundi^cote d'ivoire^cabo verde^cambodia^cameroon^canada^central african republic^chad^chile^china^colombia^comoros^congo (congo-brazzaville)^costa rica^croatia^cuba^cyprus^czechia (czech republic)^democratic republic the congo^denmark^djibouti^dominica^dominican republic^ecuador^egypt^el salvador^equatorial guinea^eritrea^estonia^eswatini^ethiopia^fiji^finland^france^gabon^gambia^georgia^germany^ghana^greece^grenada^guatemala^guinea^guinea-bissau^guyana^haiti^holy see^honduras^hungary^iceland^india^indonesia^iran^iraq^ireland^israel^italy^jamaica^japan^jordan^kazakhstan^kenya^kiribati^kuwait^kyrgyzstan^laos^latvia^lebanon^lesotho^liberia^libya^liechtenstein^lithuania^luxembourg^madagascar^malawi^malaysia^maldives^mali^malta^marshall islands^mauritania^mauritius^mexico^micronesia^moldova^monaco^mongolia^montenegro^morocco^mozambique^myanmar (formerly burma)^namibia^nauru^nepal^netherlands^new zealand^nicaragua^niger^nigeria^north korea^north macedonia^norway^oman^pakistan^palau^panama^papua new guinea^paraguay^peru^philippines^poland^portugal^qatar^romania^russia^rwanda^saint kitts and nevis^saint lucia^saint vincent and the grenadines^samoa^san marino^sao tome and principe^saudi arabia^senegal^serbia^seychelles^sierra leone^singapore^slovakia^slovenia^solomon islands^somalia^south africa^south korea^south sudan^spain^sri lanka^state palestine^sudan^suriname^sweden^switzerland^syria^tajikistan^tanzania^thailand^timor-leste^togo^tonga^trinidad and tobago^tunisia^turkey^turkmenistan^tuvalu^uganda^ukraine^united arab emirates^united kingdom^united states america^uruguay^uzbekistan^vanuatu^venezuela^vietnam^yemen^zambia^zimbabwe,canada,54.0
+what's your citizenship / employment eligibility:u.s. citizen/permanent resident^non-citizen allowed to work for any employer^non-citizen allowed to work for current employer^non-citizen seeking work authorization^canadian citizen/permanent resident^other,canadian citizen/permanent resident,52.0
+information technology,1,50.0
+google cloud platform (gcp),1,48.0
+most recent job title:,software developer,47.0
+microsoft sql server,4.0,46.0
+we must fill this position urgently. can start immediately:yes^no,yes,46.0
+react native,1.0,46.0
+expected hourly pay cad on a t4 basis,62.0,45.0
+legal name,Johnathan Miko,45.0
+aws lambda,1,45.0
+can maintaa conversation english:select an option^no^yes,yes,44.0
+most recent company:,Hivestack,44.0
+terraform,0,43.0
+graphql,1.0,42.0
+how did hear about this opportunity:select an option^linkedin^glassdoor^builtin^comparably^medium^motive careers page^referred by a friend,linkedin,41.0
+are legally authorized to work canada:select an option^yes^no,yes,41.0
+deploying code to aws:select an option^i never deployed to aws.^less than a year experience deploying code to aws.^2-4 years experience deploying code to aws.^more than 5 years experience deploying code to aws.,2-4 years experience deploying code to aws.,41.0
+before submitting your application please review the below:select an option^i acknowledge receipt the momentive global applicant and candidate data privacy notice.,i acknowledge receipt the momentive global applicant and candidate data privacy notice.,40.0
+how did first hear about momentive:select an option^i was referred to momentive^momentive website^linkedin^glassdoor^indeed^conference or meetup^campus recruiting event^blog post or other social media^recruiter^gradient spaces^other,linkedin,40.0
+software service (saas),0.0,39.0
+amazon s3,1.0,38.0
+kotlin,1.0,35.0
+microsoft excel,10,35.0
+¿cuál es tu nivel de inglés:select an option^ninguno^conversación^profesional^nativo o bilingüe,nativo o bilingüe,35.0
+c (programming language),0,35.0
+gender:select an option^male (cisgender)^female (cisgender)^transgender female^transgender male^gender variant/non-conforming^non-binary^genderfluid^intersex^not listed^i prefer not to say,male (cisgender),35.0
+êtes-vous prêt(e) à vous déplacer vers ce lieu de travail:oui^non,oui,35.0
+typescript,1.0,35.0
+python (langage de programmation),8,34.0
+what level seniority think achieved:select an option^trainee^junior^mid-level^senior^tech lead^architect,mid-level,33.0
+mysql,3.0,33.0
+to which gender identity most identify:select an option^not wish to answer^man^non-binary^woman,man,33.0
+web development,4.0,32.0
+html,1,31.0
+what country are located in:select an option^canada/ canada^cyprus/ chypre^luxembourg/ luxembourg^romania/ roumanie^united states america / états-unis d'amérique^united kingdom/ royaume-uni^other / autre,canada/ canada,31.0
+salesforce.com,0,30.0
+i am allowing 8x8 to contact me about future job opportunities for up to 1 year. privacy policy https//www.8x8.com/uk/job-applicant-privacy-noticeyesno:yes^no,yes,30.0
+tableau,0,30.0
+are comfortable working pacific time zone hours:select an option^yes^no,yes,29.0
+embedded systems,1.0,29.0
+how long worked on python development,8,28.0
+prénom,John,28.0
+core java,1.0,28.0
+ios,0.0,27.0
+your name,John Miko,27.0
+were referred by a connected employee,no,27.0
+earliest start date,Immediately,27.0
+"genderto comply government equal employment opportunity and/or affirmative action reporting regulations, we are requesting (but not requiring) that enter this personal data. this information will not be used connection any employment decisions, and will be used solely as permitted by state and federal law. your voluntary cooperation would be appreciated. learn moremalefemaledecline to answer",male,27.0
+android,0.0,27.0
+nom de famille,Miko,26.0
+asp.net mvc,0,26.0
+courriel,johnmiko4@gmail.com,26.0
+jira,0.0,26.0
+java:select an option^0^1^2^3^4^5^6^7^8^9^+10,1,26.0
+e-mail:select an option^johnmiko4@gmail.com,johnmiko4@gmail.com,26.0
+jenkins,0.0,26.0
+spring framework,0,25.0
+where is your current place residence,"Rue Du Square Sir George Etienne Cartier, Montreal, Quebec",25.0
+avez-vous 4 années min. d'expérience avec les produits esri:select an option^yes^no,no,25.0
+mongodb,1,25.0
+api development,4.0,25.0
+are legally eligible to work canada or the united states on an ongoing basis:yes^no,yes,24.0
+technical support,1.0,24.0
+are comfortable working on w2:select an option^yes^no,yes,24.0
+are legally authorized to work canada for any employer,Yes,24.0
+work authorization/ authorization de travail:select an option^are authorized to work for any employer canada/ vous êtes autorisé à travailler pour nimporte quel employeur au canada^are authorized to work for any employer cyprus/ vous êtes autorisé à travailler pour nimporte quel employeur au chypre^are authorized to work for any employer luxembourg/ vous êtes autorisé à travailler pour nimporte quel employeur au luxembourg^are authorized to work for any employer romania/ vous êtes autorisé à travailler pour nimporte quel employeur au roumanie^are authorized to work for any employer the united states america/ vous êtes autorisé à travailler pour nimporte quel employeur au états-unis d'amérique^are authorized to work for any employer the united kingdom/ vous êtes autorisé à travailler pour nimporte quel employeur royaume-uni^are not authorized to work for any employer any the countries mentioned above/ vous nêtes pas autorisé à travailler pour un employeur dans lun des pays mentionnés ci-dessus,are authorized to work for any employer canada/ vous êtes autorisé à travailler pour nimporte quel employeur au canada,24.0
+gdpr authorization/ autorisation gdpr:select an option^confirm/ confirmer,confirm,24.0
+rest api standards and web services,2,24.0
+jakarta ee,0,23.0
+"gender - gender, race and ethnicity (definitions):select an option^male^female^prefer not to answer",male,23.0
+"relational databases and/or nosql (e.g., aws aurora, dynamodb, cassandra).",3,23.0
+react,2.0,23.0
+are legally authorized to work canada for any employer:select an option^yes^no,yes,23.0
+how much  working / building restful apis,2.0,23.0
+manufacturing environment,3,22.0
+operating systems,2.0,22.0
+are eligible to work canada:yes^no,yes,22.0
+téléphone,'587-700-2734',22.0
+working python writing scripts,8,22.0
+please provide your physical address below,Rue Du Square Sir George Etienne Cartier,22.0
+communication,0.0,22.0
+laravel,0.0,22.0
+python,8.0,22.0
+"for hiring purposes, which state currently reside in:select an option^alabama^alaska^arizona^arkansas^california^colorado^connecticut^delaware^florida^georgia^hawaii^idaho^illinois^indiana^iowa^kansas^kentucky^louisiana^maine^maryland^massachusetts^michigan^minnesota^mississippi^missouri^montana^nebraska^nevada^new hampshire^new jersey^new mexico^new york^north carolina^north dakota^ohio^oklahoma^oregon^pennsylvania^rhode island^south carolina^south dakota^tennessee^texas^utah^vermont^virginia^washington^west virginia^wisconsin^wyoming^i currently not reside the us.",i currently not reside the us.,21.0
+point sale (pos) systems,0,21.0
+identify member the lgbtq2+ community,no,21.0
+"if you're applying to be a us-based employee will now or the future require paper to commence (sponsor) an immigration case order to employ (for example, h-1b or other employment-based immigration case):select an option^yes, i will require sponsorship^no, i will not require sponsorship^i am not applying to be a us-based employee",i will not require sponsorship,21.0
+back-end web development,3.0,21.0
+flask,0,21.0
+"require sponsorship to work for any employer the us:yes, i require sponsorship^no, i not require sponsorship","no, i not require sponsorship",21.0
+strongest backend programming language,Python,21.0
+will now or the future require sponsorship:select an option^current citizen^new visa sponsorship required^visa transfer to rewardstyle required^greencard holder^other,current citizen,21.0
+building api's node.js or java,1,21.0
+¿cuántos años de experiencia tienes con java,1,21.0
+"before submit your application, please choose yes that read and acknowledge receipt the candidate privacy notice.:select an option^no^yes",yes,21.0
+working on / building web apps react,3,21.0
+número de celular,1-587-700-2734,20.0
+webpack,1,20.0
+asp.net,1.0,20.0
+firmware,1.0,20.0
+are a us citizen:select an option^yes^no,no,20.0
+embedded software,1,20.0
+require sponsorship to work canada:select an option^yes^no,no,20.0
+apache airflow,0,20.0
+angularjs,0,19.0
+mobile devices,1,19.0
+how long been working raml,0,19.0
+preferred work location:select an option^an office^remote work,remote work,19.0
+azure devops,2.0,19.0
+how long been working mulesoft,0,19.0
+"a degree engineering, building sciences, or other related technical fields.:select an option^yes^no",yes,19.0
+scala,0,18.0
+kubernetes,0.0,18.0
+pyspark,0,18.0
+will now or the future require sponsorship for immigration:yes^no,no,18.0
+full-stack development,2,18.0
+selenium,3.0,18.0
+representational state transfer (rest),2,18.0
+gender,Male,18.0
+pyth (programming language),8.0,17.0
+are legally entitled to work canada:select an option^yes^no,yes,17.0
+¿cuántos años de experiencia tienes con javascript,3,17.0
+full stack development  have,3,17.0
+vue.js,0,17.0
+working python,8,17.0
+what gender identify as:select an option^male^female^prefer not to answer,male,16.0
+microsoft office,15.0,16.0
+are 18 years age or older:yes^no,yes,16.0
+golang,0,16.0
+apache flink,0.0,16.0
+powershell,3,15.0
+python programming language,8,15.0
+qual seu nível de proficiência em english:select an option^nenhuma^conversação^proficiente^nativo ou bilíngue,nativo ou bilíngue,15.0
+are experienced front-end development:select an option^yes^no,yes,15.0
+completed the following level education 200:yes^no,yes,15.0
+json,1.0,15.0
+are or will be located quebec:select an option^yes^no,yes,15.0
+"race/ethnicity - gender, race and ethnicity (definitions):select an option^american indian or alaska native^asian^black or african american^hispanic or latino^native hawaiian or other pacific islander^white^two or more races^prefer not to answer",white,15.0
+are legally authorized to work as an employee canada for any employer,Yes,15.0
+solid ci/cd skills:select an option^yes^no,yes,15.0
+e-mail-adresse:select an option^johnmiko4@gmail.com,johnmiko4@gmail.com,15.0
+redux.js,1.0,14.0
+identify as an indigenous person,no,14.0
+level proficiency german:select an option^none^conversational^professional^native or bilingual,conversational,14.0
+professional experience full software development life cycle and developing client/server applications have,3,14.0
+renewable energy,0.0,14.0
+are legally entitled to work canada at this time:yes^no,yes,14.0
+microservices,0.0,14.0
+visual basic .net (vb.net),1.0,14.0
+airlines and aviation,2,13.0
+data engineering,3,13.0
+"at least 5 years experience back-end development nodejs, typescript, or graphql:select an option^yes^no",yes,13.0
+computer hardware troubleshooting,2,13.0
+nosql,1,13.0
+vivez-vous au canada:select an option^yes^no,yes,13.0
+blockchain,0.0,13.0
+analyzing the performance complex software,3,13.0
+soap,0.0,12.0
+are legally authorized to work italy:select an option^yes^no,yes,12.0
+elasticsearch,1,12.0
+/ writing sql queries,3.0,12.0
+"experience object oriented programming and design (i.e. java, c#, .net)",8,12.0
+cloud-based microservices development,3,11.0
+devops,2.0,11.0
+game industry  have,0,11.0
+wordpress,0.0,11.0
+entity framework,0.0,11.0
+etes-vous légalement autorisé à travailler au canada:select an option^yes^no,yes,11.0
+are legally eligible to work canada on an on-going basis:yes^no,yes,10.0
+programming,7.0,10.0
+windows,10.0,10.0
+agile methodologies,1.0,10.0
+ionic framework,0.0,10.0
+"now, or will the future require sponsorship to work or continue to work the u.s.:select an option^yes^no",no,10.0
+last name,Miko,9.0
+big data,1.0,9.0
+experience typescript have,1,9.0
+marketing,0.0,9.0
+restful webservices,2.0,9.0
+currently live canada the eastern time zone:select an option^yes^no,yes,9.0
+first name,John,9.0
+", or are eligible to obtaa federal enhanced reliability government security clearance:select an option^yes^no",yes,8.0
+technical unreal engine artist,0,8.0
+oracle database,1.0,8.0
+matlab,2.0,8.0
+working sql (relational databases),3,8.0
+test automation,4.0,8.0
+spring mvc,0.0,8.0
+"please indicate your desired salary range example $60,000 - $70,000","$120,000 - $150,000",8.0
+expected salary,100000,8.0
+professional  go,0,8.0
+apigee api management,0,8.0
+api management,1,8.0
+what are your salary requirements,100000.0,8.0
+next.js,0.0,8.0
+depuis combien dâ’annã©es utilisez-vous django,1,7.0
+"are based ontario, canada:select an option^yes^no",no,7.0
+job description development,0.0,7.0
+html5,1,7.0
+linkedin,https://www.linkedin.com/in/john-miko,7.0
+pandas (software),6.0,7.0
+web services,2.0,7.0
+content management systems (cms),0.0,7.0
+tensorflow,1.0,7.0
+data pipelines,1.0,7.0
+google bigquery,0.0,6.0
+oop and software design knowledge:select an option^yes^no,5,6.0
+"experience developing across a full-stack web server, relational database, and client-side/front-end have",3,6.0
+continuous integration and continuous delivery (ci/cd),2.0,6.0
+experience go/golang:select an option^yes^no,0,6.0
+are legally entitled to work canada for any employer without sponsorship:select an option^yes^no,yes,6.0
+sales,0.0,6.0
+redux for state management,1,6.0
+rust (programming language),0.0,6.0
+front end development,2.0,6.0
+amazon relational database service (rds),1.0,6.0
+project management,0.0,6.0
+cisco systems products,0.0,6.0
+experience devops,1,5.0
+subversion,0.0,5.0
+microsoft power bi,0,5.0
+programmable logic controller (plc),1.0,5.0
+experience python and jenkins:select an option^yes^no,yes,5.0
+database design,2.0,5.0
+anticipated salary for the role,100000 CAD,5.0
+telecommunications,1.0,5.0
+perl,0.0,5.0
+pl/sql,3.0,5.0
+hibernate,0.0,5.0
+sql server reporting services (ssrs),0.0,5.0
+experience k8s,0,5.0
+automation,2.0,5.0
+oauth,1.0,4.0
+tailwind css,0,4.0
+sass,0.0,4.0
+embedded linux,0.0,4.0
+the following license or certification: microsoft certified solutions expert,no,4.0
+node,1.0,4.0
+swift (programming language),0.0,4.0
+scada,1.0,4.0
+are legally eligible to work canada or the united states on an ongoing basis,yes,4.0
+front-end development,2.0,4.0
+unity,0.0,4.0
+working on responsive web apps,3,4.0
+management,0.0,4.0
+.net software development leadership have,2,4.0
+pytorch,0.0,3.0
+ios development,0.0,3.0
+bootstrap,1.0,3.0
+autodesk inventor,1.0,3.0
+writing sql server / oracle,0,3.0
+google kubernetes engine (gke),0.0,3.0
+working arcgis enterprise,0,3.0
+adobe experience manager (aem),0.0,3.0
+multithreading,0.0,3.0
+are physically located canada and are legally permitted to work canada:select an option^yes^no,yes,3.0
+experience working e-commerce,0,3.0
+full stack development,2.0,3.0
+microsoft powerpoint,10.0,3.0
+are currently located canada,Yes,3.0
+google analytics,1.0,3.0
+reactjs,1.0,3.0
+construction,0.0,3.0
+office 365,10.0,3.0
+electronic medical record (emr),0.0,3.0
+windows presentation foundation (wpf),0.0,3.0
+neo4j,0.0,3.0
+aws,1,3.0
+test driven development,4.0,3.0
+responsive web design,0.0,3.0
+expected hourly pay cad (on t4 basis),62.0,3.0
+visual studio,2.0,3.0
+visual basic,3.0,2.0
+utilities,0.0,2.0
+unix,1.0,2.0
+mobile applications,0.0,2.0
+control systems engineering,1.0,2.0
+adobe indesign,0.0,2.0
+aws cloudformation,0.0,2.0
+are legally able to work canada at this time:yes^no,yes,2.0
+salesforce marketing cloud,0.0,2.0
+data analysis,4.0,2.0
+web developer,3,2.0
+front end engineer,2.0,2.0
+aws iot,0.0,2.0
+software design,6.0,2.0
+sql server management studio,2.0,2.0
+go (golang),0.0,2.0
+project coordination,0.0,2.0
+rabbitmq,0.0,2.0
+microservices development  have,2,2.0
+full stack web development  have,1.0,2.0
+solidity,0.0,2.0
+wordpress development,0.0,2.0
+troubleshooting,7.0,2.0
+numpy,6.0,2.0
+are legally entitled to work the country where this job is located:yes^no,Yes,2.0
+express.js,1.0,2.0
+full stack developer,2,2.0
+transact-sql (t-sql),0,2.0
+cloud computing,1.0,2.0
+start-ups,4.0,2.0
+procurement,0.0,2.0
+what are your current salary expectations,100000,2.0
+enterprise level java,1.0,1.0
+saas development,0.0,1.0
+full-time software engineer,4,1.0
+working saas platform development,0.0,1.0
+java & nodejs,1.0,1.0
+program development,8.0,1.0
+materials,3.0,1.0
+telecommuting,0.0,1.0
+data center,0.0,1.0
+health & safety,2.0,1.0
+developing front end,1,1.0
+javascript (es5/es6)/jquery,2.0,1.0
+veteran status,I am not a protected veteran,1.0
+how many business projects/ideas been involved in,10.0,1.0
+control systems,2.0,1.0
+software craftsmanship,0.0,1.0
+computer & network security,0.0,1.0
+wastewater treatment,0.0,1.0
+xml schema,1.0,1.0
+marketing and advertising,0.0,1.0
+python or another modern back-end programming languag,8.0,1.0
+experience data structures and algorithms,4.0,1.0
+u.s. food and drug administration (fda),0.0,1.0
+website updating,2.0,1.0
+nodejs & relational databases,2.0,1.0
+creative problem solving,8.0,1.0
+working shopify and shopify plus,0.0,1.0
+rest api,2,1.0
+optimization,2.0,1.0
+data architect,0.0,1.0
+oil & energy,5.0,1.0
+web design,2.0,1.0
+what are your salary expectations lei net,100000.0,1.0
+desired hourly rate cad per hour,62.0,1.0
+are legally able to work canada,Yes,1.0
+building management systems,0.0,1.0
+sheet metal,0.0,1.0
+working microservices,1.0,1.0
+failure analysis,4.0,1.0
+cloud based infrastruct,1.0,1.0
+production,1.0,1.0
+computer software,10.0,1.0
+total experienc,8.0,1.0
+completed the following level education bachelor's degree:yes^no,yes,1.0
+change data capt,0.0,1.0
+telerik ui for wpf,0.0,1.0
+aws amplify,0.0,1.0
+software/full-stack/backend engineering  hav,4.0,1.0
+react hooks,1.0,1.0
+developer  have,4.0,1.0
+backend development,4.0,1.0
+how much  full stack developer hav,2.0,1.0
+salary expectation fix,100000.0,1.0
+app sto,1.0,1.0
+writing and implementing unit tests,3.0,1.0
+how many months  building cloud-based api platforms or backend systems,2.0,1.0
+golang  hav,0.0,1.0
+after sales,0.0,1.0
+go/golang,0.0,1.0
+unreal engine 4,0.0,1.0
+object-oriented programming languages like java 8,8.0,1.0
+agile development,1.0,1.0
+embedded softwa,0.0,1.0
+website / portfolio,https://www.linkedin.com/in/john-miko,1.0
+maritime,0.0,1.0
+elixir,0.0,1.0
+cognex,0.0,1.0
+are legally able to work for any employer canada,Yes,1.0
+google material design,0.0,1.0
+jango web development,2.0,1.0
+team leadership,1.0,1.0
+race and ethnicityrace & ethnicity definitions,White,1.0
+nodejs,1,1.0
+websocket,0.0,1.0
+large assemblies,2.0,1.0
+knowledge systems design and software architecture,4.0,1.0
+microscopy,0.0,1.0
+ux design  have,0.0,1.0
+styled-components,1.0,1.0
+level english out 10,10.0,1.0
+expected salary (cad per year),100000.0,1.0
+what is the hourly pay rate (cad) are looking for this long term assignment,62.0,1.0
+fullstack,2.0,1.0
+guidewire,0.0,1.0
+hydraulic modeling,0.0,1.0
+battery management systems,0.0,1.0
+3d modeling,4.0,1.0
+cooling,0.0,1.0
+vbscript,1.0,1.0
+renewables & environment,0.0,1.0
+community development,0.0,1.0
+computer hardware,0.0,1.0
+web services such as soap and rest have,3.0,1.0
+how may years team leading expertise bring to this role,1,1.0
+solid modeling,1.0,1.0
+wcf services,0.0,1.0
+load balancing,1.0,1.0
+experience software engineering,4.0,1.0
+professional  software development,4.0,1.0
+full stack engin,2.0,1.0
+experience vuejs,0.0,1.0
+ubunt,1.0,1.0
+angular development  hav,0.0,1.0
+linux systems operations professional,1.0,1.0
+how many hours per week are able to work part-time,40.0,1.0
+machining,1.0,1.0
+english,30.0,1.0
+usability engineering,1.0,1.0
+designing and implementing microservices,0.0,1.0
+what are your total compensation expectations,100000.0,1.0
+cypress,0.0,1.0
+kubernetes multimaster cluster node environment operation,0.0,1.0
+full-stack development (after graduation)  hav,2.0,1.0
+designing and building restful apis microservices architect,2.0,1.0
+been a full stack developer for,2.0,1.0
+jakarta,0.0,1.0
+verification and validation (v&v),0.0,1.0
+laboratory information management system (lims),0,1.0
+sheet metal design,0.0,1.0
+developer relations,0.0,1.0
+capital markets,0.0,1.0
+smart contracts,0,1.0
+simulink,1.0,1.0
+ansys,1.0,1.0
+expected hourly pay (on t4 basis) cad,62,1.0
+pharmaceutics,0.0,1.0
+automotive  currently hav,0.0,1.0
+3d animation,0.0,1.0
+user interface design,1.0,1.0
+angular 7 or higher,0.0,1.0
+project management  have,0.0,1.0
+elastic stack (elk),0.0,1.0
+information technology & services,1,1.0
+german,1.0,1.0
+civil engineering,0.0,1.0
+symfony,0.0,1.0
+microsoft project,1.0,1.0
+ngrx,0.0,1.0
+web experience,2.0,1.0
+project documentation,7.0,1.0
+front and/or back end  hav,4.0,1.0
+full stack javascript developer,2,1.0
+front end developer  have,2.0,1.0
+hydraulics,0.0,1.0
+programming  hav,10.0,1.0
+autodesk civil 3d,1.0,1.0
+developing apis withnode.js,1,1.0
+javascriptmvc,0.0,1.0
+hbase,0.0,1.0
+deep learning,1.0,1.0
+experience backend development hav,4.0,1.0
+targeted salary range,100000,1.0
+working agile methodology,1.0,1.0
+full-stack software develop,2.0,1.0
+platform service (paas),0.0,1.0
+product management,0.0,1.0
+stack,0.0,1.0
+backend development hav,4.0,1.0
+allen-bradley,0.0,1.0
+ci/cd and devops tools,2,1.0
+tablea,0.0,1.0
+functional programming,1.0,1.0
+as back end engin,4.0,1.0
+working as data engineer / big data engin,1.0,1.0
+new plant start-up,0.0,1.0
+expected hourly pay ca,62.0,1.0
+azure devops server,2.0,1.0
+industrial automation,0.0,1.0
+hardware,1.0,1.0
+back-end development,3.0,1.0
+qnx,0.0,1.0
+elixir / phoenix,0.0,1.0
+how many products released unreal engine,0,1.0
+hydraulic systems,0.0,1.0
+a degree computer science,No,1.0
+property management systems,0.0,1.0
+java database connectivity (jdbc),1.0,1.0
+technology evangelism,0.0,1.0
+commercial  sql,2.0,1.0
+gatsbyjs,0.0,1.0
+hvac controls,0.0,1.0
+software testing,6.0,1.0
+full stack develop,2.0,1.0
+back end development,3.0,1.0
+gitlab,0.0,1.0
+mandatory: what are your annual salary expectations,100000,1.0
+golang or java or c# or c++,3,1.0
+completed the following level education: bachelor's degree,Yes,1.0
+structural engineering,1.0,1.0
+machine design,4.0,1.0
+hmi configuration,0.0,1.0
+experience openshift,0.0,1.0
+plc programming,1.0,1.0
+piping and instrumentation drawing (p&id),0.0,1.0
+short message peer-to-peer (smpp),0.0,1.0
+linkedprofileex: https://www.linkedin.com/in/xxx-xxx-xxx,https://www.linkedin.com/in/john-miko,1.0
+cloud management,1,1.0
+windows networking,1.0,1.0
+what are your yearly salary expectations,100000.0,1.0
+design,10.0,1.0
+expected hourly salary on t4 basis,62.0,1.0
+design for manufacturing,3.0,1.0
+programming  python,8.0,1.0
+how much  building / working on web based saas solutions,0.0,1.0
+on front-end development,2.0,1.0
+injection molding,2.0,1.0
+medical devices,0.0,1.0
+ptc creo,0.0,1.0
+webrtc,0.0,1.0
+doing api integrations web apps and erp systems,0.0,1.0
+plc ladder logic,1.0,1.0
+control system,2.0,1.0
+professional  total,8.0,1.0
+subdivisions,0.0,1.0
+developing integrations for 3rd party applications via oauth,0.0,1.0
+server side programming,1.0,1.0
+experience working an agile environment ci/cd processes,2.0,1.0
+design control,3.0,1.0
+experience flask,0.0,1.0
+project engineering work  have,0.0,1.0
+design patterns,4.0,1.0
+software engineering  currently hav,4.0,1.0
+schematic,0.0,1.0
+hiring,1.0,1.0
+frontend development  hav,2.0,1.0
+mission critical facilities,0.0,1.0
+building automation,1.0,1.0
+coding and software design,8.0,1.0
+asp.net web ap,1.0,1.0
+rpg,0.0,1.0
+worked a crm professionally,0,1.0
+platform evangelism,0.0,1.0
+backend  hav,4.0,1.0
+experience spring hav,0.0,1.0
+houdini,0.0,1.0
+back-en,4.0,1.0
+professional  web development or a similar rol,4.0,1.0
+lead,2.0,1.0
+full stack  hav,2.0,1.0
+rest ap,2.0,1.0
+5) what are your salary expectations,100000,1.0
+mbr,0.0,1.0
+detailed design,8.0,1.0

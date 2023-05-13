@@ -1,0 +1,24 @@
+Requirements:
+
+Experience with Modern object-oriented development language like Python, C#, .NET, Go, Scala, Java or Swift
+Experience Developing RESTful APIs
+Experience working with Relational Database (SQL Server, Postgres, MySQL, Oracle)
+Experience with ORM Framework (EntityFramework, Hibernate, Dapper)
+Experience using modern web frameworks like Angular, Vue or React SCSS, Sass, or CSS for website development
+Experience taking designs and recreating with html and CSS
+What Will Put You Ahead
+
+Experience with leading technical design
+Experience coaching and assisting in the development of other team members
+Experience writing unit tests
+Understanding of Onion, N-TIER, Hexagonal or other formal architectural strategy
+SOLID Development Patterns
+Understanding of Microservice vs Monolithic architecture
+Experience with Message Queueing Technologies such as RabbitMQ or Kafka
+Experience setting up an application to build in a Docker Container
+Experience with AWS
+Experience with Angular 2+
+Experience using Reactive Extension Library programming API like RxJS or ReactiveX
+State Management libraries that follows a Flux architecture, such as NgRx, Redux or MobX
+Experience with unit testing using Jasmine, Jest, or any js/ts unit test framework
+Experience with Transportation or Logistics Applications

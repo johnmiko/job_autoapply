@@ -1,0 +1,85 @@
+need to do some manually
+
+urgent
+    - if checkbox - check
+    - shouldn't need max timer
+        - crashed on 84 - "cover letter"
+
+find_interesting_jobs.py
+    - webscrap linkedin? I guess?
+    - find jobs that I find interesting, record to a file, apply for jobs using existing code
+
+
+    Things I find interesting
+        health
+            - literal spine prediction
+            - coordinating work between doctors
+            - medical records
+        security
+        finance
+        climate change
+        software application developer (making hotels automated)
+
+Improvements
+    Record full questions and answers to file
+        - Only recording with the fluff removed at the moment
+
+    record_jobs_applied_for
+        - go thru "applied" until we get to "x_date", record to file
+
+    https://stackoverflow.com/questions/15572288/general-decorator-to-wrap-try-except-in-python
+
+    - 4000+ jobs
+        - should start checking job description, don't need to be applying for all of these
+        - only apply for job if "python" is in the description
+
+    if 'scroll_bar' present in page
+        - scroll to bottom
+
+    limitations
+        cannot apply for jobs when there is lots of questions and we need to scroll down
+
+
+    question fluff
+        - Need to check for word boundaries, python getting reduced to "pyth"
+        - should also record the raw questions so they're easier to understand. Wait does that make sense?
+        - Well yeah, so we record 1 raw question, then remove the fluff, compare the questions if they match, no need to
+         compare the next one
+
+    Record 'jobs_applied to' info to a file so I can search for the company and position
+        - record company, job title, url, date
+
+    Some questions getting recorded are absolute gibberish, not sure why
+    If question is longer than 100 chars - print to screen along with url and other shit
+
+    - Don't record questions that have non ascii characters
+    - Set a 5 second timeout for each page. i.e., try filling each one out for 5 seconds
+        - May be able to remove the timer at this point
+
+
+    Questions and answers
+        - Need to start making question and answer rules
+        - if salary in question, answer 120000
+            - if also hourly in question answer 62
+
+"no matching jobs found"
+    - need to just start clicking the next one in the "jobs you may be interested in" category
+    apply for job all of them, then refresh the page
+            # Get sidebar, can use to look for mor jobs after we run out of results
+            #   Or could just do it this way in the first place
+            # sidebar = driver.find_element('xpath',"//ul[@class='scaffold-layout__list-container']")
+            # lis = sidebar.find_elements('xpath',".//li")
+            # li_first = lis[0]
+            # job_title = li_first.text.split('\n')[0]
+
+
+
+Improvements - from old - not sure if valid anymore
+    - Record text of radio button and answer yes no appropriately
+    - Be able to select drop down
+    - Record open text box questions, and answers
+    - may need seperate file for them
+
+figure1
+squarepoint capital
+mistplay

@@ -1,0 +1,20 @@
+Responsibilities
+
+Design and implement functional requirements
+Build efficient back-end features in Python using Flask and FastAPI
+Creating unittests and bug fixes
+Prepare technical documentation
+Collaborate with UX/UI designers to implement design into the code
+Coach junior team members
+Implement software enhancements and suggest improvements
+Requirements:
+
+Understanding of application design and design patterns
+Solid experience as Python Developer
+Experience with Python frameworks (Flask, FastApi, SQLAlchemy)
+Familiarity with Azure Web Services and REST API
+Understanding of databases and SQL
+Attention to detail
+Leadership skills
+Knowledge of JavaScript and the React framework is a plus
+Feel free to write to us right now. Let's make history and create the best micro-investing product in the world!

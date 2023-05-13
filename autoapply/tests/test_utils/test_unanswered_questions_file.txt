@@ -1,0 +1,3 @@
+question,answer,times_asked
+project planning,,1.0
+anticipated salary for the role,,1.0

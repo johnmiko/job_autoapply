@@ -1,0 +1,11 @@
+Dear Hiring Manager,
+
+I am writing to apply for the Python Developer position. As a developer with 8 years of programming experience I have built Restful APIs, integrated 3rd part APIs, web applications and web scrapers.
+
+I love working on complex problems, one of the larger ones I worked on was a hockey betting algorithm. To start, I watched 30 hours of lectures on machine learning, taught myself web scraping, collected all hockey statistics since the 1950s, and trained various algorithms on the dataset. Once I was confident that it was working, I put my own money into it. I ended up winning 11 bets in a row, to then lose the next 25 and bottomed out. When I reviewed the code to see if I made any mistakes, I found 2 small bugs that made the math not work exactly like I thought it did. I had unit tests for this section of code but the unit tests I had were not strict enough. Having lost a couple thousand dollars of my own money due to bad tests, it’s something I excel at now.
+
+Please take a moment to look over my resume and schedule a meeting with me (https://calendly.com/johnmiko/meeting) so we can talk about my qualifications for the position. You can also reach me by email at johnmiko4@gmail.com. Thank you for taking the time to consider my application.
+
+Regards,
+
+John Miko

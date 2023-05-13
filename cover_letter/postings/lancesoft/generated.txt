@@ -1,0 +1,16 @@
+Dear Hiring Manager,
+
+I am writing to apply for the **backend_python_developer** position at lancesoft. As a developer with 8 years of programming experience and an altruistic nature, I find the responsibilities of this job posting enjoyable and straightforward..
+In terms of experience, I have 8 with Python 3 with continuous integration 3 with SQL 3 with agile 1 with Linux.
+8
+3 years working with CI/CD
+When working, I always take detailed notes on how things work, or the steps required to complete a task. Because of this, it's very easy for me to turn these notes into clear documentation for everyone to use.
+Personally I really enjoy putting the finishing touches on things. This personality trait lets me enjoy reviewing pull requests more than others.
+3
+3 years doing Agile development
+1
+Besides my previous experience, I believe my optimism and hardworking nature are qualities that will make a positive contribution to NoviFlow. Here is my calendly link (https://calendly.com/johnmiko/meeting) if you would like to book a meeting with me, or you can reach me by email at johnmiko4@gmail.com. Thank you for taking the time to consider my application.
+
+Sincerely,
+
+John Miko

@@ -1,0 +1,37 @@
+
+Mariner Innovations is seeking a Senior Python Developer to be a key member of our IT Professional Services team. In this role, you will be responsible for client-based projects and, in collaboration with our delivery and sales teams, you will deliver best of breed solutions to new and existing customers.
+
+Responsibilities:
+
+Develops the detailed analysis and detailed design for system conversions and migrations Working with system design specifications, develops detailed specifications for software programming applications gns, codes, tests, debugs, and documents programs Involved in the maintenance and enhancement of existing operational application systems Mentor and coach developer team members, and helps them to understand broader objectives May be involved in requirement sessions to help determine solutions Handles or delegates solutions to medium problems to large scale issues May participate in the definition of architecture for large projects under the guidance of the architect or systems analyst Maintains, documents and trouble-shoots prime software products Good knowledge of QA process and methods;
+
+develops and documents test specifications Assists with capacity planning, architecture definition and advice on infrastructure
+
+Qualifications University degree in software engineering/computer science or equivalent experience.
+8+ years experience in Software development, 5+ years of experience in Python.
+
+Experience with OSS systems including architecture, engineering, development and testing.
+
+Fluent with software programming languages and scripting including Python, Java, Perl, Java Script Knowledge  of Python best practices Strong understanding of API integration, microservices architecture, and web service methods (REST, SOAP, XML, JSON).
+
+Experience with container technologies such as Kubernetes, Docker, etc.
+
+Experience with Kafka
+
+Ability to develop web based applications (JAVA, JAVASCRIPT, JAVA SERVLET, XML, HTML, JSP, SOAP and REST)
+Develop, test, deploy and support new solutions using the Agile/Scrum approach
+
+Knowledge of database technologies:
+Oracle, SQLDelivers under pressure with excellent time management skills and prioritization.
+
+A team player and change enabler with a positive forward thinking mindset.
+
+Fully versed in all office applications (Outlook, Word, Excel, PowerPoint).Leadership or mentoring experience is considered an asset  Work With Us Why Mariner Partners?
+
+We believe in making a positive impact in the communities where we live and work – our team is located in major cities all across Canada, throughout the US and internationally. We are proud to be headquartered here, and are passionate about growing a strong technology sector here in Atlantic Canada and beyond.
+
+We offer competitive compensation; benefits packages and training and development.
+
+We recognize that empowered employees are more innovative, more efficient, deliver better customer service and can flat out-perform conventional organizations. Our people have built products for national deployments d's largest TV and Internet companies and leading real estate, financial and government organizations. We are looking for passionate IT professionals who are curious about data, who love solving problems for customers and who want to grow their careers.
+
+Join our growing team!

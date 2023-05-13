@@ -1,0 +1,60 @@
+Linkedin
+
+    Add column to questions file that includes the full text
+
+    Write Cover Letter
+        your message to the hiring manager,,40.0
+        describe recent projects worked on at your current or previous job.,,35.0
+        why are interested working at pachyderm and this role particular,,31.0
+
+    answering questions better
+        - have exact answers
+            - if answer exists in text file
+            - can question have exact answer? example - salary should not have an exact answer
+                - answer based on job, so job specific questions
+        - in cover letter, have a more generic system
+            - check for exact match, if not exact match, then check generics?
+            - have criterias?
+            - can probably just create functions, can't really be asked THAT many questions
+
+
+    Need to have expected salary depending upon the job I am applying to
+    Salary - Engineer
+        - 100'000
+        IT support
+        50'000
+    Will get into settings now
+        Need to understand the question given the words in it
+        Step 1: Exact word matching
+            "pronoun" in question means - he/him is answer
+            "gender - gender, race and ethnicity (definitions):select an option^male^female^prefer not to answer",male,23.0
+            how did hear about this opportunity?
+            are legally authorized to work canada for any employer
+        Step 2:
+            question scoring, if "name" is in question - give score of 1
+                could give a different answer
+                if it is exactly "what is your name?" match exact
+
+Improvements
+    - Record text of radio button and answer yes no appropriately
+    - Be able to select drop down
+    - Record open text box questions, and answers
+    - may need seperate file for them
+    - Add column to 'questions.txt' - full_question, question_no_fluff
+
+Testing - save webpage potentially?
+    Test salary thing here?
+        answer = answer_salary_question(url)
+        # https://www.linkedin.com/jobs/search/?currentJobId=3323299283&f_AL=true&f_E=2&f_JT=P%2CC%2CT%2CF&f_WT=1%2C2%2C3&geoId=101330853&keywords=it%20support&location=Montreal%2C%20Quebec%2C%20Canada&refresh=true&start=77
+        # https://www.linkedin.com/jobs/view/3323299283
+
+Improvements
+    - Don't record questions that have non ascii characters
+    - Set a 5 second timeout for each page. i.e., try filling each one out for 5 seconds
+        - May be able to remove the timer at this point
+
+
+    Questions and answers
+        - Need to start making question and answer rules
+        - if salary in question, answer 120000
+            - if also hourly in question answer 62

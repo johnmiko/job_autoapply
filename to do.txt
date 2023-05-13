@@ -1,0 +1,5 @@
+Log to file if I have problems
+    - Write down the text on the popup
+
+Need to be able to click the radio buttons and answer the questions
+    If "experience" and "python" and "textbox" enter 5

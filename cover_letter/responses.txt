@@ -1,0 +1,27 @@
+response,text,category
+8,"Python",experience
+2,"AWS",experience
+I love helping people and I did technical support at R3mote.io,"technical support",
+2,"jira",experience
+2,"C#",experience
+2,"Java",experience
+2,"Docker",experience
+2,"JavaScript",experience
+3,"SQL",experience
+8,"git",experience
+3 years doing Agile development,"agile",experience
+1,"Linux",experience
+1,"UNIX",experience
+1,"Django",experience
+"I have 3 years of experience working with cloud computing platforms including AWS, Microsoft Azure, and Google Cloud Platform. While working at R3mote.io, I was responsible for maintaining the Azure cloud resources, this included modifying the CI/CD pipeline, editing the docker images, and adjusting the load balancing when necessary.","continuous integration",
+"During university I was a part of the Autonomous Robot Club. The purpose of the club was to develop a robot to compete in the Intelligent Ground Vehicle Competition, navigating an obstacle course autonomously. One project I worked on was calibrating the robots video camera with its LIDAR data. To do this I built an upside-down table and painted each of the 4 legs with neon bright colours. I then used K-means clustering to find the position of each leg in the camera image and matching this to the position of the legs shown by the LIDAR.","autonomous vehicles",
+"When working, I always take detailed notes on how things work, or the steps required to complete a task. Because of this, it's very easy for me to turn these notes into clear documentation for everyone to use.","write clear,documentation,notes",
+"Personally, I really enjoy putting the finishing touches on things. This personality trait lets me enjoy reviewing pull requests more than others.","code reviews"
+"In my personal life I enjoy taking up difficult hobbies. Because of this, I can comfortably work under pressure as work is always less stressful than my personal life.","pressure",
+"Growing up, I had 2 younger sisters that were mentally disabled. We always had to do what was best for the family to minimize tantrums and screaming. This has made me very patient, understanding, and an excellent team player. I will always volunteer to do the least desirable tasks at work and I love helping junior developers.","team player, coaching, coach",
+"I have worked with Python now for 8 years. During this time I have worked with teams ranging from large companies, to being self-employed. I have used libraries such as Pandas, NumPy, Scikit-learn, PyTest, Nose, Selenium, Django, and FastApi. I have built RESTful API’s and integrated 3rd party ones. I spent 3 years creating a hockey betting algorithm in Python. To do this I watched 30 hours of lectures on machine learning, scrapped all advanced hockey statistics since the 1950’s from the web, and trained various algorithms on this dataset.","Please describe your experience with Python",
+"The largest team I've led was during my 4th year of university for our year-long class. I managed a 12-person team of software, mechanical, and electrical engineers where we built an autonomous underwater robot.","leadership",
+"I love working on complex problems, one of the larger ones I worked on was a hockey betting algorithm. To start, I watched 30 hours of lectures on machine learning, taught myself web scraping, collected all hockey statistics since the 1950s, and trained various algorithms on the dataset. Once I was confident that it was working, I put my own money into it. I ended up winning 11 bets in a row, to then lose the next 25 and bottomed out. When I reviewed the code to see if I made any mistakes, I found 2 small bugs that made the math not work exactly like I thought it did. I had unit tests for this section of code but the unit tests I had were not strict enough. Having lost a couple thousand dollars of my own money due to bad tests, it’s something I excel at now.","test,testing",
+"Working as a safety engineer would be both enjoyable and interesting for me as I take safety seriously in all aspects of my life. In my opinion people often confuse seriousness with safety, placing high degree of concern on serious topics such as finance, then misunderstand that finances are not dangerous. I have seen several near-death incidents because of safety misunderstanding.","safety",
+"While working at Probe as a mechanical engineer designing oilfield tools, we guaranteed that every tool complied with ISO 15156-3 (Corrosive Environment Standards). This has given me experience working with compliance standards.","iso"
+"One of my responsibilities while working at R3mote.io was technical support which I thoroughly enjoyed. I would read through users Zen Desk tickets, messaging them either via the web or calling them to clarify what they needed help with. Once it was clear what they wanted, I would add the task to our board to be completed. If the task was quite large, I would check with management if it was worth dedicating the resources towards it.","technical support, customer support"

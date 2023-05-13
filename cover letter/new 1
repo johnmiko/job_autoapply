@@ -1,0 +1,18 @@
+start date of 1990 if it didn't exist
+end date of 2030
+
+jobs are a bit mismatched because linkedin has free text
+
+pulling out trends from the data
+finding the average hiring rate, finding outliers
+    does the location matter - ignore for now
+    
+    data is up to october of 2020
+    
+    E - job title
+    F - normalized job title (cleaned)
+    
+    6 hours for 28
+    
+    he would want to also check the job category ratios (scientists hired vs business people hired)
+    

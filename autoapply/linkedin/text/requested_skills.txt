@@ -1,0 +1,500 @@
+question,answer,times_asked,category
+python (programming language),8.0,816.0,skill
+amazon web services (aws),1.0,586.0,skill
+java,2,427.0,skill
+react.js,3,299.0,skill
+c#,2,268.0,skill
+javascript,3.0,251.0,skill
+node.js,1,246.0,skill
+sql,3.0,200.0,skill
+.net framework,2,129.0,skill
+microsoft azure,1,115.0,skill
+state,Quebec,115.0,skill
+django,1,102.0,skill
+spring boot,0.0,100.0,skill
+website,https://github.com/johnmiko,99.0,skill
+ruby on rails,0,92.0,skill
+software development,6.0,91.0,skill
+are authorized to work lawfully the country to which are applying for mozilla:select an option^yes^no,yes,90.0,skill
+preferred name,John,86.0,skill
+engineering,9,86.0,skill
+"are willing to undergo a background check, accordance local law/regulations:yes^no",yes,84.0,skill
+angular,0,82.0,skill
+rest apis,2,78.0,skill
+c++,1.0,75.0,skill
+php,1.0,72.0,skill
+if reside the united states california consumer privacy act notification:select an option^i acknowledge receipt the above ccpa notice.^i reside canada.,i reside canada.,68.0,skill
+docker products,3,67.0,skill
+linux,2,63.0,skill
+.net core,2,62.0,skill
+postgresql,3,57.0,skill
+"¿cuál es tu nivel de inglés:select an option^ninguno^conversación^profesional^""nativo o bilingüe","nativo o bilingüe""",54.0,skill
+git,8.0,53.0,skill
+level proficiency french,None,53.0,skill
+what are your salary expectations,100000.0,53.0,skill
+quel est votre niveau en anglais:select an option^inexistant^conversationnel^professionnel^natif ou bilingue,natif ou bilingue,51.0,skill
+current location:select an option^afghanistan^albania^algeria^andorra^angola^antigua and barbuda^argentina^armenia^australia^austria^azerbaijan^bahamas^bahrain^bangladesh^barbados^belarus^belgium^belize^benin^bhutan^bolivia^bosnia and herzegovina^botswana^brazil^brunei^bulgaria^burkina faso^burundi^cote d'ivoire^cabo verde^cambodia^cameroon^canada^central african republic^chad^chile^china^colombia^comoros^congo (congo-brazzaville)^costa rica^croatia^cuba^cyprus^czechia (czech republic)^democratic republic the congo^denmark^djibouti^dominica^dominican republic^ecuador^egypt^el salvador^equatorial guinea^eritrea^estonia^eswatini^ethiopia^fiji^finland^france^gabon^gambia^georgia^germany^ghana^greece^grenada^guatemala^guinea^guinea-bissau^guyana^haiti^holy see^honduras^hungary^iceland^india^indonesia^iran^iraq^ireland^israel^italy^jamaica^japan^jordan^kazakhstan^kenya^kiribati^kuwait^kyrgyzstan^laos^latvia^lebanon^lesotho^liberia^libya^liechtenstein^lithuania^luxembourg^madagascar^malawi^malaysia^maldives^mali^malta^marshall islands^mauritania^mauritius^mexico^micronesia^moldova^monaco^mongolia^montenegro^morocco^mozambique^myanmar (formerly burma)^namibia^nauru^nepal^netherlands^new zealand^nicaragua^niger^nigeria^north korea^north macedonia^norway^oman^pakistan^palau^panama^papua new guinea^paraguay^peru^philippines^poland^portugal^qatar^romania^russia^rwanda^saint kitts and nevis^saint lucia^saint vincent and the grenadines^samoa^san marino^sao tome and principe^saudi arabia^senegal^serbia^seychelles^sierra leone^singapore^slovakia^slovenia^solomon islands^somalia^south africa^south korea^south sudan^spain^sri lanka^state palestine^sudan^suriname^sweden^switzerland^syria^tajikistan^tanzania^thailand^timor-leste^togo^tonga^trinidad and tobago^tunisia^turkey^turkmenistan^tuvalu^uganda^ukraine^united arab emirates^united kingdom^united states america^uruguay^uzbekistan^vanuatu^venezuela^vietnam^yemen^zambia^zimbabwe,canada,50.0,skill
+level proficiency french:select an option^none^conversational^professional^native or bilingual,conversational,50.0,skill
+"are willing to take a drug test, accordance local law/regulations:yes^no",yes,47.0,skill
+¿cuántos años de experiencia tienes con python,8,47.0,skill
+databases,5,47.0,skill
+react native,1.0,46.0,skill
+google cloud platform (gcp),1,46.0,skill
+legal name,Johnathan Miko,45.0,skill
+expected hourly pay cad on a t4 basis,62.0,45.0,skill
+most recent job title:,software developer,45.0,skill
+desired salary,100000,45.0,skill
+information technology,1,44.0,skill
+aws lambda,1,43.0,skill
+microsoft sql server,4.0,43.0,skill
+terraform,0,42.0,skill
+we must fill this position urgently. can start immediately:yes^no,yes,42.0,skill
+most recent company:,Hivestack,42.0,skill
+graphql,1.0,42.0,skill
+deploying code to aws:select an option^i never deployed to aws.^less than a year experience deploying code to aws.^2-4 years experience deploying code to aws.^more than 5 years experience deploying code to aws.,2-4 years experience deploying code to aws.,41.0,skill
+amazon s3,1.0,38.0,skill
+software service (saas),0.0,35.0,skill
+c (programming language),0,35.0,skill
+kotlin,1.0,33.0,skill
+what level seniority think achieved:select an option^trainee^junior^mid-level^senior^tech lead^architect,mid-level,33.0,skill
+mysql,3.0,32.0,skill
+a valid driver's license:yes^no,yes,31.0,skill
+html,1,31.0,skill
+typescript,1.0,31.0,skill
+êtes-vous prêt(e) à vous déplacer vers ce lieu de travail:oui^non,oui,30.0,skill
+¿cuál es tu nivel de inglés:select an option^ninguno^conversación^profesional^nativo o bilingüe,nativo o bilingüe,30.0,skill
+i am allowing 8x8 to contact me about future job opportunities for up to 1 year. privacy policy https//www.8x8.com/uk/job-applicant-privacy-noticeyesno:yes^no,yes,30.0,skill
+tableau,0,29.0,skill
+embedded systems,1.0,28.0,skill
+how long worked on python development,8,28.0,skill
+salesforce.com,0,28.0,skill
+ios,0.0,27.0,skill
+android,0.0,26.0,skill
+core java,1.0,26.0,skill
+asp.net mvc,0,25.0,skill
+jira,0.0,25.0,skill
+were referred by a connected employee,no,25.0,skill
+mongodb,1,25.0,skill
+jenkins,0.0,24.0,skill
+rest api standards and web services,2,24.0,skill
+your name,John Miko,24.0,skill
+how much  working / building restful apis,2.0,23.0,skill
+api development,4.0,23.0,skill
+react,2.0,22.0,skill
+laravel,0.0,22.0,skill
+back-end web development,3.0,21.0,skill
+python,8.0,21.0,skill
+identify member the lgbtq2+ community,no,21.0,skill
+embedded software,1,20.0,skill
+número de celular,1-587-700-2734,20.0,skill
+asp.net,1.0,20.0,skill
+"a degree engineering, building sciences, or other related technical fields.:select an option^yes^no",yes,19.0,skill
+firmware,1.0,19.0,skill
+angularjs,0,19.0,skill
+azure devops,2.0,19.0,skill
+preferred work location:select an option^an office^remote work,remote work,19.0,skill
+web development,4.0,18.0,skill
+representational state transfer (rest),2,18.0,skill
+scala,0,18.0,skill
+full-stack development,2,18.0,skill
+vue.js,0,17.0,skill
+working python,8,17.0,skill
+pyth (programming language),8.0,17.0,skill
+apache flink,0.0,16.0,skill
+kubernetes,0.0,16.0,skill
+microsoft excel,10,15.0,skill
+are experienced front-end development:select an option^yes^no,yes,15.0,skill
+are or will be located quebec:select an option^yes^no,yes,15.0,skill
+json,1.0,15.0,skill
+identify as an indigenous person,no,14.0,skill
+renewable energy,0.0,14.0,skill
+redux.js,1.0,14.0,skill
+level proficiency german:select an option^none^conversational^professional^native or bilingual,conversational,14.0,skill
+microservices,0.0,14.0,skill
+professional experience full software development life cycle and developing client/server applications have,3,14.0,skill
+visual basic .net (vb.net),1.0,14.0,skill
+completed the following level education 200:yes^no,yes,14.0,skill
+analyzing the performance complex software,3,13.0,skill
+blockchain,0.0,13.0,skill
+selenium,3.0,13.0,skill
+airlines and aviation,2,13.0,skill
+elasticsearch,1,12.0,skill
+"experience object oriented programming and design (i.e. java, c#, .net)",8,12.0,skill
+/ writing sql queries,3.0,12.0,skill
+are legally entitled to work canada:select an option^yes^no,yes,12.0,skill
+soap,0.0,12.0,skill
+entity framework,0.0,11.0,skill
+game industry  have,0,11.0,skill
+etes-vous légalement autorisé à travailler au canada:select an option^yes^no,yes,11.0,skill
+cloud-based microservices development,3,11.0,skill
+communication,0.0,11.0,skill
+wordpress,0.0,11.0,skill
+agile methodologies,1.0,10.0,skill
+ionic framework,0.0,10.0,skill
+experience typescript have,1,9.0,skill
+big data,1.0,9.0,skill
+restful webservices,2.0,9.0,skill
+currently live canada the eastern time zone:select an option^yes^no,yes,9.0,skill
+oracle database,1.0,8.0,skill
+what are your salary requirements,100000.0,8.0,skill
+devops,2.0,8.0,skill
+"please indicate your desired salary range example $60,000 - $70,000","$120,000 - $150,000",8.0,skill
+apigee api management,0,8.0,skill
+programming,7.0,8.0,skill
+professional  go,0,8.0,skill
+working sql (relational databases),3,8.0,skill
+technical unreal engine artist,0,8.0,skill
+test automation,4.0,8.0,skill
+api management,1,8.0,skill
+matlab,2.0,8.0,skill
+"are based ontario, canada:select an option^yes^no",no,7.0,skill
+content management systems (cms),0.0,7.0,skill
+next.js,0.0,7.0,skill
+html5,1,7.0,skill
+spring mvc,0.0,7.0,skill
+data pipelines,1.0,7.0,skill
+job description development,0.0,7.0,skill
+depuis combien dâannã©es utilisez-vous django,1,7.0,skill
+web services,2.0,7.0,skill
+google bigquery,0.0,6.0,skill
+pandas (software),6.0,6.0,skill
+rust (programming language),0.0,6.0,skill
+mobile phone number,5877002734,6.0,skill
+experience go/golang:select an option^yes^no,0,6.0,skill
+oop and software design knowledge:select an option^yes^no,5,6.0,skill
+redux for state management,1,6.0,skill
+front end development,2.0,6.0,skill
+"experience developing across a full-stack web server, relational database, and client-side/front-end have",3,6.0,skill
+tensorflow,1.0,6.0,skill
+amazon relational database service (rds),1.0,6.0,skill
+microsoft power bi,0,5.0,skill
+experience python and jenkins:select an option^yes^no,yes,5.0,skill
+subversion,0.0,5.0,skill
+experience k8s,0,5.0,skill
+anticipated salary for the role,100000 CAD,5.0,skill
+database design,2.0,5.0,skill
+pl/sql,3.0,5.0,skill
+experience devops,1,5.0,skill
+hibernate,0.0,5.0,skill
+programmable logic controller (plc),1.0,5.0,skill
+perl,0.0,5.0,skill
+sql server reporting services (ssrs),0.0,5.0,skill
+continuous integration and continuous delivery (ci/cd),2.0,5.0,skill
+the following license or certification: microsoft certified solutions expert,no,4.0,skill
+windows,10.0,4.0,skill
+microsoft office,15.0,4.0,skill
+tailwind css,0,4.0,skill
+oauth,1.0,4.0,skill
+swift (programming language),0.0,4.0,skill
+embedded linux,0.0,4.0,skill
+management,0.0,4.0,skill
+scada,1.0,4.0,skill
+front-end development,2.0,4.0,skill
+unity,0.0,4.0,skill
+.net software development leadership have,2,4.0,skill
+expected salary,100000,4.0,skill
+cisco systems products,0.0,4.0,skill
+working on responsive web apps,3,4.0,skill
+node,1.0,4.0,skill
+adobe experience manager (aem),0.0,3.0,skill
+construction,0.0,3.0,skill
+test driven development,4.0,3.0,skill
+office 365,10.0,3.0,skill
+expected hourly pay cad (on t4 basis),62.0,3.0,skill
+are physically located canada and are legally permitted to work canada:select an option^yes^no,yes,3.0,skill
+google kubernetes engine (gke),0.0,3.0,skill
+responsive web design,0.0,3.0,skill
+multithreading,0.0,3.0,skill
+ios development,0.0,3.0,skill
+experience working e-commerce,0,3.0,skill
+bootstrap,1.0,3.0,skill
+reactjs,1.0,3.0,skill
+neo4j,0.0,3.0,skill
+electronic medical record (emr),0.0,3.0,skill
+visual studio,2.0,3.0,skill
+google analytics,1.0,3.0,skill
+are currently located canada,Yes,3.0,skill
+full stack development,2.0,3.0,skill
+sass,0.0,3.0,skill
+aws,1,3.0,skill
+windows presentation foundation (wpf),0.0,3.0,skill
+pytorch,0.0,3.0,skill
+writing sql server / oracle,0,3.0,skill
+are legally entitled to work the country where this job is located:yes^no,Yes,2.0,skill
+web developer,3,2.0,skill
+project management,0.0,2.0,skill
+go (golang),0.0,2.0,skill
+start-ups,4.0,2.0,skill
+sql server management studio,2.0,2.0,skill
+are legally able to work canada at this time:yes^no,yes,2.0,skill
+aws cloudformation,0.0,2.0,skill
+full stack developer,2,2.0,skill
+mobile applications,0.0,2.0,skill
+rabbitmq,0.0,2.0,skill
+aws iot,0.0,2.0,skill
+full stack web development  have,1.0,2.0,skill
+what are your current salary expectations,100000,2.0,skill
+visual basic,3.0,2.0,skill
+salesforce marketing cloud,0.0,2.0,skill
+unix,1.0,2.0,skill
+data analysis,4.0,2.0,skill
+control systems engineering,1.0,2.0,skill
+numpy,6.0,2.0,skill
+transact-sql (t-sql),0,2.0,skill
+microsoft powerpoint,10.0,2.0,skill
+utilities,0.0,2.0,skill
+cloud computing,1.0,2.0,skill
+software design,6.0,2.0,skill
+procurement,0.0,2.0,skill
+solidity,0.0,2.0,skill
+adobe indesign,0.0,2.0,skill
+project coordination,0.0,2.0,skill
+front end engineer,2.0,2.0,skill
+microservices development  have,2,2.0,skill
+a degree computer science,No,1.0,skill
+ansys,1.0,1.0,skill
+ubunt,1.0,1.0,skill
+allen-bradley,0.0,1.0,skill
+pharmaceutics,0.0,1.0,skill
+hbase,0.0,1.0,skill
+expected hourly pay (on t4 basis) cad,62,1.0,skill
+vbscript,1.0,1.0,skill
+knowledge systems design and software architecture,4.0,1.0,skill
+injection molding,2.0,1.0,skill
+websocket,0.0,1.0,skill
+azure devops server,2.0,1.0,skill
+agile development,1.0,1.0,skill
+optimization,2.0,1.0,skill
+wordpress development,0.0,1.0,skill
+telecommuting,0.0,1.0,skill
+express.js,1.0,1.0,skill
+marketing,0.0,1.0,skill
+rpg,0.0,1.0,skill
+programming  python,8.0,1.0,skill
+expected salary (cad per year),100000.0,1.0,skill
+what is the hourly pay rate (cad) are looking for this long term assignment,62.0,1.0,skill
+java & nodejs,1.0,1.0,skill
+battery management systems,0.0,1.0,skill
+functional programming,1.0,1.0,skill
+experience working an agile environment ci/cd processes,2.0,1.0,skill
+experience data structures and algorithms,4.0,1.0,skill
+what are your yearly salary expectations,100000.0,1.0,skill
+enterprise level java,1.0,1.0,skill
+nodejs,1,1.0,skill
+solid modeling,1.0,1.0,skill
+developing apis withnode.js,1,1.0,skill
+experience flask,0.0,1.0,skill
+object-oriented programming languages like java 8,8.0,1.0,skill
+golang  hav,0.0,1.0,skill
+web design,2.0,1.0,skill
+designing and implementing microservices,0.0,1.0,skill
+qnx,0.0,1.0,skill
+stack,0.0,1.0,skill
+autodesk civil 3d,1.0,1.0,skill
+detailed design,8.0,1.0,skill
+u.s. food and drug administration (fda),0.0,1.0,skill
+backend development hav,4.0,1.0,skill
+full stack  hav,2.0,1.0,skill
+expected hourly pay ca,62.0,1.0,skill
+full-time software engineer,4,1.0,skill
+medical devices,0.0,1.0,skill
+working saas platform development,0.0,1.0,skill
+microsoft project,1.0,1.0,skill
+last name,Miko,1.0,skill
+how much  full stack developer hav,2.0,1.0,skill
+hydraulic modeling,0.0,1.0,skill
+project documentation,7.0,1.0,skill
+control system,2.0,1.0,skill
+platform evangelism,0.0,1.0,skill
+machining,1.0,1.0,skill
+elixir,0.0,1.0,skill
+smart contracts,0,1.0,skill
+saas development,0.0,1.0,skill
+asp.net web ap,1.0,1.0,skill
+experience backend development hav,4.0,1.0,skill
+building management systems,0.0,1.0,skill
+plc programming,1.0,1.0,skill
+platform service (paas),0.0,1.0,skill
+hydraulic systems,0.0,1.0,skill
+back-en,4.0,1.0,skill
+verification and validation (v&v),0.0,1.0,skill
+back end development,3.0,1.0,skill
+houdini,0.0,1.0,skill
+deep learning,1.0,1.0,skill
+front and/or back end  hav,4.0,1.0,skill
+production,1.0,1.0,skill
+experience spring hav,0.0,1.0,skill
+hiring,1.0,1.0,skill
+troubleshooting,7.0,1.0,skill
+linux systems operations professional,1.0,1.0,skill
+front end developer  have,2.0,1.0,skill
+angular 7 or higher,0.0,1.0,skill
+professional  web development or a similar rol,4.0,1.0,skill
+as back end engin,4.0,1.0,skill
+full stack engin,2.0,1.0,skill
+google material design,0.0,1.0,skill
+commercial  sql,2.0,1.0,skill
+embedded softwa,0.0,1.0,skill
+working shopify and shopify plus,0.0,1.0,skill
+3d modeling,4.0,1.0,skill
+how many business projects/ideas been involved in,10.0,1.0,skill
+computer hardware,0.0,1.0,skill
+design for manufacturing,3.0,1.0,skill
+fullstack,2.0,1.0,skill
+health & safety,2.0,1.0,skill
+web experience,2.0,1.0,skill
+software craftsmanship,0.0,1.0,skill
+targeted salary range,100000,1.0,skill
+java database connectivity (jdbc),1.0,1.0,skill
+full-stack development (after graduation)  hav,2.0,1.0,skill
+styled-components,1.0,1.0,skill
+how many months  building cloud-based api platforms or backend systems,2.0,1.0,skill
+5) what are your salary expectations,100000,1.0,skill
+how many products released unreal engine,0,1.0,skill
+subdivisions,0.0,1.0,skill
+ux design  have,0.0,1.0,skill
+project engineering work  have,0.0,1.0,skill
+frontend development  hav,2.0,1.0,skill
+cooling,0.0,1.0,skill
+working arcgis enterprise,0,1.0,skill
+website / portfolio,https://www.linkedin.com/in/john-miko,1.0,skill
+program development,8.0,1.0,skill
+product management,0.0,1.0,skill
+mbr,0.0,1.0,skill
+renewables & environment,0.0,1.0,skill
+creative problem solving,8.0,1.0,skill
+developer relations,0.0,1.0,skill
+laboratory information management system (lims),0,1.0,skill
+ci/cd and devops tools,2,1.0,skill
+hvac controls,0.0,1.0,skill
+symfony,0.0,1.0,skill
+wcf services,0.0,1.0,skill
+full stack develop,2.0,1.0,skill
+are legally able to work for any employer canada,Yes,1.0,skill
+nodejs & relational databases,2.0,1.0,skill
+tablea,0.0,1.0,skill
+developer  have,4.0,1.0,skill
+control systems,2.0,1.0,skill
+piping and instrumentation drawing (p&id),0.0,1.0,skill
+doing api integrations web apps and erp systems,0.0,1.0,skill
+wastewater treatment,0.0,1.0,skill
+worked a crm professionally,0,1.0,skill
+professional  software development,4.0,1.0,skill
+information technology & services,1,1.0,skill
+jakarta,0.0,1.0,skill
+computer & network security,0.0,1.0,skill
+unreal engine 4,0.0,1.0,skill
+data architect,0.0,1.0,skill
+team leadership,1.0,1.0,skill
+server side programming,1.0,1.0,skill
+ngrx,0.0,1.0,skill
+developing integrations for 3rd party applications via oauth,0.0,1.0,skill
+react hooks,1.0,1.0,skill
+how much  building / working on web based saas solutions,0.0,1.0,skill
+design,10.0,1.0,skill
+backend  hav,4.0,1.0,skill
+working microservices,1.0,1.0,skill
+aws amplify,0.0,1.0,skill
+gitlab,0.0,1.0,skill
+user interface design,1.0,1.0,skill
+cypress,0.0,1.0,skill
+hydraulics,0.0,1.0,skill
+working as data engineer / big data engin,1.0,1.0,skill
+load balancing,1.0,1.0,skill
+large assemblies,2.0,1.0,skill
+desired hourly rate cad per hour,62.0,1.0,skill
+ptc creo,0.0,1.0,skill
+first name,John,1.0,skill
+go/golang,0.0,1.0,skill
+are legally able to work canada,Yes,1.0,skill
+telecommunications,1.0,1.0,skill
+technology evangelism,0.0,1.0,skill
+web services such as soap and rest have,3.0,1.0,skill
+backend development,4.0,1.0,skill
+python or another modern back-end programming languag,8.0,1.0,skill
+full-stack software develop,2.0,1.0,skill
+automation,2.0,1.0,skill
+angular development  hav,0.0,1.0,skill
+coding and software design,8.0,1.0,skill
+xml schema,1.0,1.0,skill
+full stack javascript developer,2,1.0,skill
+german,1.0,1.0,skill
+experience software engineering,4.0,1.0,skill
+cognex,0.0,1.0,skill
+windows networking,1.0,1.0,skill
+civil engineering,0.0,1.0,skill
+sales,0.0,1.0,skill
+lead,2.0,1.0,skill
+what are your salary expectations lei net,100000.0,1.0,skill
+guidewire,0.0,1.0,skill
+gatsbyjs,0.0,1.0,skill
+design patterns,4.0,1.0,skill
+building automation,1.0,1.0,skill
+sheet metal design,0.0,1.0,skill
+after sales,0.0,1.0,skill
+website updating,2.0,1.0,skill
+property management systems,0.0,1.0,skill
+sheet metal,0.0,1.0,skill
+elixir / phoenix,0.0,1.0,skill
+javascript (es5/es6)/jquery,2.0,1.0,skill
+computer software,10.0,1.0,skill
+design control,3.0,1.0,skill
+3d animation,0.0,1.0,skill
+webrtc,0.0,1.0,skill
+hmi configuration,0.0,1.0,skill
+kubernetes multimaster cluster node environment operation,0.0,1.0,skill
+total experienc,8.0,1.0,skill
+hardware,1.0,1.0,skill
+app sto,1.0,1.0,skill
+jango web development,2.0,1.0,skill
+working agile methodology,1.0,1.0,skill
+salary expectation fix,100000.0,1.0,skill
+plc ladder logic,1.0,1.0,skill
+how many hours per week are able to work part-time,40.0,1.0,skill
+marketing and advertising,0.0,1.0,skill
+how may years team leading expertise bring to this role,1,1.0,skill
+telerik ui for wpf,0.0,1.0,skill
+change data capt,0.0,1.0,skill
+been a full stack developer for,2.0,1.0,skill
+data center,0.0,1.0,skill
+automotive  currently hav,0.0,1.0,skill
+elastic stack (elk),0.0,1.0,skill
+autodesk inventor,1.0,1.0,skill
+capital markets,0.0,1.0,skill
+software testing,6.0,1.0,skill
+short message peer-to-peer (smpp),0.0,1.0,skill
+writing and implementing unit tests,3.0,1.0,skill
+operating systems,2.0,1.0,skill
+javascriptmvc,0.0,1.0,skill
+golang or java or c# or c++,3,1.0,skill
+programming  hav,10.0,1.0,skill
+expected hourly salary on t4 basis,62.0,1.0,skill
+microscopy,0.0,1.0,skill
+community development,0.0,1.0,skill
+cloud based infrastruct,1.0,1.0,skill
+on front-end development,2.0,1.0,skill
+schematic,0.0,1.0,skill
+rest api,2,1.0,skill
+materials,3.0,1.0,skill
+mandatory: what are your annual salary expectations,100000,1.0,skill
+project management  have,0.0,1.0,skill
+usability engineering,1.0,1.0,skill
+industrial automation,0.0,1.0,skill
+back-end development,3.0,1.0,skill
+professional  total,8.0,1.0,skill
+new plant start-up,0.0,1.0,skill
+rest ap,2.0,1.0,skill
+structural engineering,1.0,1.0,skill
+mission critical facilities,0.0,1.0,skill
+failure analysis,4.0,1.0,skill
+designing and building restful apis microservices architect,2.0,1.0,skill
+maritime,0.0,1.0,skill
+software engineering  currently hav,4.0,1.0,skill
+machine design,4.0,1.0,skill
+software/full-stack/backend engineering  hav,4.0,1.0,skill
+experience vuejs,0.0,1.0,skill
+simulink,1.0,1.0,skill
+cloud management,1,1.0,skill
+developing front end,1,1.0,skill
+experience openshift,0.0,1.0,skill
+oil & energy,5.0,1.0,skill

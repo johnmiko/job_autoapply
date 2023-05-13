@@ -1,0 +1,36 @@
+Algolux is a globally recognized computer vision company addressing the critical issue of safety for advanced driver assistance systems and autonomous vehicles. Our machine-learning tools and embedded AI software products enable existing and new camera designs to achieve industry-leading performance across all driving conditions. Founded on groundbreaking research at the intersection of deep learning, computer vision, and computational imaging, Algolux has been repeatedly recognized at industry and academic conferences and has been named to the 2021 CB Insights AI 100 List of the world’s most innovative artificial intelligence startups.
+
+As a C++ and Python Developer within the fleet team, you will contribute to the integration of autonomous driving modules within a robotics framework in a variety of hardware platforms, including test vehicles. The ideal candidate is a Software Engineer with a proven ability to write production-quality code and who is comfortable collaborating with an R&D team.
+
+Key responsibilities:
+
+Develop testing and continuous integration pipelines for the fleet codebase
+Build infrastructure for regression testing, performance validation, and system maintenance
+Test and deploy developed algorithms in simulation environments as well as on production vehicles
+Build and maintain fleet software releases
+Provide useful feedback to the developers of the different modules used by the fleet software stack
+Requirements:
+
+Experience with ROS to design, build, and operate robotic systems
+Experience with using Python to create entry points that use underlying C++ libraries
+Experience with popular C++ testing frameworks
+Excellent C++ programming skills:
+Mastery of modern C++ standards (C++11 or more recent).
+Hands-on experience with object-oriented software design patterns, and their implementation in C++.
+Comfortable using language features like STL, smart pointers, move semantics, templates, etc.
+Experience with debugging and using tools such as gdb, lldb, valgrind, etc.
+Experienced with cross-platform build systems, like CMake.
+Multi-threading
+5+ years of experience as a software engineer
+Experience working in a collaborative work environment:
+Familiarity with agile development practices such as Scrum.
+Comfortable using collaborative development tools such as GitLab and Jira.
+Ability to adhere to company coding standards.
+Willingness to participate in code review processes.
+Bachelor or Master degree in Computer Science, Software Engineering (or in similar fields)
+Experienced and comfortable dealing with technical / project uncertainty.
+Proven dedication for writing production-quality code that is robust, efficient, portable, maintainable, and bug-free.
+Nice To Have Skills:
+
+OpenCV
+Knowledge of Deep Learning and Computer Vision algorithms.

@@ -1,0 +1,10 @@
+name,value,last_updated
+applied_for,2160.0,
+skipped,983.0,
+could_have_applied_for,4764.0,
+already_applied,6442.0,
+failures,2604.0,
+running_time (s),148692.0,
+running_time (m),2478.0,
+jobs / min,0.8716707021791767,
+success rate,45.0,

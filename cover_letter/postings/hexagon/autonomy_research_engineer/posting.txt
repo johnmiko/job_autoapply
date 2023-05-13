@@ -1,0 +1,21 @@
+Must-Have:                       
+
+Bachelor’s degree in Computer Engineering, Computer Science, Electrical Engineering, Robotics or a related field with 3+ years of work experience
+Knowledge of estimation and filtering techniques (Kalman filtering, Bayesian Estimation, etc.)
+Strong C++ and Python coding experience
+Experience with sensor calibration
+Excellent analytical and problem-solving skills and the ability to clearly communicate ideas and solutions to others
+Key Success Factors:
+
+Excellent interpersonal and communication skills (written and verbal)
+Exceptional problem solving and troubleshooting skills
+Self-driven
+Collaboration with a highly technical team
+Ability to work in a geographically diverse team setting, which means remote meetings
+Nice-to-Have:
+
+M.Sc or Ph.D in fields above. If you have a M.Sc. or Ph.D., the 3 years of working experience will be considered fulfilled
+Experience with GNSS and/or Inertial Positioning
+Knowledge of control systems
+Experience with real time operating systems and embedded firmware development 
+Knowledge of robotic / autonomy middleware (e.g. ROS or other)

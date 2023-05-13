@@ -1,0 +1,10 @@
+name,value,last_updated
+applied_for,0,
+skipped,0,
+could_have_applied_for,0,
+already_applied,0,
+failures,0,
+running_time (s),0,
+running_time (m),0,
+jobs / min,0,
+success rate,0,

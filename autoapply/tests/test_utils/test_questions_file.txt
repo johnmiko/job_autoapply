@@ -1,0 +1,10 @@
+question,answer,times_asked
+email address,johnmiko4@gmail.com,8.0
+completed the following level education: bachelor's degree,Yes,6.0
+website / portfolio,https://www.linkedin.com/in/john-miko,3.0
+linkedprofileex: https://www.linkedin.com/in/xxx-xxx-xxx,https://www.linkedin.com/in/john-miko,1.0
+linkedin,https://www.linkedin.com/in/john-miko,1.0
+are legally entitled to work the country where this job is located:yes^no,Yes,1.0
+completed the following level education bachelor's degree:yes^no,yes,1.0
+project planning,,1.0
+anticipated salary for the role,,1.0

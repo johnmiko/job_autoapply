@@ -1,0 +1,19 @@
+response,text,category
+8,'["Python"]',experience
+2,'["AWS"]',experience
+I love helping people and I did technical support at R3mote.io,'["technical support"]',
+2,'["jira"]',experience
+2,'["C#"]',experience
+2,'["Java"]',experience
+3,'["SQL"]',experience
+8,'["git"]',experience
+3 years doing Agile development,'["agile"]',experience
+1,'["Linux"]',experience
+1,'["UNIX"]',experience
+"I have 3 years of experience working with cloud computing platforms including AWS, Microsoft Azure, and Google Cloud Platform. While working at R3mote.io, I was responsible for maintaining the Azure cloud resources, this included modifying the CI/CD pipeline, editing the docker images, and adjusting the load balancing when necessary.",'["continuous integration"]',
+"During university I was a part of the Autonomous Robot Club. The purpose of the club was to develop a robot to compete in the Intelligent Ground Vehicle Competition, navigating an obstacle course autonomously. One project I worked on was calibrating the robots video camera with its LIDAR data. To do this I built an upside-down table and painted each of the 4 legs with neon bright colours. I then used K-means clustering to find the position of each leg in the camera image and matching this to the position of the legs shown by the LIDAR.",'["autonomous vehicles"]',
+"When working, I always take detailed notes on how things work, or the steps required to complete a task. Because of this, it's very easy for me to turn these notes into clear documentation for everyone to use.","['write clear','documentation']",
+"Personally, I really enjoy putting the finishing touches on things. This personality trait lets me enjoy reviewing pull requests more than others.",'["code reviews"]'
+"In my personal life I enjoy taking up difficult hobbies. Because of this, I can comfortably work under pressure as work is always less stressful than my personal life.",'["pressure"]',
+"I have 2 younger sisters that are mentally disabled. Growing up with them ingrained into me the concept of being a team player. Because of this, it's normal for me to volunteer to do the work that no one else wants to at a job. It has also made me very patient and understanding",'["team player"]',
+"I have worked with Python now for 8 years. During this time I have worked with teams ranging from large companies, to being self-employed. I have used libraries such as Pandas, NumPy, Scikit-learn, PyTest, Nose, Selenium, Django, and FastApi. I have built RESTful API’s and integrated 3rd party ones. I spent 3 years creating a hockey betting algorithm in Python. To do this I watched 30 hours of lectures on machine learning, scrapped all advanced hockey statistics since the 1950’s from the web, and trained various algorithms on this dataset.",'["Please describe your experience with Python"]',
