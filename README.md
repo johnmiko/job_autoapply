@@ -1,6 +1,11 @@
+#  Need Microsoft Build tools for certifi
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+
 # linkedin_autoapply
 
 Run code (it will crash)
+
 
 - In the window that's open, sign in to linkedin - Boom, now the webdriver is signed in
 
