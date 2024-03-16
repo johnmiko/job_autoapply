@@ -292,6 +292,7 @@ def get_pct_success_str(jobs_applied_for, jobs_I_could_have_applied_for):
 class StatsManager:
     def __init__(self, filename):
         self.df = pd.read_csv(filename, index_col=0)
+        self.df = self.df.fillna(0)
         self.could_have_applied_for_cur_run = 0
         self.applied_for_cur_run = 0
 

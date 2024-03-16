@@ -219,23 +219,23 @@ try:
                 today = datetime.today().strftime("%Y-%m-%d")
                 write_to_file(APPLIED_FOR_FILE, 'a', 'date,company,position,url',
                               f'{today},{company_name},{job_title},{short_href}')
-        if not submitted:
-            today = datetime.today().strftime("%Y-%m-%d")
-            write_to_file(ERROR_FILE, 'a', 'date,company,position,url,reason',
-                          f'{today},{company_name},{job_title},{short_href},{reason}')
-        elapsed = int(timer() - start)
-        start = timer()
-        stats_manager.increment('running_time (s)', elapsed)
-        stats_manager.df.loc['running_time (m)', 'value'] = int(
-            stats_manager.df.loc['running_time (s)', 'value'] / 60)
-        stats_manager.df.loc['jobs / min', 'value'] = stats_manager.df.loc['applied_for', 'value'] / \
-                                                      stats_manager.df.loc[
-                                                          'running_time (m)', 'value']
-        stats_manager.df.loc['success rate', 'value'] = int(
-            stats_manager.df.loc['applied_for', 'value'] / stats_manager.df.loc[
-                'could_have_applied_for', 'value'] * 100)
-        stats_manager.df.to_csv(STATS_FILENAME, index=True, header=True)
-        should_pause(STOP_AFTER_EVERY_JOB)
+            if not submitted:
+                today = datetime.today().strftime("%Y-%m-%d")
+                write_to_file(ERROR_FILE, 'a', 'date,company,position,url,reason',
+                              f'{today},{company_name},{job_title},{short_href},{reason}')
+            elapsed = int(timer() - start)
+            start = timer()
+            stats_manager.increment('running_time (s)', elapsed)
+            stats_manager.df.loc['running_time (m)', 'value'] = int(
+                stats_manager.df.loc['running_time (s)', 'value'] / 60)
+            stats_manager.df.loc['jobs / min', 'value'] = stats_manager.df.loc['applied_for', 'value'] / \
+                                                          stats_manager.df.loc[
+                                                              'running_time (m)', 'value']
+            stats_manager.df.loc['success rate', 'value'] = int(
+                stats_manager.df.loc['applied_for', 'value'] / stats_manager.df.loc[
+                    'could_have_applied_for', 'value'] * 100)
+            stats_manager.df.to_csv(STATS_FILENAME, index=True, header=True)
+            should_pause(STOP_AFTER_EVERY_JOB)
 finally:
     with open(JOB_NUMBER_FILENAME, 'w') as jobf:
         logger.info('writing job number to file')
