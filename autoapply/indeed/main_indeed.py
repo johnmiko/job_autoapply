@@ -1,19 +1,20 @@
+import time
+from contextlib import suppress
 from datetime import datetime
 from timeit import default_timer as timer
-import time
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
     ElementNotInteractableException, ElementClickInterceptedException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 
-from autoapply.indeed.constants import JOB_NUMBER_FILENAME, INDEED_DIR, Page, STATS_FILENAME
 from autoapply.driver import driver_manager as DM
+from autoapply.indeed.constants import JOB_NUMBER_FILENAME, INDEED_DIR, Page, STATS_FILENAME
+from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
+    APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import create_logger, python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, QuestionManager
-from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
-    APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 
 logger, c_handler = create_logger(__name__)
 # from misc.kill_drivers import kill_drivers
@@ -58,12 +59,10 @@ try:
             url = f'{base_url}&start={job_number}'
             DM.driver.get(url)
             # If popup, need to close it
-            try:
+            with suppress(TimeoutException):
                 # DM.find_element('xpath', "div", "aria-labelledby", "modal-mosaic-desktopserpjapopup", 0.5)
                 # TODO: check if we can just click the close button, no need to check for thexistance of both It hink
                 DM.find_element(name="close", element="button", prop='aria-label', wait_time=0.5).click()
-            except TimeoutException:
-                pass
             # Find list of jobs
             #
             # job_cards_all = DM.find_element('xpath', "div", 'id', "mosaic-jobcards", 0.5)
@@ -180,14 +179,12 @@ try:
             # driver.find_element('xpath',self.xpath(element, prop, name)))
             # with ignoring(NoSuchElementException, action=log):
             #     something()
-            try:
+            with suppress(NoSuchElementException):
                 # Check if "Applied X time ago" element exists, if so, we already applied
                 stats_manager.increment('already_applied')
                 DM.driver.find_element('xpath', DM.xpath('span', 'class', 'artdeco-inline-feedback__message'))
                 logger.info('skipping: already applied')
                 continue
-            except NoSuchElementException:
-                pass
             try:
                 DM.find_element('xpath', 'div', 'class', 'jobs-apply-button--top-card', 1).click()
                 easy_apply_button = None
@@ -257,13 +254,11 @@ try:
                         questions_radio = []
                     questions = questions_dropdowns_and_text + questions_radio
                     # try to scroll to bottom of page
-                    try:
+                    with suppress():
                         popup = DM.find_element('xpath', 'div', 'class',
                                                 'artdeco-modal__content jobs-easy-apply-modal__content p0 ember-view',
                                                 2)
-                        DM.driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", popup);
-                    except:
-                        pass
+                        DM.driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", popup)
                     #
                     tried_to_answer_questions, old_questions = answer_questions(questions, tried_to_answer_questions,
                                                                                 q_and_as_df, question_file,
@@ -284,12 +279,10 @@ try:
                         continue
                 for button in buttons_list:
                     if button.text in valid_button_text:
-                        try:
+                        with suppress():
                             button.click()
-                        except:
-                            pass
                         # Could reorder this I think.
-                        try:
+                        with suppress(StaleElementReferenceException):
                             if 'Submit application' == button.text:
                                 submitted = True
                                 stats_manager.increment(['applied_for', 'could_have_applied_for'])
@@ -299,8 +292,6 @@ try:
                                     f"current run: {get_pct_success_str(applied_for_cur_run, could_have_applied_for_cur_run)}")
                                 stats_manager.print_applied_for()
                                 break
-                        except StaleElementReferenceException:
-                            pass
                         break
                 if submitted:
                     today = datetime.today().strftime("%Y-%m-%d")

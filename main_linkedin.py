@@ -2,8 +2,6 @@ import time
 from datetime import datetime
 from timeit import default_timer as timer
 
-from inputs import base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
-    APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
     ElementNotInteractableException, ElementClickInterceptedException
 from selenium.webdriver.support.wait import WebDriverWait
@@ -11,6 +9,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import JOB_NUMBER_FILENAME, Page, STATS_FILENAME, LINKEDIN_DIR
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR
+from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file,
+                                       USE_MAX_TIMER, \
+                                       APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB)
 from autoapply.linkedin.unused import get_last_job_applied_for_page_number
 from autoapply.linkedin.utils import create_logger, python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \

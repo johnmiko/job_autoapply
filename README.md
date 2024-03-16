@@ -47,3 +47,11 @@ Choices are no or yes here
 
 When you answer the questions, save the file. The code will then take the answered questions out of the file and
 save them into `questions.txt`
+
+### Text files
+
+Record some statistics into the text file you have
+
+- applied_for.csv - list of urls with the jobs you've applied for
+- stats.txt - record average time taken to apply for job. Percentage of jobs applied for (vs unable to apply because
+  of errors)

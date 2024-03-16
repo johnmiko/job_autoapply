@@ -31,10 +31,10 @@ class Testanswer_questions:
     class MockSeleniumElement:
         text = 'email address'
 
-        def find_elements('xpath',self, arg1):
+        def find_elements('xpath', self, arg1):
             return [1]
 
-        def find_element('xpath',self, arg1):
+        def find_element('xpath', self, arg1):
             return self
 
         def send_keys(self, keys):

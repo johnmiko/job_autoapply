@@ -1,6 +1,7 @@
 import logging
 import os
 import time
+from contextlib import suppress
 from timeit import default_timer as timer
 
 import pandas as pd
@@ -105,11 +106,9 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
             if q_text == 'city':
                 put_answer_in_question_textbox('Montreal, Quebec, Canada', question)
                 # For city question, need to click the box to continue
-                try:
+                with suppress():
                     dm.find_element('jobs-easy-apply-content').click()
                     time.sleep(0.5)
-                except:
-                    pass
                 continue
                 # try:
                 #     questions = WebDriverWait(question, 1).until(
@@ -139,10 +138,8 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                     answer = existing_answer.strip().lower()
                     # Answers are being recorded as floats, so convert to ints if we can
                     # Floats are not accepted
-                    try:
+                    with suppress(ValueError):
                         answer = int(float(answer))
-                    except ValueError:
-                        pass
                     q_m.answer_question(answer)
                     # if question_type == QuestionType.text:
                     #     put_answer_in_question_textbox(answer, question)
@@ -189,10 +186,8 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                         text_box = question.find_element('xpath', ".//input")
                     except NoSuchElementException:
                         text_box = question.find_element('xpath', ".//textarea")
-                    try:
+                    with suppress(InvalidElementStateException):
                         text_box.clear()
-                    except InvalidElementStateException:
-                        pass
                     # Uncomment to guess 0
                     # text_box.send_keys(0)
                 try:
@@ -317,13 +312,11 @@ def should_pause(condition):
 
 def write_to_file(filename, mode, header, line):
     file_exists = os.path.isfile(filename)
-    try:
+    with suppress(UnicodeEncodeError):
         with open(filename, mode) as f:
             if not file_exists:
                 f.write(f'{header}\n')
             f.write(f'{line}\n')
-    except UnicodeEncodeError:
-        pass
 
 
 def get_questions_and_answers(question_file):
@@ -398,11 +391,9 @@ def translate_answer_to_french(answer):
 
 
 def put_answer_in_question_dropdown(answer, text_options, select):
-    try:
+    with suppress(ValueError):  # ("if it's not found in the list")
         index = text_options.index(answer)
         select.select_by_index(index)
-    except ValueError:  # ("if it's not found in the list")
-        pass
 
 
 class QuestionManager():
@@ -418,11 +409,9 @@ class QuestionManager():
             select = Select(self.element.find_elements('xpath', ".//select")[0])
             text_options = [option.text.lower() for option in select.options]
             put_answer_in_question_dropdown(answer, text_options, select)
-            try:
+            with suppress(ValueError):  # ("if it's not found in the list")
                 index = text_options.index(answer)
                 select.select_by_index(index)
-            except ValueError:  # ("if it's not found in the list")
-                pass
         elif self.question_type == QuestionType.radio:
             options = self.element.find_elements('xpath', ".//label")
             answer_found = False
