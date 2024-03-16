@@ -19,8 +19,7 @@ DEFAULT_LOAD_TIME = 5
 # https://stackoverflow.com/questions/66018451/how-to-get-the-chromedriver-automatically-updated-through-python-selenium-after
 options = webdriver.ChromeOptions()
 options.add_argument('user-data-dir=' + CHROME_PROFILE)
-options.add_argument('executable_path=' + CHROMEDRIVER_EXE)
-# chrome_driver = webdriver.Chrome()
+# options.add_argument('executable_path=' + CHROMEDRIVER_EXE)
 
 chrome_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 

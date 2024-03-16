@@ -2,6 +2,8 @@ import time
 from datetime import datetime
 from timeit import default_timer as timer
 
+from inputs import base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
+    APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
     ElementNotInteractableException, ElementClickInterceptedException
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,14 +16,12 @@ from autoapply.linkedin.utils import create_logger, python_part_of_job, click_si
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title
 from autoapply.linkedin.utils import use_latest_resume
-from inputs import base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
-    APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 
 logger, c_handler = create_logger(__name__)
 logger.info('starting')
 start = timer()
 job_number = get_last_job_applied_for_page_number(JOB_NUMBER_FILENAME)
-job_number = 94
+job_number = 0
 stats_manager = StatsManager(STATS_FILENAME)
 df_stats = stats_manager.df
 # initialize variables

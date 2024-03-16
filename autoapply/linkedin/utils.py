@@ -1,7 +1,7 @@
-import os
-from timeit import default_timer as timer
-import time
 import logging
+import os
+import time
+from timeit import default_timer as timer
 
 import pandas as pd
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
@@ -12,6 +12,7 @@ from selenium.webdriver.support.select import Select
 from autoapply.linkedin.answers_broad import question_is_generic
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType, GLOBAL_LOG_LEVEL
+from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -19,7 +20,6 @@ from autoapply.linkedin.constants import QuestionType, GLOBAL_LOG_LEVEL
 #         return True
 #     return False
 from autoapply.linkedin.wrappers import passTimeoutException
-from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE
 
 
 def create_logger(name):
