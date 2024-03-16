@@ -58,6 +58,7 @@ Make sure it's recording questions, and putting in the answers you want
 
 Record some statistics into the text file you have
 
-- applied_for.csv - list of urls with the jobs you've applied for
+- applied_for.csv - list of urls with the jobs you've applied for. Useful for when you get a request for an interview
+  then you can find the original job posting
 - stats.txt - record average time taken to apply for job. Percentage of jobs applied for (vs unable to apply because
   of errors)

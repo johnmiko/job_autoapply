@@ -2743,3 +2743,9 @@ date,company,position,url,reason
 2023-01-09,,,,unable to answer questions
 2023-01-16,,,,unable to answer questions
 2024-03-16,Insight Global,Test Engineer,,unable to answer questions
+2024-03-16,Robert Half,Software Engineer in Test,,unable to answer questions
+2024-03-16,Arka IT Solutions,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3857594050/,max seconds occured
+2024-03-16,SoftStandard Solutions,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3845919836/,unable to answer questions
+2024-03-16,Take2 Consulting, LLC,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3847079743/,unable to answer questions
+2024-03-16,The ABK Group, LLC,Software Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3851491853/,unable to answer questions
+2024-03-16,Zeektek,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3843605996/,unable to answer questions

@@ -50,12 +50,11 @@ try:
             if 'https://www.linkedin.com/jobs/search/' not in DM.driver.current_url:
                 logger.info('got redirected to a different site')
                 continue
-            # TODO: company and job title not working anymore
+            # Get job title and href to record to applied for
             job_title, short_href = get_short_href_from_job_title(DM)
             try:
                 company_name = DM.driver.find_element('xpath', '//span[@class="job-card-container__primary-description '
                                                                '"]').text
-                #
             except NoSuchElementException:
                 company_name = ''
             logger.info(f'\npost: {job_number} - {company_name}: {job_title}')

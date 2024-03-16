@@ -197,7 +197,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                     # Got error when question was in arabic
                     continue
         # Check that old_questions are not [], and questions don't match
-
+        # We failed to answer questions if the page of questions is the same
         tried_to_answer_questions = old_questions and (questions == old_questions)
         if tried_to_answer_questions:
             old_questions = []
@@ -459,18 +459,21 @@ def get_short_href_from_job_title(dm):
     def inner_func(job_title_el):
         job_title = job_title_el.text
         job_title = job_title.encode('latin1', 'ignore').decode("latin1")
-        href = job_title_el.find_element('xpath', '..').get_attribute('href')
-        if href:
+        try:
+            href = job_title_el.get_attribute('href')
             short_href = href.split('?')[0]
-        else:
-            short_href = ""
+        except:
+            logger.error("Unable to get href for current job. Not going to be able to save posting to applied_for.cv")
         return job_title, short_href
 
     try:
-        job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title", element="h2")
+        # Element containing the href is an "a"
+        job_title_el = dm.find_element(name="disabled ember-view job-card-container__link job-card-list__title",
+                                       element="a")
         return inner_func(job_title_el)
     except TimeoutException:
         try:
+            # Get job title from large description section and not sidebar if things fail
             job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title",
                                            element="h2")
             return inner_func(job_title_el)

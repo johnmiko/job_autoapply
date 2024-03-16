@@ -1,10 +1,10 @@
 name,value,last_updated
-applied_for,,
-skipped,,
-could_have_applied_for,,
-already_applied,,
-failures,,
-running_time (s),,
-running_time (m),,
-jobs / min,,
-success rate,,
+applied_for,6.0,0.0
+skipped,0.0,0.0
+could_have_applied_for,12.0,0.0
+already_applied,13.0,0.0
+failures,6.0,0.0
+running_time (s),931.0,0.0
+running_time (m),15.0,0.0
+jobs / min,0.4,0.0
+success rate,50.0,0.0
