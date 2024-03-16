@@ -48,6 +48,12 @@ Choices are no or yes here
 When you answer the questions, save the file. The code will then take the answered questions out of the file and
 save them into `questions.txt`
 
+You can modify questions.txt and unanswered_questions.txt while the code is paused. May be able to do it while code is
+running, it reloads the file after each job
+
+You will need to supervise the code for a couple minute at least to make sure it is doing what you think it is.
+Make sure it's recording questions, and putting in the answers you want
+
 ### Text files
 
 Record some statistics into the text file you have

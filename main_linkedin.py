@@ -22,7 +22,7 @@ logger, c_handler = create_logger(__name__)
 logger.info('starting')
 start = timer()
 job_number = get_last_job_applied_for_page_number(JOB_NUMBER_FILENAME)
-job_number = 0
+# job_number = 0
 stats_manager = StatsManager(STATS_FILENAME)
 df_stats = stats_manager.df
 # initialize variables
@@ -50,9 +50,12 @@ try:
             if 'https://www.linkedin.com/jobs/search/' not in DM.driver.current_url:
                 logger.info('got redirected to a different site')
                 continue
+            # TODO: company and job title not working anymore
             job_title, short_href = get_short_href_from_job_title(DM)
             try:
-                company_name = DM.driver.find_element('xpath', '//a[@class="ember-view t-black t-normal"]').text
+                company_name = DM.driver.find_element('xpath', '//span[@class="job-card-container__primary-description '
+                                                               '"]').text
+                #
             except NoSuchElementException:
                 company_name = ''
             logger.info(f'\npost: {job_number} - {company_name}: {job_title}')

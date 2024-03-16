@@ -209,7 +209,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
     df5 = q_and_as_df[~q_and_as_df['answer'].isna()]
     df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
     df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
-    should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS)
+    should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS, "pause after answering questions")
     return tried_to_answer_questions, old_questions
 
 
@@ -229,8 +229,7 @@ def keep_trying_to_submit_form(tried_to_answer_questions, loop_timer_start, seco
     else:
         try_to_submit_form = True
         reason = ''
-    if (not try_to_submit_form) and PAUSE_AFTER_FAILURE:
-        breakpoint()
+    should_pause((not try_to_submit_form) and PAUSE_AFTER_FAILURE, context="pausing after failure")
     logger.debug(f'{try_to_submit_form=}')
     return try_to_submit_form, reason
 
@@ -283,7 +282,11 @@ def click_sidebar_top_result(dm):
 
 
 def get_pct_success_str(jobs_applied_for, jobs_I_could_have_applied_for):
-    return f"{jobs_applied_for} / {jobs_I_could_have_applied_for} - {int(jobs_applied_for / jobs_I_could_have_applied_for * 100)}%"
+    try:
+        return f"{jobs_applied_for} / {jobs_I_could_have_applied_for} - {int(jobs_applied_for / jobs_I_could_have_applied_for * 100)}%"
+    except ValueError:
+        # Catch error before first success
+        return 0
 
 
 class StatsManager:
@@ -305,7 +308,9 @@ class StatsManager:
             f"jobs applied for: {get_pct_success_str(self.df.loc['applied_for', 'value'], self.df.loc['could_have_applied_for', 'value'])}")
 
 
-def should_pause(condition):
+def should_pause(condition, context=""):
+    if context:
+        logger.debug(context)
     if condition:
         breakpoint()
 
@@ -454,15 +459,19 @@ def get_short_href_from_job_title(dm):
         job_title = job_title_el.text
         job_title = job_title.encode('latin1', 'ignore').decode("latin1")
         href = job_title_el.find_element('xpath', '..').get_attribute('href')
-        short_href = href.split('?')[0]
+        if href:
+            short_href = href.split('?')[0]
+        else:
+            short_href = ""
         return job_title, short_href
 
     try:
-        job_title_el = dm.find_element(name="t-24 t-bold jobs-unified-top-card__job-title", element="h2")
+        job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title", element="h2")
         return inner_func(job_title_el)
     except TimeoutException:
         try:
-            job_title_el = dm.find_element(name="t-24 t-bold jobs-unified-top-card__job-title", element="h2")
+            job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title",
+                                           element="h2")
             return inner_func(job_title_el)
         except TimeoutException:
             return '', ''
