@@ -7,8 +7,8 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
-from autoapply.linkedin.constants import JOB_NUMBER_FILENAME, Page, STATS_FILENAME, LINKEDIN_DIR
-from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR
+from autoapply.linkedin.constants import Page, LINKEDIN_DIR
+from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME
 from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file,
                                        USE_MAX_TIMER, \
                                        APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB)
@@ -22,11 +22,9 @@ from autoapply.linkedin.utils import use_latest_resume
 logger, c_handler = create_logger(__name__)
 logger.info('starting')
 start = timer()
-job_number = get_last_job_applied_for_page_number(JOB_NUMBER_FILENAME)
-# job_number = 0
+job_number = get_last_job_applied_for_page_number()
 stats_manager = StatsManager(STATS_FILENAME)
 df_stats = stats_manager.df
-# initialize variables
 could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
@@ -207,6 +205,8 @@ try:
                     questions = []
                 # try to scroll to bottom of page
                 try:
+                    # D:\Users\johnm\OneDrive\ccode_files\job_autoapply\linkedin\text
+                    # D:\\ccode\\job_autoapply\\autoapply\\linkedin/text/job_number.txt'
                     popup = DM.find_element('artdeco-modal__content jobs-easy-apply-modal__content p0 ember-view')
                     DM.driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", popup);
                 except:

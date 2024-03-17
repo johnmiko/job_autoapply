@@ -7,7 +7,6 @@ GLOBAL_LOG_LEVEL = logging.INFO
 LINKEDIN_DIR = os.path.dirname(os.path.abspath(Path(__file__)))
 AUTOAPPLY_DIR = os.path.dirname(os.path.abspath(Path(__file__).parent))
 PROJ_DIR = os.path.dirname(os.path.abspath(Path(__file__).parent.parent))
-STATS_FILENAME = LINKEDIN_DIR + '/text/stats.txt'
 # LINKEDIN_DIR = f'{PROJ_DIR}/linkedin'
 REMOTE = '&f_WRA=true'
 CANADA = '&location=Canada'
@@ -17,7 +16,6 @@ NORTH_AMERICA = '&geoId=102221843&location=North%20America'
 QUESTION_FLUFF = ['please enter a valid answer', 'how many years', 'work experience', 'experience do you',
                   'what is your ', 'using ', 'with ', 'in ', 'do ', 'have ', 'you ', 'of ', 'as a ', 'currently have',
                   'depuis combien dannées utilisez-vous']
-JOB_NUMBER_FILENAME = LINKEDIN_DIR + '/text/job_number.txt'
 
 
 class Page:
