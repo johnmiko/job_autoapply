@@ -2749,3 +2749,119 @@ date,company,position,url,reason
 2024-03-16,Take2 Consulting, LLC,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3847079743/,unable to answer questions
 2024-03-16,The ABK Group, LLC,Software Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3851491853/,unable to answer questions
 2024-03-16,Zeektek,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3843605996/,unable to answer questions
+2024-03-16,World Wide Technology,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3855850703/,unable to answer questions
+2024-03-16,24 Seven Talent,Automation Engineer,https://www.linkedin.com/jobs/view/3857506126/,unable to answer questions
+2024-03-16,AdPipe,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3825211307/,unable to answer questions
+2024-03-16,Net2Source Inc.,Automation Engineer,https://www.linkedin.com/jobs/view/3854185528/,unable to answer questions
+2024-03-16,SiPhox Health,Software Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3830575327/,unable to answer questions
+2024-03-16,HUB International,Testing Automation Engineer,https://www.linkedin.com/jobs/view/3844385221/,unable to answer questions
+2024-03-16,Beyondsoft,Software Test Engineer,https://www.linkedin.com/jobs/view/3857856337/,unable to answer questions
+2024-03-16,Comptech Associates,Automation Testing Developer,https://www.linkedin.com/jobs/view/3840628158/,unable to answer questions
+2024-03-16,PathAI,Functional Tester/Test Automation Contractor,https://www.linkedin.com/jobs/view/3847752986/,unable to answer questions
+2024-03-16,Mainz Brady Group,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3855495369/,unable to answer questions
+2024-03-16,ClickHouse,SDET- Core Database (Remote),https://www.linkedin.com/jobs/view/3846357275/,unable to answer questions
+2024-03-16,Akkodis,Sr. Automation QA Tester,https://www.linkedin.com/jobs/view/3856020057/,unable to answer questions
+2024-03-16,Tech Mahindra,Test Automation Specialist - Cloud - Healthcare,https://www.linkedin.com/jobs/view/3843691059/,unable to answer questions
+2024-03-16,Connect Tech+Talent,QA Engineer Automated 2 (4078),https://www.linkedin.com/jobs/view/3855427801/,unable to answer questions
+2024-03-16,Take2 Consulting, LLC,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3847079743/,unable to answer questions
+2024-03-16,Beyondsoft,Software Test Engineer,https://www.linkedin.com/jobs/view/3857856337/,unable to answer questions
+2024-03-16,SiPhox Health,Software Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3830575327/,unable to answer questions
+2024-03-16,Zeektek,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3843605996/,unable to answer questions
+2024-03-16,Seneca Resources,Performance Test Engineer,https://www.linkedin.com/jobs/view/3842344845/,unable to answer questions
+2024-03-16,Comptech Associates,Automation Testing Developer,https://www.linkedin.com/jobs/view/3840628158/,unable to answer questions
+2024-03-16,HUB International,Testing Automation Engineer,https://www.linkedin.com/jobs/view/3844385221/,unable to answer questions
+2024-03-16,24 Seven Talent,Automation Engineer,https://www.linkedin.com/jobs/view/3857506126/,unable to answer questions
+2024-03-16,World Wide Technology,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3855850703/,unable to answer questions
+2024-03-16,The ABK Group, LLC,Software Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3851491853/,unable to answer questions
+2024-03-16,Lumivero,Software QA Tester,https://www.linkedin.com/jobs/view/3858035959/,unable to answer questions
+2024-03-16,Altimetrik,Software Engineer In Test,https://www.linkedin.com/jobs/view/3840298551/,unable to answer questions
+2024-03-16,Take2 Consulting, LLC,Software Engineer in Test,https://www.linkedin.com/jobs/view/3837483832/,unable to answer questions
+2024-03-16,Talent Groups,Ranorex Automation Tester,https://www.linkedin.com/jobs/view/3859292627/,unable to answer questions
+2024-03-16,Joyent,Software Development Engineer in Test (SDET),https://www.linkedin.com/jobs/view/3848983943/,unable to answer questions
+2024-03-16,Onwardpath,five9 QA Engineer,https://www.linkedin.com/jobs/view/3837817601/,unable to answer questions
+2024-03-16,Insight Global,Quality Assurance Automation Engineer,https://www.linkedin.com/jobs/view/3855858385/,unable to answer questions
+2024-03-16,Applause,QA Tester (video streaming),https://www.linkedin.com/jobs/view/3844048267/,unable to answer questions
+2024-03-16,GOBankingRates,ETL Test Automation Engineer,https://www.linkedin.com/jobs/view/3832603336/,unable to answer questions
+2024-03-16,SoftStandard Solutions,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3856697847/,unable to answer questions
+2024-03-16,AdPipe,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3825211307/,unable to answer questions
+2024-03-16,The Baer Group,SAP Ariba QA Testing Engineer (15853),https://www.linkedin.com/jobs/view/3835019244/,unable to answer questions
+2024-03-16,Fusemachines,QA Engineer,https://www.linkedin.com/jobs/view/3838975798/,unable to answer questions
+2024-03-16,AltScore,QA Automation Engineer,https://www.linkedin.com/jobs/view/3835170983/,unable to answer questions
+2024-03-16,Fusion Technology LLC,Software Test Engineer,https://www.linkedin.com/jobs/view/3834481134/,unable to answer questions
+2024-03-16,FacilityONE,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3831176068/,unable to answer questions
+2024-03-16,RadixSoft Inc,Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3857557992/,unable to answer questions
+2024-03-16,Insight Global,Manual QA,https://www.linkedin.com/jobs/view/3849919206/,unable to answer questions
+2024-03-16,Blackstone Talent Group,Software Development Engineer in Test (SDET),https://www.linkedin.com/jobs/view/3844859344/,unable to answer questions
+2024-03-16,Eliassen Group,Software Development Engineer In Test (SDET),https://www.linkedin.com/jobs/view/3843086537/,unable to answer questions
+2024-03-16,The Business App Company,Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3851757470/,unable to answer questions
+2024-03-16,Veracity Solutions,Senior SDET,https://www.linkedin.com/jobs/view/3852110548/,unable to answer questions
+2024-03-16,The Select Group,Data QA Analyst,https://www.linkedin.com/jobs/view/3844471951/,unable to answer questions
+2024-03-16,Christian Healthcare Ministries,Quality Assurance Test Engineer,https://www.linkedin.com/jobs/view/3854804954/,unable to answer questions
+2024-03-16,Brooksource,Test Analyst,https://www.linkedin.com/jobs/view/3835349083/,unable to answer questions
+2024-03-16,Cohere Health,User Acceptance Testing Analyst,https://www.linkedin.com/jobs/view/3838663342/,max seconds occured
+2024-03-16,Medasource,Data QA Analyst,https://www.linkedin.com/jobs/view/3829128120/,unable to answer questions
+2024-03-16,Mastech Digital,Sr. Software QA Engineer,https://www.linkedin.com/jobs/view/3856024505/,unable to answer questions
+2024-03-16,V-Soft Consulting Group, Inc.,Sr. Web Automation Quality Engineer 100% Remote,https://www.linkedin.com/jobs/view/3852726899/,unable to answer questions
+2024-03-16,Cloudflare,Test Automation Engineer (Zero Trust Desktop Clients),https://www.linkedin.com/jobs/view/3779506443/,unable to answer questions
+2024-03-16,Agero, Inc.,Senior Automation Engineer,https://www.linkedin.com/jobs/view/3821088962/,max seconds occured
+2024-03-16,CBTS,Sr. QA Software Engineer,https://www.linkedin.com/jobs/view/3852732341/,unable to answer questions
+2024-03-16,Insight Global,Test Validation Engineer,https://www.linkedin.com/jobs/view/3838143330/,max seconds occured
+2024-03-16,Caprock Custom Construction, Inc.,Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3848963951/,unable to answer questions
+2024-03-16,Sharp Decisions,BTP Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3853704432/,unable to answer questions
+2024-03-16,Keeper Security, Inc.,QA Analyst, Browser Ext,https://www.linkedin.com/jobs/view/3799816388/,unable to answer questions
+2024-03-16,Agility Partners,QA Analyst,https://www.linkedin.com/jobs/view/3853183904/,unable to answer questions
+2024-03-16,Sintesys North America - ServiceNow and NearShore Specialists,Servicenow QA - 100% Remote,https://www.linkedin.com/jobs/view/3853175136/,unable to answer questions
+2024-03-16,SPECTRAFORCE,Manufacturing Test Engineer,https://www.linkedin.com/jobs/view/3855496315/,unable to answer questions
+2024-03-16,Applicantz,Senior Automation Engineer,https://www.linkedin.com/jobs/view/3855491568/,unable to answer questions
+2024-03-16,Lumen Resources,Remote Performance Test Engineer II,https://www.linkedin.com/jobs/view/3846057921/,unable to answer questions
+2024-03-16,Marathon TS,System Tester,https://www.linkedin.com/jobs/view/3840616621/,unable to answer questions
+2024-03-16,Verve Industrial, A Rockwell Automation Company,Product Security Test Engineer,https://www.linkedin.com/jobs/view/3832202511/,unable to answer questions
+2024-03-16,GAP Solutions, Inc.,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3853206345/,unable to answer questions
+2024-03-16,TherapyNotes, LLC,Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3842944609/,unable to answer questions
+2024-03-16,Harbor Compliance,REMOTE - Software Test Engineer,https://www.linkedin.com/jobs/view/3815901508/,unable to answer questions
+2024-03-16,Accelerant,Software Test Engineer,https://www.linkedin.com/jobs/view/3840224781/,unable to answer questions
+2024-03-16,AE Business Solutions,DevOps Engineer,https://www.linkedin.com/jobs/view/3839533236/,unable to answer questions
+2024-03-16,Info Services,DevOps Engineer,https://www.linkedin.com/jobs/view/3848363559/,unable to answer questions
+2024-03-16,ResponsiveAds,ResponsiveAds QA Test Engineer,https://www.linkedin.com/jobs/view/3590302349/,unable to answer questions
+2024-03-16,YRCI,Cloud Engineer,https://www.linkedin.com/jobs/view/3825934341/,unable to answer questions
+2024-03-16,FCP Euro,Software Quality Assurance Engineer - Remote,https://www.linkedin.com/jobs/view/3787752698/,max seconds occured
+2024-03-17,Analytica,Big Data/ ETL Tester,https://www.linkedin.com/jobs/view/3854350287/,unable to answer questions
+2024-03-17,CuraLinc Healthcare,Quality Assurance Specialist,https://www.linkedin.com/jobs/view/3818602429/,unable to answer questions
+2024-03-17,TekValue IT Solutions,BTP QA Engineer(USC & Green Card only),https://www.linkedin.com/jobs/view/3854653380/,unable to answer questions
+2024-03-17,Eviden,SDET with Azure,https://www.linkedin.com/jobs/view/3857250926/,unable to answer questions
+2024-03-17,Interactive Resources - iR,Senior Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3852969615/,unable to answer questions
+2024-03-17,Mastech Digital,Senior Software Quality Assurance Engineer,https://www.linkedin.com/jobs/view/3803483970/,unable to answer questions
+2024-03-17,YRCI,Cloud Engineer,https://www.linkedin.com/jobs/view/3825934341/,unable to answer questions
+2024-03-17,IT Resources,Configuration Analyst,https://www.linkedin.com/jobs/view/3846370222/,unable to answer questions
+2024-03-17,neteffects,GCP DevOps Engineer,https://www.linkedin.com/jobs/view/3833827872/,unable to answer questions
+2024-03-17,DTEX Systems,Senior QA Engineer (US, Remote),https://www.linkedin.com/jobs/view/3858046452/,unable to answer questions
+2024-03-17,Tactiq,Sr. QA Engineer,https://www.linkedin.com/jobs/view/3839490961/,unable to answer questions
+2024-03-17,Shop Online New York,Non-Paid Internship for Junior DevOps Engineer,https://www.linkedin.com/jobs/view/3856320680/,max seconds occured
+2024-03-17,Gemini,Software Engineer, Trust & Safety,https://www.linkedin.com/jobs/view/3825422640/,unable to answer questions
+2024-03-17,TCWGlobal,Autonomous Vehicle Software Engineer,https://www.linkedin.com/jobs/view/3822121377/,unable to answer questions
+2024-03-17,AVM Consulting Inc,Sr. Python Developer with SDET / automation experience,https://www.linkedin.com/jobs/view/3789529268/,unable to answer questions
+2024-03-17,Insight Global,Remote Sr Manual QA Tester,https://www.linkedin.com/jobs/view/3845464892/,unable to answer questions
+2024-03-17,HRM Direct Middleware Test Company,LI Test 3,https://www.linkedin.com/jobs/view/3812552920/,unable to answer questions
+2024-03-17,Third Eye Software,Senior QA Automation Engineer,https://www.linkedin.com/jobs/view/3856191038/,unable to answer questions
+2024-03-17,GAMA-1 Technologies,(CI/CD) Pipelines Testers,https://www.linkedin.com/jobs/view/3806874618/,unable to answer questions
+2024-03-17,U.S. LawShield®,Contact Center Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3827223383/,unable to answer questions
+2024-03-17,Diverse Lynx,Salesforce QA Lead Engineer,https://www.linkedin.com/jobs/view/3849522676/,unable to answer questions
+2024-03-17,Cloudflare,Engineering Manager in Test - Zero Trust Client Automation,https://www.linkedin.com/jobs/view/3848607262/,unable to answer questions
+2024-03-17,RouteOne,Java Software Engineer,https://www.linkedin.com/jobs/view/3818305245/,unable to answer questions
+2024-03-17,University of Massachusetts Amherst,PeopleSoft Automation Engineer,https://www.linkedin.com/jobs/view/3790042414/,max seconds occured
+2024-03-17,TekStream Solutions,Senior Salesforce Automation Test Engineer,https://www.linkedin.com/jobs/view/3852363050/,unable to answer questions
+2024-03-17,Brooksource,Senior Software Quality Engineer,https://www.linkedin.com/jobs/view/3835959110/,unable to answer questions
+2024-03-17,Net2Source Inc.,Senior Automation Engineer,https://www.linkedin.com/jobs/view/3854512491/,unable to answer questions
+2024-03-17,Qualitest,#12918 - Salesforce Test Automation Engineer,https://www.linkedin.com/jobs/view/3840702281/,unable to answer questions
+2024-03-17,Prodigy Resources,Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3848912809/,unable to answer questions
+2024-03-17,Insight Global,Lead Software Test Engineer,https://www.linkedin.com/jobs/view/3842535548/,unable to answer questions
+2024-03-17,TWO95 International, Inc,Sr SAP Ariba QA / Testing Engineer ($open++) - 100% Remote Work,https://www.linkedin.com/jobs/view/3842530136/,unable to answer questions
+2024-03-17,Caprock Custom Construction, Inc.,Quality Assurance Analyst,https://www.linkedin.com/jobs/view/3848963951/,unable to answer questions
+2024-03-17,AGS Cyber,Penetration Tester,https://www.linkedin.com/jobs/view/3833682016/,unable to answer questions
+2024-03-17,Zinnia,Software Engineer,https://www.linkedin.com/jobs/view/3845983082/,unable to answer questions
+2024-03-17,OMW Consulting,DevOps Engineer,https://www.linkedin.com/jobs/view/3856961475/,unable to answer questions
+2024-03-17,Oscar Health,Associate Director, Quality Engineering,https://www.linkedin.com/jobs/view/3850046300/,unable to answer questions
+2024-03-17,Albert Bow,Senior DevOps Engineer,https://www.linkedin.com/jobs/view/3826074534/,unable to answer questions
+2024-03-17,murmuration,DevOps Engineer,https://www.linkedin.com/jobs/view/3854650679/,unable to answer questions
+2024-03-17,Cohere Health,DevOps Engineer,https://www.linkedin.com/jobs/view/3853617310/,max seconds occured
+2024-03-17,Addison Group,DevOps Engineer,https://www.linkedin.com/jobs/view/3857559010/,unable to answer questions

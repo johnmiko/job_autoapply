@@ -1,7 +1,9 @@
 import logging
 import os
+import random
 import time
 from contextlib import suppress
+from datetime import datetime, timedelta
 from timeit import default_timer as timer
 
 import pandas as pd
@@ -13,7 +15,8 @@ from selenium.webdriver.support.select import Select
 from autoapply.linkedin.answers_broad import question_is_generic
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType, GLOBAL_LOG_LEVEL
-from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE
+from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
+    APPLIED_FOR_FILE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -479,3 +482,20 @@ def get_short_href_from_job_title(dm):
             return inner_func(job_title_el)
         except TimeoutException:
             return '', ''
+
+
+def have_applied_for_too_many_jobs_today():
+    """
+    Unclear if account will get flagged if we apply for too many jobs. After I think 100 jobs in the past 24 hours
+    Linkedin will give an error saying "no results found" and you have to wait 24 hours to apply for more jobs
+    To prevent account from being suspicous, stop applying for jobs after 90-95 jobs have been applied for
+    """
+    df = pd.read_csv(APPLIED_FOR_FILE, on_bad_lines="skip")
+    df['date'] = pd.to_datetime(df['date'])
+    mask = df['date'] > (datetime.now() - timedelta(hours=24))
+    num_jobs_applied_for = mask.sum()
+    max_jobs = random.randint(90, 95)
+    if num_jobs_applied_for > max_jobs:
+        logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
+        return True
+    return False

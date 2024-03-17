@@ -15,7 +15,8 @@ from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_fil
 from autoapply.linkedin.unused import get_last_job_applied_for_page_number
 from autoapply.linkedin.utils import create_logger, python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
-    write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title
+    write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
+    have_applied_for_too_many_jobs_today
 from autoapply.linkedin.utils import use_latest_resume
 
 logger, c_handler = create_logger(__name__)
@@ -37,6 +38,8 @@ try:
         if base_url in urls_complete:
             continue
         while True:
+            if have_applied_for_too_many_jobs_today():
+                break
             if next_url:
                 job_number = 0
                 next_url = False
@@ -209,19 +212,17 @@ try:
                 except:
                     pass
                 if try_to_submit_form:
-                    # TODO: create some
                     tried_to_answer_questions, old_questions = answer_questions(DM, questions,
                                                                                 tried_to_answer_questions,
                                                                                 q_and_as_df, question_file,
                                                                                 old_questions, url)
+            now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
             if submitted:
-                today = datetime.today().strftime("%Y-%m-%d")
                 write_to_file(APPLIED_FOR_FILE, 'a', 'date,company,position,url',
-                              f'{today},{company_name},{job_title},{short_href}')
+                              f'{now},"{company_name}","{job_title}","{short_href}"')
             if not submitted:
-                today = datetime.today().strftime("%Y-%m-%d")
                 write_to_file(ERROR_FILE, 'a', 'date,company,position,url,reason',
-                              f'{today},{company_name},{job_title},{short_href},{reason}')
+                              f'{now},{company_name},{job_title},{short_href},{reason}')
             elapsed = int(timer() - start)
             start = timer()
             stats_manager.increment('running_time (s)', elapsed)
