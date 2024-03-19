@@ -20,6 +20,7 @@ APPLIED_FOR_FILE = f'{TEXT_DIR}applied_for.csv'
 ERROR_FILE = f'{TEXT_DIR}errors.txt'
 STATS_FILENAME = f"{TEXT_DIR}stats.txt"
 JOB_NUMBER_FILENAME = f"{TEXT_DIR}job_number.txt"
+COMPLETED_FILENAME = f"{TEXT_DIR}completed.txt"
 question_file = f'{TEXT_DIR}questions.txt'
 unanswered_question_file = f'{TEXT_DIR}unanswered_questions.txt'
 SECONDS_TO_TRY_FOR = 90

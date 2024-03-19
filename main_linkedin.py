@@ -7,8 +7,8 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
-from autoapply.linkedin.constants import Page, LINKEDIN_DIR
-from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME
+from autoapply.linkedin.constants import Page
+from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, COMPLETED_FILENAME
 from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file,
                                        USE_MAX_TIMER, \
                                        APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB)
@@ -29,7 +29,7 @@ could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
 
-with open(LINKEDIN_DIR + '/text/completed.txt', 'r') as f:
+with open(COMPLETED_FILENAME, 'r') as f:
     urls_complete = [line.strip('\n') for line in f]
 try:
     for base_url in base_urls:

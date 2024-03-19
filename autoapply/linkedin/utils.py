@@ -223,7 +223,7 @@ def keep_trying_to_submit_form(tried_to_answer_questions, loop_timer_start, seco
     logger.debug(f"{max_seconds_occurred=}")
     if max_seconds_occurred and USE_MAX_TIMER:
         try_to_submit_form = False
-        reason = 'max seconds occured'
+        reason = f"{seconds_to_try_for}s elapsed"
         logger.info(f'failure: {reason}')
     elif tried_to_answer_questions:
         try_to_submit_form = False
