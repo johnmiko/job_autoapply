@@ -11,6 +11,8 @@ def question_is_generic(question_text, url):
         return 'yes'
     elif 'gender' in text:
         return 'male'
+    elif 'disability' in text:
+        return 'yes'
     return 'answer not found'
 
 
@@ -20,16 +22,16 @@ def is_allowed_to_work_in_canada(text):
 
 def is_previous_employee(text):
     return ('previously been employed' in text) \
-           or (re.search('are currently a.*employee', text)) \
-           or ("êtes-vous présentement à l'emploi de" in text)
+        or (re.search('are currently a.*employee', text)) \
+        or ("êtes-vous présentement à l'emploi de" in text)
 
 
 def answer_salary_question(url):
     if 'developer' in url:
-        return 100000
+        return 125000
     # elif 'assistant' in url:
     else:
-        salary = 50000
+        salary = 125000
     return salary
 
 
@@ -58,6 +60,7 @@ vivez-vous au canada:select an option^yes^no,yes,13.0 <- do you live in canada
 "at least 5 years experience back-end development nodejs, typescript, or graphql:select an option^yes^no",yes,13.0
 were aware sonder prior to applying:select an option^no^yes,,13.0
 """
+
 # def answer_citizenship(question_text):
 #     text = question_text.lower()
 #     # what country are located in:select an option^canada/ canada^cyprus/ chypre^luxembourg/ luxembourg^romania/ roumanie^united states america / états-unis d'amérique^united kingdom/ royaume-uni^other / autre,,21.0

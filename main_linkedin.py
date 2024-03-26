@@ -8,7 +8,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import Page
-from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, COMPLETED_FILENAME
+from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, COMPLETED_FILENAME, \
+    DO_NOT_APPLY_AT_THESE_COMPANIES
 from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file,
                                        USE_MAX_TIMER, \
                                        APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB)
@@ -59,6 +60,8 @@ try:
             except NoSuchElementException:
                 company_name = ''
             logger.info(f'\npost: {job_number} - {company_name}: {job_title}')
+            if any(company.lower() in company_name.lower() for company in DO_NOT_APPLY_AT_THESE_COMPANIES):
+                continue
             if ONLY_PYTHON_JOBS and (not python_part_of_job(DM)):
                 stats_manager.increment('skipped')
                 time.sleep(3)

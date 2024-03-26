@@ -490,10 +490,11 @@ def have_applied_for_too_many_jobs_today():
     Linkedin will give an error saying "no results found" and you have to wait 24 hours to apply for more jobs
     To prevent account from being suspicous, stop applying for jobs after 90-95 jobs have been applied for
     """
-    df = pd.read_csv(APPLIED_FOR_FILE, on_bad_lines="skip")
+    df = pd.read_csv(APPLIED_FOR_FILE, on_bad_lines="skip", encoding='latin1')
     df['date'] = pd.to_datetime(df['date'])
     mask = df['date'] > (datetime.now() - timedelta(hours=24))
     num_jobs_applied_for = mask.sum()
+    logger.info(f"jobs applied for in past 24 hours {num_jobs_applied_for}")
     max_jobs = random.randint(90, 95)
     if num_jobs_applied_for > max_jobs:
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
