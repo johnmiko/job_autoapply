@@ -2,3 +2,4 @@
 venv/
 *.pyc
 autoapply/linkedin/text
+log_file.txt
