@@ -9,6 +9,7 @@ from timeit import default_timer as timer
 import pandas as pd
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
     InvalidElementStateException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 
@@ -136,7 +137,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                     q_and_as_df.at[index, 'times_asked'] += 1
                     # https://www.linkedin.com/jobs/search/?currentJobId=3294737126&f_AL=true&f_E=2&f_JT=P%2CC%2CT%2CF&f_WT=1%2C2%2C3&geoId=101330853&keywords=it%20support&location=Montreal%2C%20Quebec%2C%20Canada&refresh=true&start=6
                     if (pd.isna(existing_answer)) or (existing_answer == ''):
-                        logger.info(f'\tneeds answered: "{existing_question}"')
+                        logger.info(f'\tquestion found but no answer: "{existing_question}"')
                         break
                     answer = existing_answer.strip().lower()
                     # Answers are being recorded as floats, so convert to ints if we can
@@ -196,6 +197,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                 try:
                     q_text2 = q_text.encode('latin1', 'ignore').decode("latin1").replace('"', '\"')
                     q_and_as_df = pd.concat([q_and_as_df, pd.DataFrame({'question': [q_text2]})])
+                    logger.info(f'\tnew question: "{q_text2}"')
                 except UnicodeEncodeError:
                     # Got error when question was in arabic
                     continue
@@ -477,9 +479,10 @@ def get_short_href_from_job_title(dm):
     except TimeoutException:
         try:
             # Get job title from large description section and not sidebar if things fail
-            job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title",
-                                           element="h2")
-            return inner_func(job_title_el)
+            h2_job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title",
+                                              element="h2")
+            h2_job_title_el_child = h2_job_title_el.find_element(by=By.XPATH, value='./*')
+            return inner_func(h2_job_title_el_child)
         except TimeoutException:
             return '', ''
 
