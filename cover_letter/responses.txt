@@ -1,14 +1,14 @@
 response,text,category
-8,"Python",experience
+10,"Python",experience
 2,"AWS",experience
 I love helping people and I did technical support at R3mote.io,"technical support",
-2,"jira",experience
+3,"jira",experience
 2,"C#",experience
 2,"Java",experience
 2,"Docker",experience
 2,"JavaScript",experience
 3,"SQL",experience
-8,"git",experience
+10,"git",experience
 3 years doing Agile development,"agile",experience
 1,"Linux",experience
 1,"UNIX",experience
@@ -25,3 +25,4 @@ I love helping people and I did technical support at R3mote.io,"technical suppor
 "Working as a safety engineer would be both enjoyable and interesting for me as I take safety seriously in all aspects of my life. In my opinion people often confuse seriousness with safety, placing high degree of concern on serious topics such as finance, then misunderstand that finances are not dangerous. I have seen several near-death incidents because of safety misunderstanding.","safety",
 "While working at Probe as a mechanical engineer designing oilfield tools, we guaranteed that every tool complied with ISO 15156-3 (Corrosive Environment Standards). This has given me experience working with compliance standards.","iso"
 "One of my responsibilities while working at R3mote.io was technical support which I thoroughly enjoyed. I would read through users Zen Desk tickets, messaging them either via the web or calling them to clarify what they needed help with. Once it was clear what they wanted, I would add the task to our board to be completed. If the task was quite large, I would check with management if it was worth dedicating the resources towards it.","technical support, customer support"
+"Professionally, over the past 10 years I have worked with Microsoft Azure, Google Cloud Platform and AWS, filled with messy data from financial, to advertising, to hockey data. The messier the data the more fun it is for me to organize and sort it. I enjoy analyzing data so much that I collect statistics on various subjects in my free time as well. Currently I’m compiling statistics of Dota games (a video game) to find interesting ones to watch. These involves calculating kill and gold statistics to give a numerical value to how close the games are, if a comeback happens, the number of kills per minute to calculate how interesting the games are.","data engineer",

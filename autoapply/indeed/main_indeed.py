@@ -12,9 +12,10 @@ from autoapply.driver import driver_manager as DM
 from autoapply.indeed.constants import JOB_NUMBER_FILENAME, INDEED_DIR, Page, STATS_FILENAME
 from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
     APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
-from autoapply.linkedin.utils import create_logger, python_part_of_job, click_sidebar_top_result, get_questions_df, \
+from autoapply.linkedin.utils import python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, QuestionManager
+from autoapply.misc.utils import create_logger
 
 logger, c_handler = create_logger(__name__)
 # from misc.kill_drivers import kill_drivers

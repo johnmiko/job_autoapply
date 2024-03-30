@@ -12,7 +12,7 @@ c_handler = logging.StreamHandler()
 c_handler.setLevel(logging.INFO)
 logger.addHandler(c_handler)
 
-from misc.kill_drivers import kill_drivers
+from autoapply.misc.kill_drivers import kill_drivers
 
 kill_drivers('kill_drivers.bat')
 

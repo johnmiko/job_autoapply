@@ -14,11 +14,12 @@ from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_fil
                                        USE_MAX_TIMER, \
                                        APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB)
 from autoapply.linkedin.unused import get_last_job_applied_for_page_number
-from autoapply.linkedin.utils import create_logger, python_part_of_job, click_sidebar_top_result, get_questions_df, \
+from autoapply.linkedin.utils import python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
     have_applied_for_too_many_jobs_today
 from autoapply.linkedin.utils import use_latest_resume
+from autoapply.misc.utils import create_logger
 
 logger, c_handler = create_logger(__name__)
 logger.info('starting')

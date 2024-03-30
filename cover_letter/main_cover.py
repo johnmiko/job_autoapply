@@ -5,18 +5,18 @@ from os.path import isfile, join
 
 import pandas as pd
 
-from cover_letter.inputs import COVER_LETTER_TEXT_DIR
+from cover_letter.inputs import COVER_LETTER_TEXT_DIR, COMPANY, JOB_TITLE, POSTING
 from cover_letter.utils import get_posting_lines
+from autoapply.misc.utils import create_logger
 
+logger, c_handler = create_logger(__name__)
 pd.options.display.width = 0
-posting = 'job_posting.txt'
-company = 'Circle Medical'
-job_title = 'Senior Data Engineer'
-company_dir = f'{COVER_LETTER_TEXT_DIR}postings/{company.lower().replace(" ", "_")}/'
-job_title_as_path = job_title.lower().replace(" ", "_")
-job_title_fname = f'{job_title_as_path}.txt'
+company_dir = f'{COVER_LETTER_TEXT_DIR}postings/{COMPANY.lower().replace(" ", "_")}/'
+job_title_as_path = JOB_TITLE.lower().replace(" ", "_")
+job_title_fname = f'{job_title_as_path}_posting.txt'
 fname = f'{company_dir}{job_title_fname}'
 if not os.path.exists(company_dir):
+    logger.info(f"creating directory {company_dir}")
     os.makedirs(company_dir)
 
 files = [f for f in listdir(company_dir) if isfile(join(company_dir, f))]
@@ -26,21 +26,24 @@ if not os.path.exists(folder):
     os.makedirs(folder)
 for f in files:
     if f not in ['generated.txt', 'sent.txt', job_title_fname]:
+        logger.info(f"multiple jobs at company {COMPANY}")
         multiple_jobs_at_company = True
         fname = f'{folder}/posting.txt'
         if not os.path.isfile(fname):
-            shutil.copyfile(posting, fname)
+            logger.info(f"copying {POSTING} to {fname}")
+            shutil.copyfile(POSTING, fname)
         break
 
 if not multiple_jobs_at_company:
     if not os.path.isfile(fname):
-        shutil.copyfile(posting, fname)
-# posting_parts = posting.split('/')
+        logger.info(f"copying {POSTING} to {fname}")
+        shutil.copyfile(POSTING, fname)
+# posting_parts = POSTING.split('/')
 # folder = '/'.join(posting_parts[:2])
-# company = posting_parts[1]
-# job_title = posting_parts[2].split('.')[0].replace('_', ' ')
+# COMPANY = posting_parts[1]
+# JOB_TITLE = posting_parts[2].split('.')[0].replace('_', ' ')
 
-lines = get_posting_lines(posting)
+lines = get_posting_lines(POSTING)
 df_responses = pd.read_csv('responses.txt')
 # df_responses['text'] = df_responses['text'].apply(literal_eval)
 # df_responses['text_lower'] = df_responses['text'].str.lower()
@@ -110,12 +113,13 @@ else:
 # I am writing to apply for the software developer position at Algolux. As a mechatronics engineer with experience in autonomous vehicles I believe I would be a great fit for this position.
 intro = f"""Dear Hiring Manager, 
 
-I am writing to apply for the {job_title} position at {company}. """
+I am writing to apply for the {JOB_TITLE} position at {COMPANY}. """
 # mechatronics engineer
 # p1 = """As a developer with 8 years of programming experience, I find the responsibilities of this job posting straightforward and enjoyable.\n"""
-p1 = """As a developer with 8 years of programming experience, I believe I make an excellent candidate for this position.\n"""
+p1 = """As a software developer with 10 years of experience, I believe I make an excellent candidate for 
+this position.\n"""
 outro = f"""
-Please take a moment to look over my resume and schedule a meeting with me (https://calendly.com/johnmiko/meeting) so we can further discuss my qualifications for the {job_title} position. You can also reach me by email at johnmiko4@gmail.com. Thank you for taking the time to consider my application.
+Please take a moment to look over my resume and schedule a meeting with me (https://calendly.com/johnmiko/meeting) so we can further discuss my qualifications for the {JOB_TITLE} position. You can also reach me by email at johnmiko4@gmail.com. Thank you for taking the time to consider my application.
 
 Sincerely,
  

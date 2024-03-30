@@ -1,21 +1,51 @@
-Must-Have:                       
+ABOUT US
 
-Bachelor’s degree in Computer Engineering, Computer Science, Electrical Engineering, Robotics or a related field with 3+ years of work experience
-Knowledge of estimation and filtering techniques (Kalman filtering, Bayesian Estimation, etc.)
-Strong C++ and Python coding experience
-Experience with sensor calibration
-Excellent analytical and problem-solving skills and the ability to clearly communicate ideas and solutions to others
-Key Success Factors:
+Circle Medical is the fastest-growing telemedicine provider in the US and has seen incredible growth of over 200% per year in each of the previous two years.
 
-Excellent interpersonal and communication skills (written and verbal)
-Exceptional problem solving and troubleshooting skills
-Self-driven
-Collaboration with a highly technical team
-Ability to work in a geographically diverse team setting, which means remote meetings
-Nice-to-Have:
+Circle Medical is a venture-backed Y-Combinator healthcare startup on a mission to bring quality, delightful primary care to everyone on the planet. Built by top-tier physicians, engineers, and designers, our medical practice and underlying technology have pioneered how people find and receive care.
 
-M.Sc or Ph.D in fields above. If you have a M.Sc. or Ph.D., the 3 years of working experience will be considered fulfilled
-Experience with GNSS and/or Inertial Positioning
-Knowledge of control systems
-Experience with real time operating systems and embedded firmware development 
-Knowledge of robotic / autonomy middleware (e.g. ROS or other)
+Our focus on building directly for our patients and providers to address serious care accessibility issues has enabled us to grow over 3X year-over-year. We’re now using our most recent round of funding from WELL Health, backed by Sir Li Ka-shing, to continue building out our hybrid in-clinic and telemedicine model across all fifty states.
+
+The Engineering Team and what makes Circle Medical the right move for you?
+More about us can be found on our website.
+
+DESCRIPTION
+
+We are seeking our first talented Senior Data Engineer to join our dynamic team, based out of our offices in Montreal, Quebec. As our first dedicated Data Engineer, you will play a pivotal role in building and maintaining a scalable data infrastructure that empowers the entire company with data-driven decision-making capabilities.
+WHAT YOU’LL DO
+Organize, consolidate and organize large and growing data sets that are currently spread out within multiple systems
+Make recommendations and implement event systems that could empower multiple teams at scale
+Leverage modern cloud-based data platforms
+Orchestrate data pipelines for multiple stakeholders efficiently
+Forecast the technical needs of the company from our aggressive growth projections
+Work closely with other teams to ensure data integrity, data privacy, and HIPAA/CPRA compliance of all our systems
+WHAT YOU’LL BRING
+6+ years experience as a Data Engineer.
+Technical expertise with data models, data mining, segmentation techniques, and infrastructure within Cloud-based solutions (e.g. AWS, Azure, GCP).
+Experience working with cloud Data Warehouse solutions (e.g., Snowflake, Redshift, BigQuery, Azure).
+Ability to take ownership.
+Experience working with Agile development methodologies.
+Excellent problem-solving, communication, and organizational skills.
+WHAT WILL GIVE YOU AN EDGE
+Communication and collaboration skills that demonstrate you are a team player
+Ability to work in a high growth company
+Familiarity with data tools that intersect data engineering and business intelligence
+Familiarity with HIPAA compliance requirements
+Background with machine learning frameworks and data science tools, as well as data visualization tools
+Experience in similar large scale and high growth data engineering projects
+Experience with Startups / VC funded companies
+COMPENSATION
+
+In alignment with our values, Circle Medical has transparent salaries based on merit-based output levels, and our total rewards include equity options.
+
+This is a full-time, salaried exempt position with an annual salary range of $161,000 to $197,000 CAD plus generous vacation, and full health benefits 
+
+Additional benefits:
+- Flexible vacation & generous sick leave after 90-days 
+- Paid bonus holidays in addition to local statutory holidays
+- $500 annual education and development reimbursement 
+- Medical, Dental, Vision, Disability & Life insurance benefits for eligible Employees, enhancing local provincial coverage (eligibility after 90-days)
+- Wellness perks, including discounts for mental health programs and online wellness courses
+- Weekly in-office team lunches in Montreal!
+
+Circle Medical is an equal-opportunity employer and affirmatively seeks diversity in its workforce. Circle Medical recruits qualified applicants and advances in the employment of its employees without regard to race, color, religion, gender, sex, sexual orientation, gender identity, gender expression, age, disability, genetic information, ethnic or national origin, marital status, veteran status, or any other status protected by law.

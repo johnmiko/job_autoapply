@@ -1,4 +1,3 @@
-import logging
 import os
 import random
 import time
@@ -15,7 +14,7 @@ from selenium.webdriver.support.select import Select
 
 from autoapply.linkedin.answers_broad import question_is_generic, question_mapper
 from autoapply.linkedin.constants import QUESTION_FLUFF
-from autoapply.linkedin.constants import QuestionType, GLOBAL_LOG_LEVEL
+from autoapply.linkedin.constants import QuestionType
 from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
     APPLIED_FOR_FILE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
@@ -25,23 +24,7 @@ from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSW
 #         return True
 #     return False
 from autoapply.linkedin.wrappers import passTimeoutException
-
-
-def create_logger(name):
-    logging.basicConfig(filename='log_file.txt',
-                        filemode='a',
-                        format='%(asctime)s, %(message)s',
-                        datefmt='%Y-%M-%d %H:%M:%S',
-                        level=logging.INFO)
-
-    level = GLOBAL_LOG_LEVEL
-    logger = logging.getLogger(name)
-    logger.setLevel(level)
-    c_handler = logging.StreamHandler()
-    c_handler.setLevel(level)
-    logger.addHandler(c_handler)
-    return logger, c_handler
-
+from autoapply.misc.utils import create_logger
 
 logger, c_handler = create_logger(__name__)
 
