@@ -1,38 +1,51 @@
+ABOUT US
 
-Mariner Innovations is seeking a Senior Python Developer to be a key member of our IT Professional Services team. In this role, you will be responsible for client-based projects and, in collaboration with our delivery and sales teams, you will deliver best of breed solutions to new and existing customers.
+Circle Medical is the fastest-growing telemedicine provider in the US and has seen incredible growth of over 200% per year in each of the previous two years.
 
-Responsibilities:
+Circle Medical is a venture-backed Y-Combinator healthcare startup on a mission to bring quality, delightful primary care to everyone on the planet. Built by top-tier physicians, engineers, and designers, our medical practice and underlying technology have pioneered how people find and receive care.
 
-Develops the detailed analysis and detailed design for system conversions and migrations Working with system design specifications, develops detailed specifications for software programming applications gns, codes, tests, debugs, and documents programs Involved in the maintenance and enhancement of existing operational application systems Mentor and coach developer team members, and helps them to understand broader objectives May be involved in requirement sessions to help determine solutions Handles or delegates solutions to medium problems to large scale issues May participate in the definition of architecture for large projects under the guidance of the architect or systems analyst Maintains, documents and trouble-shoots prime software products Good knowledge of QA process and methods;
+Our focus on building directly for our patients and providers to address serious care accessibility issues has enabled us to grow over 3X year-over-year. We’re now using our most recent round of funding from WELL Health, backed by Sir Li Ka-shing, to continue building out our hybrid in-clinic and telemedicine model across all fifty states.
 
-develops and documents test specifications Assists with capacity planning, architecture definition and advice on infrastructure
+The Engineering Team and what makes Circle Medical the right move for you?
+More about us can be found on our website.
 
-Qualifications University degree in software engineering/computer science or equivalent experience.
-8+ years experience in Software development, 5+ years of experience in Python.
+DESCRIPTION
 
-Experience with OSS systems including architecture, engineering, development and testing.
+We are seeking our first talented Senior Data Engineer to join our dynamic team, based out of our offices in Montreal, Quebec. As our first dedicated Data Engineer, you will play a pivotal role in building and maintaining a scalable data infrastructure that empowers the entire company with data-driven decision-making capabilities.
+WHAT YOU’LL DO
+Organize, consolidate and organize large and growing data sets that are currently spread out within multiple systems
+Make recommendations and implement event systems that could empower multiple teams at scale
+Leverage modern cloud-based data platforms
+Orchestrate data pipelines for multiple stakeholders efficiently
+Forecast the technical needs of the company from our aggressive growth projections
+Work closely with other teams to ensure data integrity, data privacy, and HIPAA/CPRA compliance of all our systems
+WHAT YOU’LL BRING
+6+ years experience as a Data Engineer.
+Technical expertise with data models, data mining, segmentation techniques, and infrastructure within Cloud-based solutions (e.g. AWS, Azure, GCP).
+Experience working with cloud Data Warehouse solutions (e.g., Snowflake, Redshift, BigQuery, Azure).
+Ability to take ownership.
+Experience working with Agile development methodologies.
+Excellent problem-solving, communication, and organizational skills.
+WHAT WILL GIVE YOU AN EDGE
+Communication and collaboration skills that demonstrate you are a team player
+Ability to work in a high growth company
+Familiarity with data tools that intersect data engineering and business intelligence
+Familiarity with HIPAA compliance requirements
+Background with machine learning frameworks and data science tools, as well as data visualization tools
+Experience in similar large scale and high growth data engineering projects
+Experience with Startups / VC funded companies
+COMPENSATION
 
-Fluent with software programming languages and scripting including Python, Java, Perl, Java Script Knowledge  of Python best practices Strong understanding of API integration, microservices architecture, and web service methods (REST, SOAP, XML, JSON).
+In alignment with our values, Circle Medical has transparent salaries based on merit-based output levels, and our total rewards include equity options.
 
-Experience with container technologies such as Kubernetes, Docker, etc.
+This is a full-time, salaried exempt position with an annual salary range of $161,000 to $197,000 CAD plus generous vacation, and full health benefits 
 
-Experience with Kafka
+Additional benefits:
+- Flexible vacation & generous sick leave after 90-days 
+- Paid bonus holidays in addition to local statutory holidays
+- $500 annual education and development reimbursement 
+- Medical, Dental, Vision, Disability & Life insurance benefits for eligible Employees, enhancing local provincial coverage (eligibility after 90-days)
+- Wellness perks, including discounts for mental health programs and online wellness courses
+- Weekly in-office team lunches in Montreal!
 
-Ability to develop web based applications (JAVA, JAVASCRIPT, JAVA SERVLET, XML, HTML, JSP, SOAP and REST)
-Develop, test, deploy and support new solutions using the Agile/Scrum approach
-
-Knowledge of database technologies:
-Oracle, SQL
-Delivers under pressure with excellent time management skills and prioritization.
-
-A team player and change enabler with a positive forward thinking mindset.
-
-Fully versed in all office applications (Outlook, Word, Excel, PowerPoint).Leadership or mentoring experience is considered an asset  Work With Us Why Mariner Partners?
-
-We believe in making a positive impact in the communities where we live and work – our team is located in major cities all across Canada, throughout the US and internationally. We are proud to be headquartered here, and are passionate about growing a strong technology sector here in Atlantic Canada and beyond.
-
-We offer competitive compensation; benefits packages and training and development.
-
-We recognize that empowered employees are more innovative, more efficient, deliver better customer service and can flat out-perform conventional organizations. Our people have built products for national deployments d's largest TV and Internet companies and leading real estate, financial and government organizations. We are looking for passionate IT professionals who are curious about data, who love solving problems for customers and who want to grow their careers.
-
-Join our growing team!
+Circle Medical is an equal-opportunity employer and affirmatively seeks diversity in its workforce. Circle Medical recruits qualified applicants and advances in the employment of its employees without regard to race, color, religion, gender, sex, sexual orientation, gender identity, gender expression, age, disability, genetic information, ethnic or national origin, marital status, veteran status, or any other status protected by law.

@@ -4,10 +4,10 @@ from autoapply.linkedin.constants import LINKEDIN_DIR
 USE_MAX_TIMER = True
 # USE_MAX_TIMER = False
 ONLY_PYTHON_JOBS = False
-STOP_AFTER_EVERY_JOB = True
+STOP_AFTER_EVERY_JOB = False
 # STOP_AFTER_EVERY_JOB = True
-PAUSE_AFTER_FAILURE = True
-PAUSE_AFTER_ANSWERING_QUESTIONS = True
+PAUSE_AFTER_FAILURE = False
+PAUSE_AFTER_ANSWERING_QUESTIONS = False
 START_AT_JOB_NUMBER_X = 3  # Set to any number besides -1, to override what job number is started at
 # Test Automation USA
 base_urls = [

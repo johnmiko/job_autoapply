@@ -13,7 +13,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 
-from autoapply.linkedin.answers_broad import question_is_generic
+from autoapply.linkedin.answers_broad import question_is_generic, question_mapper
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType, GLOBAL_LOG_LEVEL
 from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
@@ -99,7 +99,10 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
             q_text = q_text.replace(':', '').replace('"', "")
             q_text = q_text.encode('latin1', 'ignore').decode("latin1")
             logger.debug(question.text)
-            generic_answer = question_is_generic(question.text, url)
+            question_mapped = question_mapper(question.text)
+            if question_mapped != question.text:
+                q_text = question_mapped
+            generic_question, generic_answer = question_is_generic(question.text)
             if generic_answer != 'answer not found':
                 q_m.answer_question(generic_answer)
                 continue
@@ -125,11 +128,10 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                 #         EC.element_to_be_clickable((By.XPATH, "//li"))).click()
                 # except (TimeoutException, StaleElementReferenceException, ElementClickInterceptedException):
                 #     continue
+            question_formatted = q_text.split(':')[0].replace('"', '')
             for index, row in q_and_as_df.iterrows():
                 existing_question, existing_answer, times_asked = row[['question', 'answer', 'times_asked']]
-
                 existing_question_formatted = str(existing_question).lower().split(':')[0].replace('"', '')
-                question_formatted = q_text.split(':')[0].replace('"', '')
                 if existing_question_formatted == question_formatted:
                     # Can switch to this now
                     logger.debug("q_and_as_df[q_and_as_df['question'] == question_formatted]")
@@ -198,6 +200,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                     q_text2 = q_text.encode('latin1', 'ignore').decode("latin1").replace('"', '\"')
                     q_and_as_df = pd.concat([q_and_as_df, pd.DataFrame({'question': [q_text2]})])
                     logger.info(f'\tnew question: "{q_text2}"')
+                    logger.info(f'\tnew question: "{question.text}"')
                 except UnicodeEncodeError:
                     # Got error when question was in arabic
                     continue
@@ -213,7 +216,11 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
     df4 = q_and_as_df[q_and_as_df['answer'].isna()]
     df5 = q_and_as_df[~q_and_as_df['answer'].isna()]
     df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
-    df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
+    try:
+        df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
+    except:
+        time.sleep(1)
+        df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
     should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS, "pause after answering questions")
     return tried_to_answer_questions, old_questions
 

@@ -173,7 +173,7 @@ try:
                             logger.debug(f'{h3.text=}, skipping page')
                     except StaleElementReferenceException:
                         pass
-                logger.info(f'\ton page {h3s[0].text}')
+                logger.debug(f'\ton page {h3s[0].text}')
                 if h3s[0].text == 'Home address':
                     a = 1
                 for button in buttons_list:

@@ -5,13 +5,14 @@ from os.path import isfile, join
 
 import pandas as pd
 
+from cover_letter.inputs import COVER_LETTER_TEXT_DIR
 from cover_letter.utils import get_posting_lines
 
 pd.options.display.width = 0
 posting = 'job_posting.txt'
-company = 'Hexagon'
-job_title = 'Autonomy Research Engineer'
-company_dir = f'postings/{company.lower().replace(" ", "_")}/'
+company = 'Circle Medical'
+job_title = 'Senior Data Engineer'
+company_dir = f'{COVER_LETTER_TEXT_DIR}postings/{company.lower().replace(" ", "_")}/'
 job_title_as_path = job_title.lower().replace(" ", "_")
 job_title_fname = f'{job_title_as_path}.txt'
 fname = f'{company_dir}{job_title_fname}'
@@ -20,12 +21,12 @@ if not os.path.exists(company_dir):
 
 files = [f for f in listdir(company_dir) if isfile(join(company_dir, f))]
 multiple_jobs_at_company = False
+folder = company_dir + job_title_as_path
+if not os.path.exists(folder):
+    os.makedirs(folder)
 for f in files:
     if f not in ['generated.txt', 'sent.txt', job_title_fname]:
         multiple_jobs_at_company = True
-        folder = company_dir + job_title_as_path
-        if not os.path.exists(folder):
-            os.makedirs(folder)
         fname = f'{folder}/posting.txt'
         if not os.path.isfile(fname):
             shutil.copyfile(posting, fname)

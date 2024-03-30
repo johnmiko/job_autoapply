@@ -1,19 +1,42 @@
 import re
 
 
-def question_is_generic(question_text, url):
+def question_mapper(question_text):
     text = question_text.lower()
     if is_previous_employee(text):
-        return answer_previously_employed_by_company()
+        return "previously been employed by this company"
     elif 'salary' in text:
-        return answer_salary_question(url)
+        return "salary"
     elif is_allowed_to_work_in_canada(text):
-        return 'yes'
+        return "allowed to work in canada"
     elif 'gender' in text:
-        return 'male'
+        return "what is your gender"
     elif 'disability' in text:
-        return 'yes'
-    return 'answer not found'
+        return "do you have a disability"
+    elif "how did hear" in text:
+        "how did you hear about us"
+    return question_text
+
+
+def question_is_generic(question_text):
+    text = question_text.lower()
+    if is_previous_employee(text):
+        return "previously been employed by this company", "No"
+    elif 'salary' in text:
+        return "salary", "130000"
+    elif is_allowed_to_work_in_canada(text):
+        return "allowed to work in canada", 'yes'
+    elif 'gender' in text:
+        return "what is your gender", 'male'
+    elif 'disability' in text:
+        return "do you have a disability", 'yes'
+    elif "how did hear" in text:
+        "how did you hear about us", "linkedin"
+    return 'question not found', 'answer not found'
+
+
+def is_allowed_to_work_in_canada(text):
+    return (re.search('legally.*to work.*canada', text)) or (re.search('eligible.*to work.*canada', text))
 
 
 def is_allowed_to_work_in_canada(text):
@@ -24,19 +47,6 @@ def is_previous_employee(text):
     return ('previously been employed' in text) \
         or (re.search('are currently a.*employee', text)) \
         or ("êtes-vous présentement à l'emploi de" in text)
-
-
-def answer_salary_question(url):
-    if 'developer' in url:
-        return 125000
-    # elif 'assistant' in url:
-    else:
-        salary = 125000
-    return salary
-
-
-def answer_previously_employed_by_company():
-    return 'No'
 
 
 def gender(question_text):
