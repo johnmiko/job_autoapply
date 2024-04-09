@@ -488,7 +488,7 @@ def have_applied_for_too_many_jobs_today():
     mask = df['date'] > (datetime.now() - timedelta(hours=24))
     num_jobs_applied_for = mask.sum()
     logger.info(f"jobs applied for in past 24 hours {num_jobs_applied_for}")
-    max_jobs = random.randint(90, 95)
+    max_jobs = random.randint(45, 50)
     if num_jobs_applied_for > max_jobs:
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True

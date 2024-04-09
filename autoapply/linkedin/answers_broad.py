@@ -32,6 +32,8 @@ def question_is_generic(question_text):
         return "do you have a disability", 'yes'
     elif "how did hear" in text:
         "how did you hear about us", "linkedin"
+    elif "how did you hear" in text:
+        "how did you hear about us", "linkedin"
     return 'question not found', 'answer not found'
 
 

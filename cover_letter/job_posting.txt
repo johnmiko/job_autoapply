@@ -1,51 +1,75 @@
-ABOUT US
+About the job
+Motion is growing fast (3x YoY), our product is sticky (120%+ Net Revenue Retention), and we recently raised $6M in seed funding. But we’re just getting started and we need your help.
 
-Circle Medical is the fastest-growing telemedicine provider in the US and has seen incredible growth of over 200% per year in each of the previous two years.
+We’re building a new category of software to bridge the gap between performance marketers and creative teams. Our creative analytics platform offers fast, visual reporting for Meta, TikTok, and YouTube ads to help creative teams understand what’s working and why.
 
-Circle Medical is a venture-backed Y-Combinator healthcare startup on a mission to bring quality, delightful primary care to everyone on the planet. Built by top-tier physicians, engineers, and designers, our medical practice and underlying technology have pioneered how people find and receive care.
+Our team is still small, with 10 engineers and 40 company wide. After a successful 2023 we’re growing the early team to enable more product growth this year and beyond.
 
-Our focus on building directly for our patients and providers to address serious care accessibility issues has enabled us to grow over 3X year-over-year. We’re now using our most recent round of funding from WELL Health, backed by Sir Li Ka-shing, to continue building out our hybrid in-clinic and telemedicine model across all fifty states.
+Role Overview
 
-The Engineering Team and what makes Circle Medical the right move for you?
-More about us can be found on our website.
+As Motion's first QA Engineer, you will play a critical role in embedding a culture of quality and efficiency within our engineering team. Your mission will be to enhance the velocity and quality of our feature releases. You will be pivotal in establishing test automation practices, running manual tests on new features, and working cross-functionally to define our quality processes.
 
-DESCRIPTION
+Key Responsibilities
 
-We are seeking our first talented Senior Data Engineer to join our dynamic team, based out of our offices in Montreal, Quebec. As our first dedicated Data Engineer, you will play a pivotal role in building and maintaining a scalable data infrastructure that empowers the entire company with data-driven decision-making capabilities.
-WHAT YOU’LL DO
-Organize, consolidate and organize large and growing data sets that are currently spread out within multiple systems
-Make recommendations and implement event systems that could empower multiple teams at scale
-Leverage modern cloud-based data platforms
-Orchestrate data pipelines for multiple stakeholders efficiently
-Forecast the technical needs of the company from our aggressive growth projections
-Work closely with other teams to ensure data integrity, data privacy, and HIPAA/CPRA compliance of all our systems
-WHAT YOU’LL BRING
-6+ years experience as a Data Engineer.
-Technical expertise with data models, data mining, segmentation techniques, and infrastructure within Cloud-based solutions (e.g. AWS, Azure, GCP).
-Experience working with cloud Data Warehouse solutions (e.g., Snowflake, Redshift, BigQuery, Azure).
-Ability to take ownership.
-Experience working with Agile development methodologies.
-Excellent problem-solving, communication, and organizational skills.
-WHAT WILL GIVE YOU AN EDGE
-Communication and collaboration skills that demonstrate you are a team player
-Ability to work in a high growth company
-Familiarity with data tools that intersect data engineering and business intelligence
-Familiarity with HIPAA compliance requirements
-Background with machine learning frameworks and data science tools, as well as data visualization tools
-Experience in similar large scale and high growth data engineering projects
-Experience with Startups / VC funded companies
-COMPENSATION
+ Lead the initiative in writing test automation, aiming to continuously automate tests on stable parts of the application to catch regressions.
+ Perform thorough manual testing where necessary, while progressively minimizing this need through automation.
+ Collaborate closely with engineers to integrate QA processes into the CI/CD pipeline, enhancing the delivery rate and quality of releases.
+ Work cross-functionally within the product & engineering team to define, establish, and refine QA processes, ensuring they are lean and scalable as the company grows.
+ Contribute and execute well-structured test plans and cases for both new features and existing functionality.
+ Utilize a variety of tools and processes to benchmark and test performance, identifying bottlenecks and recommending improvements.
 
-In alignment with our values, Circle Medical has transparent salaries based on merit-based output levels, and our total rewards include equity options.
+Requirements
 
-This is a full-time, salaried exempt position with an annual salary range of $161,000 to $197,000 CAD plus generous vacation, and full health benefits 
+ Proven experience in QA, with a strong background in both test automation and manual testing.
+ Solid technical skills, with the ability to write and maintain automation scripts.
+ Familiar with testing Node.js ecosystem applications
+ Excellent problem-solving skills and the ability to work cross-functionally in a dynamic and fast-paced environment.
+ Prior startup experience, with the ability to adapt and thrive in evolving situations.
+ Strong attention to detail with an eye for visual inconsistencies.
+ Experience with CI/CD tools and processes is a plus.
+ Knowledge of performance benchmarking and testing is a plus.
 
-Additional benefits:
-- Flexible vacation & generous sick leave after 90-days 
-- Paid bonus holidays in addition to local statutory holidays
-- $500 annual education and development reimbursement 
-- Medical, Dental, Vision, Disability & Life insurance benefits for eligible Employees, enhancing local provincial coverage (eligibility after 90-days)
-- Wellness perks, including discounts for mental health programs and online wellness courses
-- Weekly in-office team lunches in Montreal!
+About You
 
-Circle Medical is an equal-opportunity employer and affirmatively seeks diversity in its workforce. Circle Medical recruits qualified applicants and advances in the employment of its employees without regard to race, color, religion, gender, sex, sexual orientation, gender identity, gender expression, age, disability, genetic information, ethnic or national origin, marital status, veteran status, or any other status protected by law.
+We are looking for someone who is excited to join our small, but growing, startup to take an active role in shaping what quality means at Motion. You have a strong understanding of web products, with a keen sense of how they should function to provide the best user experience.
+
+You view the QA role as a leverage point to increase product releases and development velocity, rather than a gatekeeper in the release process. A high-agency mindset is crucial, you will be setting the standards and processes. Your technical knowledge means you are a hands-on senior QA automation engineer, who meets the engineers where they are to lead them in quality initiatives.
+
+Motion is a fully remote company but we work closely as a team. We are looking for someone who has some overlap with both EST and CET, somewhere between UTC-5 and UTC+1.
+
+Week 1, You Will
+
+ Onboard with our CS team to really get to grips with the product and our customers.
+ Pair with a senior dev to get to grips with our process
+ Have daily support from a member of the product & engineering team
+
+In 30 Days, You Will
+
+ Actively be testing new features and providing feedback.
+ Start to write detailed test plans for core stable parts of the application.
+ Be an observer in the specification writing process with an eye towards quality.
+ Start building out the framework and core pieces for automated testing.
+
+In 90 Days, You Will
+
+ Have a deep understanding of our product and how the application is used.
+ Contribute to the process around acceptance criteria
+ Maintain an automated test suite for the core parts of the application.
+ Be testing new feature releases.
+
+In 180 Days (and Beyond), You Will
+
+ Have built out complete foundations of test automation.
+ Have helped introduce test coverage and quality metrics as a standard part of the development process.
+
+What You'll Love About Motion
+
+ We offer very competitive compensation and have a flexible range we can work within, plus equity.
+ Fully remote team with incredible offsites and retreats to build camaraderie. Our last retreat was a week-long stay at Lake Muskoka.
+ We've found product market fit but we're still so early that you will have a major impact on all the work left to do.
+ The product & engineering team is small, 10 devs, but established enough that we can ship serious features regularly.
+ We’re a tech company so we have all the standard startup benefits: Great vacation policies, health care, modern tech, home office budget etc.
+ Our team is ambitious, talented and low on egos
+ A sense of urgency. We prioritize shipping quickly to users, pushing new features and iterations every two weeks. Moving fast is baked into the process.
+
+We want Motion’s impact in the creative-tech industry to be up there with the Webflows, Canvas and Figmas of the world. We have a deep understanding of the problem space through many years of building in the industry. We know exactly what it’s going to take for Motion to win. We’d love for you to join us on the ride!

@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import Page
-from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, COMPLETED_FILENAME, \
+from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
     DO_NOT_APPLY_AT_THESE_COMPANIES
 from autoapply.linkedin.inputs import (base_urls, ONLY_PYTHON_JOBS, question_file, unanswered_question_file,
                                        USE_MAX_TIMER, \
@@ -31,16 +31,14 @@ could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
 
-with open(COMPLETED_FILENAME, 'r') as f:
-    urls_complete = [line.strip('\n') for line in f]
 try:
     for base_url in base_urls:
-        if base_url in urls_complete:
-            continue
         while True:
             if have_applied_for_too_many_jobs_today():
                 break
             if next_url:
+                # coded but not really using
+                # would depend on how we want to do things, apply for jobs in order? Or 1 to 1?
                 job_number = 0
                 next_url = False
                 break
