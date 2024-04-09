@@ -240,15 +240,14 @@ def should_skip_company(dm, list_of_companies_to_skip):
     return False
 
 
-def python_part_of_job(dm):
-    job_title = dm.driver.find_element('xpath', "//h2[@class='t-24 t-bold jobs-unified-top-card__job-title']")
-    if 'python' in job_title.text.lower():
+def x_in_job_title_or_description(dm, x, job_title):
+    if x in job_title.lower():
         return True
     # check if job description has the word python in it
     job_details = dm.driver.find_element('xpath', "//div[@id='job-details']")
-    if 'python' in job_details.text.lower():
+    if x in job_details.text.lower():
         return True
-    logger.info('skipping: python not in job title or description')
+    logger.info(f'skipping: {x} not in job title or description')
     return False
 
 

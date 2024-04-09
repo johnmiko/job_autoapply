@@ -3,7 +3,7 @@ from autoapply.linkedin.constants import LINKEDIN_DIR
 
 USE_MAX_TIMER = True
 # USE_MAX_TIMER = False
-ONLY_PYTHON_JOBS = False
+JOB_MUST_CONTAIN = "automation"
 STOP_AFTER_EVERY_JOB = False
 # STOP_AFTER_EVERY_JOB = True
 PAUSE_AFTER_FAILURE = False
