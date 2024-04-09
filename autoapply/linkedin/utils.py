@@ -16,7 +16,7 @@ from autoapply.linkedin.answers_broad import question_is_generic, question_mappe
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
 from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
-    APPLIED_FOR_FILE
+    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -177,8 +177,8 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                         text_box = question.find_element('xpath', ".//textarea")
                     with suppress(InvalidElementStateException):
                         text_box.clear()
-                    # Uncomment to guess 0
-                    # text_box.send_keys(0)
+                    if GUESS_0_FOR_UNANSWERED:
+                        text_box.send_keys(0)
                 try:
                     q_text2 = q_text.encode('latin1', 'ignore').decode("latin1").replace('"', '\"')
                     q_and_as_df = pd.concat([q_and_as_df, pd.DataFrame({'question': [q_text2]})])

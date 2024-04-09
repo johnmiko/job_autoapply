@@ -113,5 +113,7 @@ intro = f"""Dear Hiring Manager,
 I am writing to apply for the {JOB_TITLE} position at {COMPANY}. """
 
 cover_letter_text = intro + PARAGRAPH_1 + content + OUTRO
-with open(f'{job_dir}/generated.txt', 'w') as f:
+generated_cover_letter_filename = f'{job_dir}/generated.txt'
+with open(generated_cover_letter_filename, 'w') as f:
     f.write(cover_letter_text)
+logger.info(f"created cover letter {generated_cover_letter_filename}")

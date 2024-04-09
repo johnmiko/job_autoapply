@@ -9,6 +9,7 @@ STOP_AFTER_EVERY_JOB = False
 PAUSE_AFTER_FAILURE = False
 PAUSE_AFTER_ANSWERING_QUESTIONS = False
 START_AT_JOB_NUMBER_X = 0  # Set to any number besides -1, to override what job number is started at
+GUESS_0_FOR_UNANSWERED = True
 # Test Automation USA
 base_urls = [
     "https://www.linkedin.com/jobs/search/?currentJobId=3806794493&f_AL=true&f_WT=2&geoId=101174742&keywords=test"
