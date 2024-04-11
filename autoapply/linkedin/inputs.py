@@ -8,13 +8,11 @@ STOP_AFTER_EVERY_JOB = False
 # STOP_AFTER_EVERY_JOB = True
 PAUSE_AFTER_FAILURE = False
 PAUSE_AFTER_ANSWERING_QUESTIONS = False
-START_AT_JOB_NUMBER_X = 0  # Set to any number besides -1, to override what job number is started at
-GUESS_0_FOR_UNANSWERED = True
+START_AT_JOB_NUMBER_X = 10  # Set to any number besides -1, to override what job number is started at
+GUESS_0_FOR_UNANSWERED = False
 # Test Automation USA
 base_urls = [
-    "https://www.linkedin.com/jobs/search/?currentJobId=3806794493&f_AL=true&f_WT=2&geoId=101174742&keywords=test"
-    "%20automation&location=Canada&origin=JOB_SEARCH_PAGE_LOCATION_HISTORY&refresh=true",
-    "https://www.linkedin.com/jobs/search/?currentJobId=3840550772&f_AL=true&f_WT=2&geoId=103644278&keywords=test%20automation&location=United%20States&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true"
+    "https://www.linkedin.com/jobs/search/?f_AL=true&f_WT=2&geoId=103644278&keywords=test%20automation&location=United%20States&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true"
 ]
 DO_NOT_APPLY_AT_THESE_COMPANIES = ['smartd']  # put in your current company
 TEXT_DIR = "D:/Users/johnm/OneDrive/ccode_files/job_autoapply/linkedin/text/"

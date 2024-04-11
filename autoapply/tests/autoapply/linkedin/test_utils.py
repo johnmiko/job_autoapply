@@ -61,3 +61,11 @@ def test_get_questions_df():
     fname = 'tests/test_utils/test_questions_file.txt'
     q_and_as_list = get_questions_df(fname)
     assert False == True
+
+
+def test_questions_answers():
+    questions = ['How many years of work experience do you have with Svelte?',
+                 'What is your level of proficiency in English?\nWhat is your level of proficiency in English?\nRequired\n       Select an option\n       None\n       Conversational\n       Professional\n       Native or bilingual\n  ',
+                 'How many years of experience in building real-time data-centric web applications?',
+                 'Have you built client and server-side web socket-based applications?\nHave you built client and server-side web socket-based applications?\nRequired\n       Select an option\n       Yes\n       No\n   Please enter a valid answer',
+                 'How many years of experience do you have building typescript web applications?']

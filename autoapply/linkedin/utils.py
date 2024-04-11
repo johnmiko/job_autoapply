@@ -65,22 +65,10 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
             logger.debug('\n' + question.text.replace("\n", " - "))
             logger.debug(f'{question.tag_name=}')
             q_m = QuestionManager(question)
-            # having issue with this question
-            # 'are legally allowed to work canadayesno'
-            # 'Are you legally allowed to work in Canada\nRequired\nYes\nNo'
-            question_text = question.text
-            if q_m.question_type == QuestionType.radio:
-                question_text = question_text.lower().split('required')[0].strip()
-            q_text = clean_question_text(question_text)
-            if q_m.question_type == QuestionType.dropdown:
-                q_text = q_text.split('select an option')[0].strip()
-            # question_type, q_text, text_options, select = get_question_type(question)
+            q_text = q_m.q_text
             question_type = q_m.question_type
             question_is_new = True
             q_text = remove_fluff_from_sentence(q_text)
-            q_text = q_text.strip().replace('\n', '')
-            q_text = q_text.replace(':', '').replace('"', "")
-            q_text = q_text.encode('latin1', 'ignore').decode("latin1")
             logger.debug(question.text)
             question_mapped = question_mapper(question.text)
             if question_mapped != question.text:
@@ -198,10 +186,14 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
     q_and_as_df = q_and_as_df.sort_values('times_asked', ascending=False)
     df4 = q_and_as_df[q_and_as_df['answer'].isna()]
     df5 = q_and_as_df[~q_and_as_df['answer'].isna()]
-    df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
+    try:
+        df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
+    except PermissionError:
+        time.sleep(1)
+        df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
     try:
         df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
-    except:
+    except PermissionError:
         time.sleep(1)
         df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
     should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS, "pause after answering questions")
@@ -240,12 +232,19 @@ def should_skip_company(dm, list_of_companies_to_skip):
     return False
 
 
-def x_in_job_title_or_description(dm, x, job_title):
-    if x in job_title.lower():
+def check_substring(string, substrings):
+    for sub in substrings:
+        if sub in string:
+            return True
+    return False
+
+
+def x_in_job_title_or_description(dm, x: str, job_title: str):
+    x = ["automation", "test", "qa"]
+    if any(sub in job_title.lower() for sub in x):
         return True
-    # check if job description has the word python in it
     job_details = dm.driver.find_element('xpath', "//div[@id='job-details']")
-    if x in job_details.text.lower():
+    if any(sub in job_details.text.lower() for sub in x):
         return True
     logger.info(f'skipping: {x} not in job title or description')
     return False
@@ -368,6 +367,9 @@ def question_is_required(question_text):
 def remove_fluff_from_sentence(text):
     for fluff in QUESTION_FLUFF:
         text = text.replace(fluff, '')
+    text = text.strip().replace('\n', '')
+    text = text.replace(':', '').replace('"', "")
+    text = text.encode('latin1', 'ignore').decode("latin1")
     return text
 
 
@@ -396,11 +398,18 @@ def put_answer_in_question_dropdown(answer, text_options, select):
         select.select_by_index(index)
 
 
-class QuestionManager():
+class QuestionManager:
     def __init__(self, question_element: WebElement):
         self.element = question_element
         self.text = question_element.text.lower()
         self.question_type = get_question_type(question_element)
+        question_text = self.text
+        if self.question_type == QuestionType.radio:
+            question_text = question_text.lower().split('required')[0].strip()
+        q_text = clean_question_text(question_text)
+        if self.question_type == QuestionType.dropdown:
+            q_text = q_text.split('select an option')[0].strip()
+        self.q_text = q_text
 
     def answer_question(self, answer):
         if self.question_type == QuestionType.text:
@@ -487,7 +496,7 @@ def have_applied_for_too_many_jobs_today():
     mask = df['date'] > (datetime.now() - timedelta(hours=24))
     num_jobs_applied_for = mask.sum()
     logger.info(f"jobs applied for in past 24 hours {num_jobs_applied_for}")
-    max_jobs = random.randint(45, 50)
+    max_jobs = random.randint(70, 75)
     if num_jobs_applied_for > max_jobs:
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True
