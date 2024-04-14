@@ -6,9 +6,9 @@
 # from constants import QUESTION_FLUFF
 #
 #
-# def get_questions_and_answers(question_file):
+# def get_questions_and_answers(QUESTIONS_FILE):
 #     # Also reorders questions file
-#     with open(question_file, 'r') as qf:
+#     with open(QUESTIONS_FILE, 'r') as qf:
 #         lines = []
 #         for line in qf:
 #             if ',' not in line:
@@ -20,15 +20,15 @@
 #         # Remove duplicates if they exist and keep order
 #         lines = list(dict.fromkeys(lines))
 #
-#     df = pd.read_csv(question_file, delimiter=',', header=None, encoding='latin1')
+#     df = pd.read_csv(QUESTIONS_FILE, delimiter=',', header=None, encoding='latin1')
 #     df3 = df.sort_values([1, 0], ascending=False)
-#     # df3.to_csv(question_file, sep=',', header=None, index=False)
+#     # df3.to_csv(QUESTIONS_FILE, sep=',', header=None, index=False)
 #     df3[0] = df3[0].str.lower()
 #     for fluff in QUESTION_FLUFF:
 #         df3[0] = df3[0].str.replace(fluff, '')
 #     df3[0] = df3[0].str.strip()
 #     df3 = df3.drop_duplicates(0)
-#     df3.to_csv(question_file, sep=',', header=None, index=False, encoding='latin1')
+#     df3.to_csv(QUESTIONS_FILE, sep=',', header=None, index=False, encoding='latin1')
 #     # df3.to_csv('temp.txt', sep=',', header=None, index=False)
 #     q_and_as = []
 #     for line in lines:

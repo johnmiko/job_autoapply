@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
 from autoapply.indeed.constants import JOB_NUMBER_FILENAME, INDEED_DIR, Page, STATS_FILENAME
-from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, question_file, unanswered_question_file, USE_MAX_TIMER, \
+from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, USE_MAX_TIMER, \
     APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
@@ -24,10 +24,10 @@ logger, c_handler = create_logger(__name__)
 
 logger.info('starting')
 # page 2
-base_urls = [
+BASE_URLS = [
     'https://ca.indeed.com/jobs?q=IT+%2440%2C000&sc=0kf%3Aattr%28DSQF7%29%3B&lang=en&start=10&pp=gQAPAAAAAAAAAAAAAAAB8wlwqwAtAQACw_hhcfW9JhUr1lcpAMKf_iWm-ImmcHEvwaQKiYKaoIz9a9xLvmEfYil2AAA&vjk=720ae99d5640aa08&advn=4672087812901408']
 # page 1
-base_urls = [
+BASE_URLS = [
     'https://ca.indeed.com/jobs?q=IT+%2440%2C000&sc=0kf%3Aattr%28DSQF7%29%3B&lang=en&pp=gQAAAAAAAAAAAAAAAAAB8wlwqwADAAABAAA&vjk=492a502e45e2c95a']
 start = timer()
 # job_number = get_last_job_applied_for_page_number(JOB_NUMBER_FILENAME)
@@ -45,7 +45,7 @@ reset_job_number = False
 with open(INDEED_DIR + '/text/completed.txt', 'r') as f:
     urls_complete = [line.strip('\n') for line in f]
 try:
-    for base_url in base_urls:
+    for base_url in BASE_URLS:
         if base_url in urls_complete:
             continue
         while True:
@@ -207,7 +207,7 @@ try:
             time.sleep(1)
             # Find next/review button
             # Need to loop until error
-            q_and_as_df = get_questions_df(question_file, unanswered_question_file)
+            q_and_as_df = get_questions_df(QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE)
             valid_button_text = ['Next', 'Review', 'Submit application']
             loop_timer_start = timer()
             tried_to_answer_questions = False
@@ -262,7 +262,7 @@ try:
                         DM.driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", popup)
                     #
                     tried_to_answer_questions, old_questions = answer_questions(questions, tried_to_answer_questions,
-                                                                                q_and_as_df, question_file,
+                                                                                q_and_as_df, QUESTIONS_FILE,
                                                                                 old_questions)
                 try:
                     buttons_list = DM.find_elements('xpath', 'button', 'class',

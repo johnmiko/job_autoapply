@@ -9,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import Page
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
-    DO_NOT_APPLY_AT_THESE_COMPANIES, base_urls, question_file, unanswered_question_file, APPLIED_FOR_FILE, ERROR_FILE, \
+    DO_NOT_APPLY_AT_THESE_COMPANIES, BASE_URLS, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, APPLIED_FOR_FILE, ERROR_FILE, \
     JOB_MUST_CONTAIN, USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
@@ -29,7 +29,7 @@ applied_for_cur_run = 0
 next_url = False
 
 try:
-    for base_url in base_urls:
+    for base_url in BASE_URLS:
         while True:
             if have_applied_for_too_many_jobs_today():
                 break
@@ -118,7 +118,7 @@ try:
             # time.sleep(1)
             # Find next/review button
             # Need to loop until error
-            q_and_as_df = get_questions_df(question_file, unanswered_question_file)
+            q_and_as_df = get_questions_df(QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE)
             valid_button_text = ['Next', 'Review', 'Submit application']
             loop_timer_start = timer()
             tried_to_answer_questions = False
@@ -213,7 +213,7 @@ try:
                 if try_to_submit_form:
                     tried_to_answer_questions, old_questions = answer_questions(DM, questions,
                                                                                 tried_to_answer_questions,
-                                                                                q_and_as_df, question_file,
+                                                                                q_and_as_df, QUESTIONS_FILE,
                                                                                 old_questions, url)
             now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
             if submitted:

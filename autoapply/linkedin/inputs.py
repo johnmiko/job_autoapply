@@ -6,28 +6,24 @@ from dotenv import dotenv_values
 from autoapply.linkedin.constants import LINKEDIN_DIR
 
 config = dotenv_values(".env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
-USE_MAX_TIMER = ast.literal_eval(config["USE_MAX_TIMER"])
-# USE_MAX_TIMER = False
-JOB_MUST_CONTAIN = config["JOB_MUST_CONTAIN"]
-STOP_AFTER_EVERY_JOB = ast.literal_eval(config["STOP_AFTER_EVERY_JOB"])
-# STOP_AFTER_EVERY_JOB = True
-PAUSE_AFTER_FAILURE = ast.literal_eval(config["PAUSE_AFTER_FAILURE"])
-PAUSE_AFTER_ANSWERING_QUESTIONS = ast.literal_eval(config["PAUSE_AFTER_ANSWERING_QUESTIONS"])
-START_AT_JOB_NUMBER_X = int(config["START_AT_JOB_NUMBER_X"])
-GUESS_0_FOR_UNANSWERED = ast.literal_eval(config["GUESS_0_FOR_UNANSWERED"])
-# Test Automation USA
-base_urls = [
-    "https://www.linkedin.com/jobs/search/?f_AL=true&f_WT=2&geoId=103644278&keywords=test%20automation&location=United%20States&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true"
-]
-DO_NOT_APPLY_AT_THESE_COMPANIES = ['smartd']  # put in your current company
-TEXT_DIR = "D:/Users/johnm/OneDrive/ccode_files/job_autoapply/linkedin/text/"
+USE_MAX_TIMER: bool = ast.literal_eval(config["USE_MAX_TIMER"])
+JOB_MUST_CONTAIN: str = config["JOB_MUST_CONTAIN"]
+STOP_AFTER_EVERY_JOB: bool = ast.literal_eval(config["STOP_AFTER_EVERY_JOB"])
+PAUSE_AFTER_FAILURE: bool = ast.literal_eval(config["PAUSE_AFTER_FAILURE"])
+PAUSE_AFTER_ANSWERING_QUESTIONS: bool = ast.literal_eval(config["PAUSE_AFTER_ANSWERING_QUESTIONS"])
+START_AT_JOB_NUMBER_X: int = int(config["START_AT_JOB_NUMBER_X"])
+GUESS_0_FOR_UNANSWERED: bool = ast.literal_eval(config["GUESS_0_FOR_UNANSWERED"])
+BASE_URLS = ast.literal_eval(config["BASE_URLS"])
+DO_NOT_APPLY_AT_THESE_COMPANIES = ast.literal_eval(
+    config["DO_NOT_APPLY_AT_THESE_COMPANIES"])  # put in your current company
+TEXT_DIR = config["TEXT_DIR"]
 if not TEXT_DIR:
     TEXT_DIR = LINKEDIN_DIR + '/text/'
-APPLIED_FOR_FILE = f'{TEXT_DIR}applied_for.csv'
-ERROR_FILE = f'{TEXT_DIR}errors.txt'
-STATS_FILENAME = f"{TEXT_DIR}stats.txt"
-JOB_NUMBER_FILENAME = f"{TEXT_DIR}job_number.txt"
-question_file = f'{TEXT_DIR}questions.txt'
-unanswered_question_file = f'{TEXT_DIR}unanswered_questions.txt'
-REFERENCES_FILE = f'{TEXT_DIR}references.txt'
-SECONDS_TO_TRY_FOR = 90
+APPLIED_FOR_FILE = f'{TEXT_DIR}{config["APPLIED_FOR_FILE"]}'
+ERROR_FILE = f'{TEXT_DIR}{config["ERROR_FILE"]}'
+STATS_FILENAME = f'{TEXT_DIR}{config["STATS_FILENAME"]}'
+JOB_NUMBER_FILENAME = f'{TEXT_DIR}{config["JOB_NUMBER_FILENAME"]}'
+QUESTIONS_FILE = f'{TEXT_DIR}{config["QUESTIONS_FILE"]}'
+UNANSWERED_QUESTIONS_FILE = f'{TEXT_DIR}{config["UNANSWERED_QUESTIONS_FILE"]}'
+REFERENCES_FILE = f'{TEXT_DIR}{config["REFERENCES_FILE"]}'
+SECONDS_TO_TRY_FOR = f'{TEXT_DIR}{config["SECONDS_TO_TRY_FOR"]}'

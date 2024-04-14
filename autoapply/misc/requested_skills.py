@@ -1,10 +1,10 @@
 # import pandas as pd
 import pandas as pd
 
-from autoapply.linkedin import question_file
+from autoapply.linkedin import QUESTIONS_FILE
 
 # may want to just add a category into the questions file, start here for now
-df = pd.read_csv(question_file, delimiter=',', encoding='latin1')
+df = pd.read_csv(QUESTIONS_FILE, delimiter=',', encoding='latin1')
 # not skills
 df['category'] = 'skill'
 misc = ['city', 'bachelor', 'street address', 'english', 'how did hear about this job', 'phone country code', 'e-mail',

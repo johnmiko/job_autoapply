@@ -15,7 +15,7 @@ from selenium.webdriver.support.select import Select
 from autoapply.linkedin.answers_broad import question_is_generic, question_mapper
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
-from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
+from autoapply.linkedin.inputs import UNANSWERED_QUESTIONS_FILE, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
     APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE, START_AT_JOB_NUMBER_X, JOB_NUMBER_FILENAME
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
@@ -29,12 +29,12 @@ from autoapply.misc.utils import create_logger
 logger, c_handler = create_logger(__name__)
 
 
-def get_questions_df(question_file, unanswered_question_file):
-    df = pd.read_csv(question_file, delimiter=',', encoding='latin1')
+def get_questions_df(QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE):
+    df = pd.read_csv(QUESTIONS_FILE, delimiter=',', encoding='latin1')
     # Remove unanswered questions if any
     # Should only need done once, but was needed when the line of code did not exist
     df_answered = df[~df['answer'].isna()]
-    df_unanswered = pd.read_csv(unanswered_question_file, delimiter=',', encoding='latin1')
+    df_unanswered = pd.read_csv(UNANSWERED_QUESTIONS_FILE, delimiter=',', encoding='latin1')
     df3 = pd.concat([df_answered, df_unanswered])
     df3['question'] = df3['question'].str.lower()
     for fluff in QUESTION_FLUFF:
@@ -45,8 +45,8 @@ def get_questions_df(question_file, unanswered_question_file):
     df3 = df3.sort_values('times_asked', ascending=False)
     df4 = df3[df3['answer'].isna()]
     df5 = df3[~df3['answer'].isna()]
-    df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
-    df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
+    df4.to_csv(UNANSWERED_QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
+    df5.to_csv(QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
     df3 = df3.reset_index(drop=True)
     return df3
 
@@ -55,7 +55,7 @@ def is_radio_button_question(question):
     return len(question.find_elements('xpath', ".//input")) > 1
 
 
-def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, question_file, old_questions, url):
+def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUESTIONS_FILE, old_questions, url):
     if not tried_to_answer_questions:
         for question in questions:
             # if not question_is_required(question.text):
@@ -191,15 +191,15 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
     df4 = q_and_as_df[q_and_as_df['answer'].isna()]
     df5 = q_and_as_df[~q_and_as_df['answer'].isna()]
     try:
-        df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
+        df4.to_csv(UNANSWERED_QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
     except PermissionError:
         time.sleep(2)
-        df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
+        df4.to_csv(UNANSWERED_QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
     try:
-        df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
+        df5.to_csv(QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
     except PermissionError:
         time.sleep(1)
-        df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
+        df5.to_csv(QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
     should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS, "pause after answering questions")
     return tried_to_answer_questions, old_questions
 
@@ -322,9 +322,9 @@ def write_to_file(filename, mode, header, line):
             f.write(f'{line}\n')
 
 
-def get_questions_and_answers(question_file):
+def get_questions_and_answers(QUESTIONS_FILE):
     # Also reorders questions file
-    with open(question_file, 'r') as qf:
+    with open(QUESTIONS_FILE, 'r') as qf:
         lines = []
         for line in qf:
             if ',' not in line:
@@ -336,15 +336,15 @@ def get_questions_and_answers(question_file):
         # Remove duplicates if they exist and keep order
         lines = list(dict.fromkeys(lines))
 
-    df = pd.read_csv(question_file, delimiter=',', header=None, encoding='latin1')
+    df = pd.read_csv(QUESTIONS_FILE, delimiter=',', header=None, encoding='latin1')
     df3 = df.sort_values([1, 0], ascending=False)
-    # df3.to_csv(question_file, sep=',', header=None, index=False)
+    # df3.to_csv(QUESTIONS_FILE, sep=',', header=None, index=False)
     df3[0] = df3[0].str.lower()
     for fluff in QUESTION_FLUFF:
         df3[0] = df3[0].str.replace(fluff, '')
     df3[0] = df3[0].str.strip()
     df3 = df3.drop_duplicates(0)
-    df3.to_csv(question_file, sep=',', header=None, index=False, encoding='latin1')
+    df3.to_csv(QUESTIONS_FILE, sep=',', header=None, index=False, encoding='latin1')
     # df3.to_csv('temp.txt', sep=',', header=None, index=False)
     q_and_as = []
     for line in lines:
