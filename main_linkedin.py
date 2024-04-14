@@ -11,11 +11,10 @@ from autoapply.linkedin.constants import Page
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
     DO_NOT_APPLY_AT_THESE_COMPANIES, base_urls, question_file, unanswered_question_file, APPLIED_FOR_FILE, ERROR_FILE, \
     JOB_MUST_CONTAIN, USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
-from autoapply.linkedin.unused import get_last_job_applied_for_page_number
 from autoapply.linkedin.utils import click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
-    have_applied_for_too_many_jobs_today, x_in_job_title_or_description
+    have_applied_for_too_many_jobs_today, x_in_job_title_or_description, get_last_job_applied_for_page_number
 from autoapply.linkedin.utils import use_latest_resume
 from autoapply.misc.utils import create_logger
 

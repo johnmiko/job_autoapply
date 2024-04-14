@@ -16,7 +16,7 @@ from autoapply.linkedin.answers_broad import question_is_generic, question_mappe
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
 from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
-    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE
+    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE, START_AT_JOB_NUMBER_X, JOB_NUMBER_FILENAME
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -505,3 +505,15 @@ def have_applied_for_too_many_jobs_today():
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True
     return False
+
+
+def get_last_job_applied_for_page_number():
+    if START_AT_JOB_NUMBER_X != -1:
+        return START_AT_JOB_NUMBER_X
+    with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
+        job_number_str = jobf.read()
+    if job_number_str == '':
+        job_number = 0
+    else:
+        job_number = int(job_number_str)
+    return job_number
