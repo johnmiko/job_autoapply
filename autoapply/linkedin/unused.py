@@ -1,4 +1,4 @@
-from autoapply.linkedin.inputs import START_AT_JOB_NUMBER_X, JOB_NUMBER_FILENAME
+from autoapply.linkedin.inputs import JOB_NUMBER_FILENAME, START_AT_JOB_NUMBER_X
 
 
 def get_last_job_applied_for_page_number():

@@ -41,10 +41,6 @@ def is_allowed_to_work_in_canada(text):
     return (re.search('legally.*to work.*canada', text)) or (re.search('eligible.*to work.*canada', text))
 
 
-def is_allowed_to_work_in_canada(text):
-    return (re.search('legally.*to work.*canada', text)) or (re.search('eligible.*to work.*canada', text))
-
-
 def is_previous_employee(text):
     return ('previously been employed' in text) \
         or (re.search('are currently a.*employee', text)) \

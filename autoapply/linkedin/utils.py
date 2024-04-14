@@ -16,7 +16,7 @@ from autoapply.linkedin.answers_broad import question_is_generic, question_mappe
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
 from autoapply.linkedin.inputs import unanswered_question_file, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
-    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED
+    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -81,6 +81,10 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
                 options = question.find_elements('xpath', ".//label")
                 options[0].click()  # Just check the box
                 continue
+            if "references" in q_text:
+                with open(REFERENCES_FILE, "r") as f:
+                    references = f.read()
+                q_m.answer_question(references)
             if q_text == 'city':
                 put_answer_in_question_textbox('Montreal, Quebec, Canada', question)
                 # For city question, need to click the box to continue
@@ -189,7 +193,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, ques
     try:
         df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
     except PermissionError:
-        time.sleep(1)
+        time.sleep(2)
         df4.to_csv(unanswered_question_file, sep=',', header=True, index=False, encoding='latin1')
     try:
         df5.to_csv(question_file, sep=',', header=True, index=False, encoding='latin1')
