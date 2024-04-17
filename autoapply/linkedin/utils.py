@@ -16,7 +16,7 @@ from autoapply.linkedin.answers_broad import question_is_generic, question_mappe
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
 from autoapply.linkedin.inputs import UNANSWERED_QUESTIONS_FILE, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
-    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE, START_AT_JOB_NUMBER_X, JOB_NUMBER_FILENAME
+    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -85,7 +85,8 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                 with open(REFERENCES_FILE, "r") as f:
                     references = f.read()
                 q_m.answer_question(references)
-            if q_text == 'city':
+            # q_text cn be "citycity" for some reason
+            if 'city' in q_text:
                 put_answer_in_question_textbox('Montreal, Quebec, Canada', question)
                 # For city question, need to click the box to continue
                 with suppress():
@@ -243,14 +244,13 @@ def check_substring(string, substrings):
     return False
 
 
-def x_in_job_title_or_description(dm, x: str, job_title: str):
-    x = ["automation", "test", "qa"]
-    if any(sub in job_title.lower() for sub in x):
+def x_in_job_title_or_description(dm, substrings: list, job_title: str):
+    if any(sub in job_title.lower() for sub in substrings):
         return True
     job_details = dm.driver.find_element('xpath', "//div[@id='job-details']")
-    if any(sub in job_details.text.lower() for sub in x):
+    if any(sub in job_details.text.lower() for sub in substrings):
         return True
-    logger.info(f'skipping: {x} not in job title or description')
+    logger.info(f'skipping: {substrings} not in job title or description')
     return False
 
 
@@ -505,15 +505,3 @@ def have_applied_for_too_many_jobs_today():
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True
     return False
-
-
-def get_last_job_applied_for_page_number():
-    if START_AT_JOB_NUMBER_X != -1:
-        return START_AT_JOB_NUMBER_X
-    with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
-        job_number_str = jobf.read()
-    if job_number_str == '':
-        job_number = 0
-    else:
-        job_number = int(job_number_str)
-    return job_number

@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 from timeit import default_timer as timer
 
+import pandas as pd
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
     ElementNotInteractableException, ElementClickInterceptedException
 from selenium.webdriver.support.wait import WebDriverWait
@@ -29,6 +30,8 @@ could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
 job_dict = {}
+df_errors = pd.read_csv(ERROR_FILE, header=0, index_col=None, encoding="latin1", on_bad_lines="skip")
+BASE_URLS = df_errors.loc[~df_errors["url"].isna()]["url"][::-1].to_list()
 try:
     for base_url in BASE_URLS:
         job_number = get_last_job_applied_for_page_number(base_url)
@@ -42,30 +45,30 @@ try:
                 next_url = False
                 break
             want_to_apply_for_job = False
-            url = f'{base_url}&start={job_number}'
-            DM.driver.get("https://www.linkedin.com/jobs/view/3868597078/")
+            url = f'{base_url}'
+            DM.driver.get(url)
             # DM.driver.get(url)
             no_jobs_found = DM.driver.find_elements('xpath', "//h1[text()='No matching jobs found.']")
             job_number += 1
             job_dict[base_url] = job_number
-            click_sidebar_top_result(DM)
-            if 'https://www.linkedin.com/jobs/' not in DM.driver.current_url:
-                logger.info('got redirected to a different site')
-                continue
-            # Get job title and href to record to applied for
-            job_title, short_href = get_short_href_from_job_title(DM)
-            try:
-                company_name = DM.driver.find_element('xpath', '//span[@class="job-card-container__primary-description '
-                                                               '"]').text
-            except NoSuchElementException:
-                company_name = ''
-            logger.info(f'\npost: {job_number} - {company_name}: {job_title}')
-            if any(company.lower() in company_name.lower() for company in DO_NOT_APPLY_AT_THESE_COMPANIES):
-                continue
-            if JOB_MUST_CONTAIN and (not x_in_job_title_or_description(DM, JOB_MUST_CONTAIN, job_title)):
-                stats_manager.increment('skipped')
-                time.sleep(3)
-                continue
+            # # click_sidebar_top_result(DM)
+            # if 'https://www.linkedin.com/jobs/' not in DM.driver.current_url:
+            #     logger.info('got redirected to a different site')
+            #     continue
+            # # Get job title and href to record to applied for
+            # # job_title, short_href = get_short_href_from_job_title(DM)
+            # try:
+            #     company_name = DM.driver.find_element('xpath', '//span[@class="job-card-container__primary-description '
+            #                                                    '"]').text
+            # except NoSuchElementException:
+            #     company_name = ''
+            # logger.info(f'\npost: {job_number} - {company_name}: {job_title}')
+            # if any(company.lower() in company_name.lower() for company in DO_NOT_APPLY_AT_THESE_COMPANIES):
+            #     continue
+            # if JOB_MUST_CONTAIN and (not x_in_job_title_or_description(DM, JOB_MUST_CONTAIN, job_title)):
+            #     stats_manager.increment('skipped')
+            #     time.sleep(3)
+            #     continue
             if no_jobs_found:
                 logger.info('no jobs found, going to next url')
                 next_url = True
@@ -220,24 +223,24 @@ try:
                                                                                 q_and_as_df, QUESTIONS_FILE,
                                                                                 old_questions, url)
             now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-            if submitted:
-                write_to_file(APPLIED_FOR_FILE, 'a', 'date,company,position,url',
-                              f'{now},"{company_name}","{job_title}","{short_href}"')
-            if not submitted:
-                write_to_file(ERROR_FILE, 'a', 'date,company,position,url,reason',
-                              f'{now},{company_name},{job_title},{short_href},{reason}')
-            elapsed = int(timer() - start)
-            start = timer()
-            stats_manager.increment('running_time (s)', elapsed)
-            stats_manager.df.loc['running_time (m)', 'value'] = int(
-                stats_manager.df.loc['running_time (s)', 'value'] / 60)
-            stats_manager.df.loc['jobs / min', 'value'] = stats_manager.df.loc['applied_for', 'value'] / \
-                                                          stats_manager.df.loc[
-                                                              'running_time (m)', 'value']
-            stats_manager.df.loc['success rate', 'value'] = int(
-                stats_manager.df.loc['applied_for', 'value'] / stats_manager.df.loc[
-                    'could_have_applied_for', 'value'] * 100)
-            stats_manager.df.to_csv(STATS_FILENAME, index=True, header=True)
+            # if submitted:
+            #     write_to_file(APPLIED_FOR_FILE, 'a', 'date,company,position,url',
+            #                   f'{now},"{company_name}","{job_title}","{short_href}"')
+            # if not submitted:
+            #     write_to_file(ERROR_FILE, 'a', 'date,company,position,url,reason',
+            #                   f'{now},{company_name},{job_title},{short_href},{reason}')
+            # elapsed = int(timer() - start)
+            # start = timer()
+            # stats_manager.increment('running_time (s)', elapsed)
+            # stats_manager.df.loc['running_time (m)', 'value'] = int(
+            #     stats_manager.df.loc['running_time (s)', 'value'] / 60)
+            # stats_manager.df.loc['jobs / min', 'value'] = stats_manager.df.loc['applied_for', 'value'] / \
+            #                                               stats_manager.df.loc[
+            #                                                   'running_time (m)', 'value']
+            # stats_manager.df.loc['success rate', 'value'] = int(
+            #     stats_manager.df.loc['applied_for', 'value'] / stats_manager.df.loc[
+            #         'could_have_applied_for', 'value'] * 100)
+            # stats_manager.df.to_csv(STATS_FILENAME, index=True, header=True)
             should_pause(STOP_AFTER_EVERY_JOB)
 except Exception as e:
     logger.error(e)

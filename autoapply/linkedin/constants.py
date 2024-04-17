@@ -1,5 +1,6 @@
 import logging
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 GLOBAL_LOG_LEVEL = logging.INFO
@@ -31,3 +32,6 @@ class QuestionType:
     dropdown = 'dropdown'
     radio = 'radio'
     text = 'text'
+
+
+
