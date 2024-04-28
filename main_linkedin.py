@@ -29,13 +29,13 @@ applied_for_cur_run = 0
 next_url = False
 job_dict = {}
 job_details = JOB_DETAILS.copy()
-try:
-    with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
-        job_number_dict = json.load(jobf)
-    if not job_number_dict:
-        job_number_dict = {}
-except FileNotFoundError:
-    job_number_dict = {}
+# try:
+#     with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
+#         job_number_dict = json.load(jobf)
+#     if not job_number_dict:
+#         job_number_dict = {}
+# except FileNotFoundError:
+#     job_number_dict = {}
 # for job_detail in job_details:
 #     job_detail["job_number"] = job_number_dict[job_detail["url"]]
 try:

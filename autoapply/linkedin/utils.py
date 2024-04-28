@@ -80,7 +80,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                 options = question.find_elements('xpath', ".//label")
                 options[0].click()  # Just check the box
                 continue
-            if "references" in q_text:
+            if ("references" in q_text) and ("preferences" not in q_text):
                 with open(REFERENCES_FILE, "r") as f:
                     references = f.read()
                 q_m.answer_question(references)
