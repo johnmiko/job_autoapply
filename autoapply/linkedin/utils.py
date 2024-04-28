@@ -6,8 +6,7 @@ from datetime import datetime, timedelta
 from timeit import default_timer as timer
 
 import pandas as pd
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, \
-    InvalidElementStateException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, InvalidElementStateException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
@@ -86,7 +85,7 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                     references = f.read()
                 q_m.answer_question(references)
             # q_text cn be "citycity" for some reason
-            if 'city' in q_text:
+            if (q_text == "city") or (q_text == "citycity"):
                 put_answer_in_question_textbox('Montreal, Quebec, Canada', question)
                 # For city question, need to click the box to continue
                 with suppress():
@@ -259,23 +258,15 @@ def click_sidebar_top_result(dm):
     # this causes the stale element exception, so just wait for 2 seconds
     # to avoid this situation
     time.sleep(2)
+    sidebar = dm.find_element('scaffold-layout__list-container', 'ul', 'class', 3)
+    # Find by attribute name
+    lis = sidebar.find_elements('xpath', './/li[@data-occludable-job-id]')
     try:
-        sidebar = dm.find_element('scaffold-layout__list-container', 'ul', 'class', 3)
-        # Find by attribute name
-        lis = sidebar.find_elements('xpath', './/li[@data-occludable-job-id]')
-        try:
-            # Need to click title in this weird case
-            title = lis[0].find_element('xpath', './/div[@id="ember369"]')
-            title.click()
-        except NoSuchElementException:
-            lis[0].click()
-
-        # for li in lis:
-        #     if not 'promoted' in li.text.lower():
-        #         li.click()
-        #         break
-    except (TimeoutException, StaleElementReferenceException) as e:
-        logger.info(f'Unable to click sidebar, got a {e} error')
+        # Need to click title in this weird case
+        title = lis[0].find_element('xpath', './/div[@id="ember369"]')
+        title.click()
+    except NoSuchElementException:
+        lis[0].click()
 
 
 def get_pct_success_str(jobs_applied_for, jobs_I_could_have_applied_for):

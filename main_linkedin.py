@@ -10,9 +10,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import Page
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
-    DO_NOT_APPLY_AT_THESE_COMPANIES, BASE_URLS, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, APPLIED_FOR_FILE, ERROR_FILE, \
-    JOB_MUST_CONTAIN, USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
-from autoapply.linkedin.job_details import get_last_job_applied_for_page_number
+    DO_NOT_APPLY_AT_THESE_COMPANIES, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, APPLIED_FOR_FILE, ERROR_FILE, \
+    USE_MAX_TIMER, STOP_AFTER_EVERY_JOB, JOB_DETAILS
 from autoapply.linkedin.utils import click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
@@ -29,10 +28,22 @@ could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
 job_dict = {}
+job_details = JOB_DETAILS.copy()
 try:
-    for base_url in BASE_URLS:
-        job_number = get_last_job_applied_for_page_number(base_url)
-        while True:
+    with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
+        job_number_dict = json.load(jobf)
+    if not job_number_dict:
+        job_number_dict = {}
+except FileNotFoundError:
+    job_number_dict = {}
+# for job_detail in job_details:
+#     job_detail["job_number"] = job_number_dict[job_detail["url"]]
+try:
+    job_number = -1
+    while True:
+        job_number += 1
+        logger.info(f"{job_number=}")
+        for job_detail in job_details:
             if have_applied_for_too_many_jobs_today():
                 break
             if next_url:
@@ -42,16 +53,30 @@ try:
                 next_url = False
                 break
             want_to_apply_for_job = False
-            url = f'{base_url}&start={job_number}'
-            DM.driver.get("https://www.linkedin.com/jobs/view/3868597078/")
-            # DM.driver.get(url)
+            url = f'{job_detail["url"]}&start={job_number}'
+            DM.driver.get(url)
             no_jobs_found = DM.driver.find_elements('xpath', "//h1[text()='No matching jobs found.']")
-            job_number += 1
-            job_dict[base_url] = job_number
-            click_sidebar_top_result(DM)
+            # job_dict[job_detail["url"]] += 1
+            # logger.info(f'job number {job_dict[job_detail["url"]]}')
+            try:
+                click_sidebar_top_result(DM)
+            except (TimeoutException, StaleElementReferenceException) as e:
+                logger.info(f'Unable to click sidebar, got a {e} error')
+                DM.driver.get(url)
             if 'https://www.linkedin.com/jobs/' not in DM.driver.current_url:
                 logger.info('got redirected to a different site')
                 continue
+
+            page_not_loading_el = DM.driver.find_elements('xpath', "//h2[text()='Unfortunately, things aren’t "
+                                                                   "loading']")
+            # At page 48/49, constantly getting an error, not sure how to fix
+            if page_not_loading_el:
+                DM.driver.refresh()
+                page_not_loading_el = DM.driver.find_elements('xpath', "//h2[text()='Unfortunately, things aren’t "
+                                                                       "loading']")
+                if page_not_loading_el:
+                    logger.error(f"Page not loading twice in a row. On job number {job_number}")
+                    break
             # Get job title and href to record to applied for
             job_title, short_href = get_short_href_from_job_title(DM)
             try:
@@ -62,7 +87,8 @@ try:
             logger.info(f'\npost: {job_number} - {company_name}: {job_title}')
             if any(company.lower() in company_name.lower() for company in DO_NOT_APPLY_AT_THESE_COMPANIES):
                 continue
-            if JOB_MUST_CONTAIN and (not x_in_job_title_or_description(DM, JOB_MUST_CONTAIN, job_title)):
+            if job_detail["job_must_contain"] and (
+                    not x_in_job_title_or_description(DM, job_detail["job_must_contain"], job_title)):
                 stats_manager.increment('skipped')
                 time.sleep(3)
                 continue
@@ -208,8 +234,6 @@ try:
                     questions = []
                 # try to scroll to bottom of page
                 try:
-                    # D:\Users\johnm\OneDrive\ccode_files\job_autoapply\linkedin\text
-                    # D:\\ccode\\job_autoapply\\autoapply\\linkedin/text/job_number.txt'
                     popup = DM.find_element('artdeco-modal__content jobs-easy-apply-modal__content p0 ember-view')
                     DM.driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", popup);
                 except:

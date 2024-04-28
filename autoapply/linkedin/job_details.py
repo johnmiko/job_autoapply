@@ -11,6 +11,7 @@ class Details:
     notes: str
 
 
+# Not being used now
 def get_last_job_applied_for_page_number(url: str):
     if START_AT_JOB_NUMBER_X != -1:
         return START_AT_JOB_NUMBER_X
