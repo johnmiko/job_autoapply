@@ -149,8 +149,6 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                 # except (TimeoutException, StaleElementReferenceException, ElementClickInterceptedException):
                 #     continue
             question_formatted = q_text.split(':')[0].replace('"', '')
-            if "veteran" in q_text:
-                a = 1
             for index, row in q_and_as_df.iterrows():
                 existing_question, existing_answer, times_asked = row[['question', 'answer', 'times_asked']]
                 existing_question_formatted = str(existing_question).lower().split(':')[0].replace('"', '')
@@ -159,9 +157,13 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                     logger.debug("q_and_as_df[q_and_as_df['question'] == question_formatted]")
                     logger.debug(q_and_as_df[q_and_as_df['question'] == question_formatted])
                     q_and_as_df.at[index, 'times_asked'] += 1
-                    # https://www.linkedin.com/jobs/search/?currentJobId=3294737126&f_AL=true&f_E=2&f_JT=P%2CC%2CT%2CF&f_WT=1%2C2%2C3&geoId=101330853&keywords=it%20support&location=Montreal%2C%20Quebec%2C%20Canada&refresh=true&start=6
                     if (pd.isna(existing_answer)) or (existing_answer == ''):
                         logger.info(f'\tquestion found but no answer: "{existing_question}"')
+                        closest_match = find_closest_matching_question(q_and_as_df, q_text)
+                        if closest_match:
+                            with suppress(ValueError):
+                                closest_match = int(float(closest_match))
+                            q_m.answer_question(closest_match)
                         break
                     answer = existing_answer.strip().lower()
                     # Answers are being recorded as floats, so convert to ints if we can
@@ -200,6 +202,16 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
                     question_is_new = False
                     break
             if question_is_new:
+                closest_match = find_closest_matching_question(q_and_as_df, q_text)
+                if closest_match:
+                    with suppress(ValueError):
+                        closest_match = int(float(closest_match))
+                    q_m.answer_question(closest_match)
+                # site reliability engineering,0.46713470604990354,engineering,9 - wrong
+                # 1444  front end engineering design (feed)    0.512178  front end development    2.0 - right
+                # 1493  now or the future require visa sponsorship to work    0.839164  now, or the future,
+                # will require visa sponsorship:yes^no     no - right
+                # 0.33 too low, 0.8 high enough
                 if (question_type == QuestionType.dropdown) or (question_type == QuestionType.radio):
                     if question_type == QuestionType.dropdown:
                         select = Select(question.find_elements('xpath', ".//select")[0])
@@ -252,26 +264,47 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
 
 
 class PhraseMatcher:
-    def __init__(self, phrases: str | list, possible_matches: list):
+    def __init__(self, phrases: str | list, possible_matches: pd.DataFrame):
         if isinstance(phrases, str):
             phrases = [phrases]
         self.phrases = phrases
         self.possible_matches = possible_matches
-        self.similarities = []
+        self.df = self.possible_matches
         self.similarity_matrices = None
 
     def calculate_similarity_matrices(self):
+        """
+        Given multiple phrases that could be correct answers, find the questions that most closely matches it
+        :return:
+        """
         tfidf_vectorizer = TfidfVectorizer()
-        tfidf_matrix = tfidf_vectorizer.fit_transform(self.possible_matches + self.phrases)
+        tfidf_matrix = tfidf_vectorizer.fit_transform(self.possible_matches['question'].tolist() + self.phrases)
         matrices = []
         for p in tfidf_matrix[-len(self.phrases):]:
             similarity_matrix = cosine_similarity(tfidf_matrix[:-len(self.phrases)], p)
             matrices.append(similarity_matrix)
-            similarity = [(phrase, similarity[0]) for phrase, similarity in zip(self.possible_matches,
-                                                                                similarity_matrix)]
-            self.similarities.append(similarity)
+            similarity_scores = similarity_matrix.flatten()
+            df = self.possible_matches.copy()
+            df["similarity"] = similarity_scores
+            self.df = pd.concat([self.df, df])
+        self.df = self.df.reset_index(drop=True)
+        self.df.sort_values("similarity", ascending=False, inplace=True)
         self.similarity_matrices = matrices
         return matrices
+
+    # def calculate_similarity_matrices(self):
+    #     tfidf_vectorizer = TfidfVectorizer()
+    #     tfidf_matrix = tfidf_vectorizer.fit_transform(self.possible_matches + self.phrases)
+    #     matrices = []
+    #     for p in tfidf_matrix[-len(self.phrases):]:
+    #         similarity_matrix = cosine_similarity(tfidf_matrix[:-len(self.phrases)], p)
+    #         matrices.append(similarity_matrix)
+    #         similarity_scores = similarity_matrix.flatten()
+    #         df = pd.DataFrame({"possible_matches": self.possible_matches, "similarity": similarity_scores})
+    #         self.df = pd.concat([self.df, df])
+    #     self.df.sort_values("similarity_matrix", ascending=False)
+    #     self.similarity_matrices = matrices
+    #     return matrices
 
     def find_closest_phrases(self):
         similarity_matrices = self.calculate_similarity_matrices()
@@ -289,13 +322,13 @@ def put_answer_in_question_dropdown(correct_answers, text_options, select):
             index = text_options.index(correct_answer)
             select.select_by_index(index)
             answer_found = True
-    if not answer_found:
-        # difflib.get_close_matches(correct_answer, text_options, n=3, cutoff=0.6)
-        phrase_matcher = PhraseMatcher(correct_answers, text_options)
-        closest_phrases = phrase_matcher.find_closest_phrases()
-        closest_phrase = closest_phrases[0]
-        index = text_options.index(closest_phrase)
-        select.select_by_index(index)
+    # if not answer_found:
+    #     # difflib.get_close_matches(correct_answer, text_options, n=3, cutoff=0.6)
+    #     phrase_matcher = PhraseMatcher(correct_answers, text_options)
+    #     closest_phrases = phrase_matcher.calculate_similarity_matrices()
+    #     closest_phrase = closest_phrases[0]
+    #     index = text_options.index(closest_phrase)
+    #     select.select_by_index(index)
 
 
 class QuestionManager:
@@ -314,12 +347,14 @@ class QuestionManager:
     def answer_question(self, answers: list | str):
         if not isinstance(answers, list):
             answer = answers
+        else:
+            answer = answers[0]
         if self.question_type == QuestionType.text:
             put_answer_in_question_textbox(answer, self.element)
         elif self.question_type == QuestionType.dropdown:
             select = Select(self.element.find_elements('xpath', ".//select")[0])
             text_options = [option.text.lower() for option in select.options]
-            put_answer_in_question_dropdown(answer, text_options, select)
+            put_answer_in_question_dropdown(answers, text_options, select)
             with suppress(ValueError):  # ("if it's not found in the list")
                 index = text_options.index(answer)
                 select.select_by_index(index)
@@ -345,3 +380,18 @@ class QuestionManager:
                 option.click()
         else:
             raise ValueError('question type unknown ' + self.question_type)
+
+
+def find_closest_matching_question(q_and_as_df, q_text):
+    answered_df = q_and_as_df[~q_and_as_df['answer'].isna()]
+    phrase_matcher = PhraseMatcher(q_text, answered_df)
+    phrase_matcher.calculate_similarity_matrices()
+    phrase_matcher.df["q_text"] = q_text
+    desired_order = ['q_text', 'similarity', 'question', 'answer']
+    phrase_matcher.df = phrase_matcher.df[desired_order]
+    phrase_matcher.df.head(3).to_csv("phrase_similarities.csv", mode="a", header=False, index=False)
+    logger.info(phrase_matcher.df.head(3).to_string())
+    row = phrase_matcher.df.head(1)
+    if row["similarity"].values[0] > 0.55:
+        return row["answer"].values[0]
+    return None

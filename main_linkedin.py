@@ -55,6 +55,7 @@ job_details = JOB_DETAILS.copy()
 #     job_detail["job_number"] = job_number_dict[job_detail["url"]]
 try:
     job_number = -1
+    job_number = 6
     while True:
         job_number += 1
         logger.info(f"{job_number=}")
