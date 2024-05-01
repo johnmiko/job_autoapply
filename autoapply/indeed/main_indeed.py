@@ -14,8 +14,8 @@ from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, QUESTIONS_FILE, UNANSWER
     APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import python_part_of_job, click_sidebar_top_result, get_questions_df, \
     keep_trying_to_submit_form, should_skip_company, should_pause, \
-    write_to_file, get_pct_success_str, StatsManager, QuestionManager
-from autoapply.linkedin.answers import answer_questions
+    write_to_file, get_pct_success_str, StatsManager
+from autoapply.linkedin.answers import answer_questions, QuestionManager
 from autoapply.misc.utils import create_logger
 
 logger, c_handler = create_logger(__name__)

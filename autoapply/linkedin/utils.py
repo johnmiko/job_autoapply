@@ -1,4 +1,3 @@
-import difflib
 import os
 import random
 import time
@@ -7,11 +6,9 @@ from datetime import datetime, timedelta
 from timeit import default_timer as timer
 
 import pandas as pd
-from more_itertools import always_iterable
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.select import Select
 
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
@@ -238,70 +235,6 @@ def translate_answer_to_french(answer):
     return answer_lower
 
 
-def put_answer_in_question_dropdown(correct_answers, text_options, select):
-    answer_found = False
-    closest_matches = []
-    for correct_answer in always_iterable(correct_answers):
-        try:
-            index = text_options.index(correct_answer)
-            select.select_by_index(index)
-            answer_found = True
-        except ValueError as e:  # ("if it's not found in the list")
-            # difflib.get_close_matches(correct_answer, text_options, n=3, cutoff=0.6)
-            phrase = "apple pie"
-            possible_matches = ["apple", "apple cider", "banana", "apple pie with ice cream"]
-            closest_phrase, similarity = find_closest_phrase(correct_answer, possible_matches)
-
-
-class QuestionManager:
-    def __init__(self, question_element: WebElement):
-        self.element = question_element
-        self.text = question_element.text.lower()
-        self.question_type = get_question_type(question_element)
-        question_text = self.text
-        if self.question_type == QuestionType.radio:
-            question_text = question_text.lower().split('required')[0].strip()
-        q_text = clean_question_text(question_text)
-        if self.question_type == QuestionType.dropdown:
-            q_text = q_text.split('select an option')[0].strip()
-        self.q_text = q_text
-
-    def answer_question(self, answers: list | str):
-        if not isinstance(answers, list):
-            answer = answers
-        if self.question_type == QuestionType.text:
-            put_answer_in_question_textbox(answer, self.element)
-        elif self.question_type == QuestionType.dropdown:
-            select = Select(self.element.find_elements('xpath', ".//select")[0])
-            text_options = [option.text.lower() for option in select.options]
-            put_answer_in_question_dropdown(answer, text_options, select)
-            with suppress(ValueError):  # ("if it's not found in the list")
-                index = text_options.index(answer)
-                select.select_by_index(index)
-        elif self.question_type == QuestionType.radio:
-            if isinstance(answers, str):
-                answers = [answer]
-            else:
-                answers = [str(answer).lower() for answer in answers]
-            options = self.element.find_elements('xpath', ".//label")
-            answer_found = False
-            for option in options:
-                option_text = option.text.lower()
-                for fluff in QUESTION_FLUFF:
-                    option_text = option_text.replace(fluff, '')
-                if ('oui' in option_text) or ('non' in option_text):
-                    answer = translate_answer_to_french(answer)
-                if option.text.lower() in answers:
-                    answer_found = True
-                    break
-            if not answer_found:
-                logger.info(f'\tdid not find answer for radio question {self.text}')
-            else:
-                option.click()
-        else:
-            raise ValueError('question type unknown ' + self.question_type)
-
-
 def get_question_type(question_el):
     if question_el.find_elements('xpath', ".//select"):
         question_type = QuestionType.dropdown
@@ -367,4 +300,3 @@ def have_applied_for_too_many_jobs_today():
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True
     return False
-

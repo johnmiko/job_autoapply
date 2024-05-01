@@ -3,16 +3,18 @@ import time
 from contextlib import suppress
 
 import pandas as pd
+from more_itertools import always_iterable
 from selenium.common import NoSuchElementException, InvalidElementStateException
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-from autoapply.linkedin.constants import QuestionType
+from autoapply.linkedin.constants import QuestionType, QUESTION_FLUFF
 from autoapply.linkedin.inputs import REFERENCES_FILE, GUESS_0_FOR_UNANSWERED, UNANSWERED_QUESTIONS_FILE, \
     PAUSE_AFTER_ANSWERING_QUESTIONS
-from autoapply.linkedin.utils import logger, QuestionManager, remove_fluff_from_sentence, \
-    put_answer_in_question_textbox, should_pause
+from autoapply.linkedin.utils import logger, remove_fluff_from_sentence, \
+    put_answer_in_question_textbox, should_pause, get_question_type, clean_question_text, translate_answer_to_french
 
 
 def question_mapper(question_text):
@@ -249,19 +251,97 @@ def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUES
     return tried_to_answer_questions, old_questions
 
 
-def find_closest_phrase(phrases: str | list, possible_matches: list):
-    if isinstance(phrases, str):  # If the input is a single phrase
-        phrase = [phrases]  # Convert it to a list for consistency
-    tfidf_vectorizer = TfidfVectorizer()
-    tfidf_matrix = tfidf_vectorizer.fit_transform(possible_matches + phrase)
-    closest_phrases = []
-    closenessess = []
-    for p in tfidf_matrix[-len(phrase):]:
-        similarity_matrix = cosine_similarity(tfidf_matrix[:-len(phrase)], p)
-        closest_index = similarity_matrix.argmax()
-        closest_similarity = similarity_matrix[closest_index][0]
-        closest_phrases.append((possible_matches[closest_index], closest_similarity))
-        closeness = [(phrase, similarity[0]) for phrase, similarity in zip(possible_matches, similarity_matrix)]
-        logger.info(f"phrase closeness {closeness}")
-        closenessess.append(closeness)
-    return closest_phrases, closenessess
+class PhraseMatcher:
+    def __init__(self, phrases: str | list, possible_matches: list):
+        if isinstance(phrases, str):
+            phrases = [phrases]
+        self.phrases = phrases
+        self.possible_matches = possible_matches
+        self.similarities = []
+        self.similarity_matrices = None
+
+    def calculate_similarity_matrices(self):
+        tfidf_vectorizer = TfidfVectorizer()
+        tfidf_matrix = tfidf_vectorizer.fit_transform(self.possible_matches + self.phrases)
+        matrices = []
+        for p in tfidf_matrix[-len(self.phrases):]:
+            similarity_matrix = cosine_similarity(tfidf_matrix[:-len(self.phrases)], p)
+            matrices.append(similarity_matrix)
+            similarity = [(phrase, similarity[0]) for phrase, similarity in zip(self.possible_matches,
+                                                                                similarity_matrix)]
+            self.similarities.append(similarity)
+        self.similarity_matrices = matrices
+        return matrices
+
+    def find_closest_phrases(self):
+        similarity_matrices = self.calculate_similarity_matrices()
+        closest_phrases = []
+        for similarity_matrix in similarity_matrices:
+            closest_index = similarity_matrix.argmax()
+            closest_phrases.append((self.possible_matches[closest_index]))
+        return closest_phrases
+
+
+def put_answer_in_question_dropdown(correct_answers, text_options, select):
+    answer_found = False
+    for correct_answer in always_iterable(correct_answers):
+        with suppress(ValueError):  # if exact match is not found
+            index = text_options.index(correct_answer)
+            select.select_by_index(index)
+            answer_found = True
+    if not answer_found:
+        # difflib.get_close_matches(correct_answer, text_options, n=3, cutoff=0.6)
+        phrase_matcher = PhraseMatcher(correct_answers, text_options)
+        closest_phrases = phrase_matcher.find_closest_phrases()
+        closest_phrase = closest_phrases[0]
+        index = text_options.index(closest_phrase)
+        select.select_by_index(index)
+
+
+class QuestionManager:
+    def __init__(self, question_element: WebElement):
+        self.element = question_element
+        self.text = question_element.text.lower()
+        self.question_type = get_question_type(question_element)
+        question_text = self.text
+        if self.question_type == QuestionType.radio:
+            question_text = question_text.lower().split('required')[0].strip()
+        q_text = clean_question_text(question_text)
+        if self.question_type == QuestionType.dropdown:
+            q_text = q_text.split('select an option')[0].strip()
+        self.q_text = q_text
+
+    def answer_question(self, answers: list | str):
+        if not isinstance(answers, list):
+            answer = answers
+        if self.question_type == QuestionType.text:
+            put_answer_in_question_textbox(answer, self.element)
+        elif self.question_type == QuestionType.dropdown:
+            select = Select(self.element.find_elements('xpath', ".//select")[0])
+            text_options = [option.text.lower() for option in select.options]
+            put_answer_in_question_dropdown(answer, text_options, select)
+            with suppress(ValueError):  # ("if it's not found in the list")
+                index = text_options.index(answer)
+                select.select_by_index(index)
+        elif self.question_type == QuestionType.radio:
+            if isinstance(answers, str):
+                answers = [answer]
+            else:
+                answers = [str(answer).lower() for answer in answers]
+            options = self.element.find_elements('xpath', ".//label")
+            answer_found = False
+            for option in options:
+                option_text = option.text.lower()
+                for fluff in QUESTION_FLUFF:
+                    option_text = option_text.replace(fluff, '')
+                if ('oui' in option_text) or ('non' in option_text):
+                    answer = translate_answer_to_french(answer)
+                if option.text.lower() in answers:
+                    answer_found = True
+                    break
+            if not answer_found:
+                logger.info(f'\tdid not find answer for radio question {self.text}')
+            else:
+                option.click()
+        else:
+            raise ValueError('question type unknown ' + self.question_type)
