@@ -8,14 +8,15 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.wait import WebDriverWait
 
 from autoapply.driver import driver_manager as DM
+from autoapply.linkedin.answers import answer_questions
 from autoapply.linkedin.constants import Page
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
     DO_NOT_APPLY_AT_THESE_COMPANIES, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, APPLIED_FOR_FILE, ERROR_FILE, \
-    USE_MAX_TIMER, STOP_AFTER_EVERY_JOB, JOB_DETAILS
+    USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import click_sidebar_top_result, get_questions_df, \
-    keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
+    keep_trying_to_submit_form, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
-    have_applied_for_too_many_jobs_today, x_in_job_title_or_description
+    have_applied_for_too_many_jobs_today, x_in_job_title_or_description, get_jobs_applied_for_in_past_24_hours
 from autoapply.linkedin.utils import use_latest_resume
 from autoapply.misc.utils import create_logger
 
@@ -28,6 +29,20 @@ could_have_applied_for_cur_run = 0
 applied_for_cur_run = 0
 next_url = False
 job_dict = {}
+JOB_DETAILS = [{
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3905239413&distance=25&f_AL=true&f_WT=3%2C1%2C2&geoId=101330853&keywords=python%20developer&origin=JOBS_HOME_KEYWORD_HISTORY&refresh=true",
+    "job_must_contain": ["python"]}, {
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3885951992&f_AL=true&f_WT=3%2C1%2C2&geoId=101330853&keywords=test%20automation%20engineer&location=Montreal%2C%20Quebec%2C%20Canada&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true",
+    "job_must_contain": ["automation", "test", "qa"]}, {
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3881260700&f_AL=true&f_WT=2&geoId=101174742&keywords=python%20developer&location=Canada&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true",
+    "job_must_contain": ["python"]}, {
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3914495894&f_AL=true&f_WT=2&geoId=101174742&keywords=test%20automation%20engineer&location=Canada&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true",
+    "job_must_contain": ["automation", "test", "qa"]}, {
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3909150454&f_AL=true&f_WT=2&geoId=103644278&keywords=python%20developer&location=United%20States&origin=JOB_SEARCH_PAGE_LOCATION_AUTOCOMPLETE&refresh=true",
+    "job_must_contain": ["python"]}, {
+    "url": "https://www.linkedin.com/jobs/search/?currentJobId=3909150454&f_AL=true&f_WT=2&geoId=103644278&keywords=test%20automation%20engineer&location=United%20States&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true",
+    "job_must_contain": ["automation", "test", "qa"]}
+]
 job_details = JOB_DETAILS.copy()
 # try:
 #     with open(JOB_NUMBER_FILENAME, 'r+') as jobf:
@@ -43,6 +58,8 @@ try:
     while True:
         job_number += 1
         logger.info(f"{job_number=}")
+        num_jobs_applied_for = get_jobs_applied_for_in_past_24_hours()
+        logger.info(f"jobs applied for in past 24 hours {num_jobs_applied_for}")
         for job_detail in job_details:
             if have_applied_for_too_many_jobs_today():
                 break
@@ -84,7 +101,7 @@ try:
                                                                '"]').text
             except NoSuchElementException:
                 company_name = ''
-            logger.info(f'\npost: {job_number} - {company_name}: {job_title}')
+            logger.info(f'\npost: {company_name}: {job_title}')
             if any(company.lower() in company_name.lower() for company in DO_NOT_APPLY_AT_THESE_COMPANIES):
                 continue
             if job_detail["job_must_contain"] and (

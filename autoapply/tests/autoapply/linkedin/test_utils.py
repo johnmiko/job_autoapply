@@ -5,7 +5,8 @@
 
 # class TestThing(unittest.TestCase):
 from autoapply.constants import PROJ_DIR
-from autoapply.linkedin.utils import get_questions_df, answer_questions
+from autoapply.linkedin.answers import question_is_generic, answer_questions
+from autoapply.linkedin.utils import get_questions_df
 
 
 def func2(x):
@@ -69,3 +70,9 @@ def test_questions_answers():
                  'How many years of experience in building real-time data-centric web applications?',
                  'Have you built client and server-side web socket-based applications?\nHave you built client and server-side web socket-based applications?\nRequired\n       Select an option\n       Yes\n       No\n   Please enter a valid answer',
                  'How many years of experience do you have building typescript web applications?']
+
+
+class TestQuestionIsGeneric:
+    def test_veteran(self):
+        question_text = 'I identify as one or more of the classifications of protected veteran listed above\nI am not a protected veteran\nI prefer not to specify'
+        assert question_is_generic(question_text) == ('are you a veteran', ["no", "I am not a protected veteran"])

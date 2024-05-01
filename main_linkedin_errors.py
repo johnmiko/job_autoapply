@@ -11,13 +11,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from autoapply.driver import driver_manager as DM
 from autoapply.linkedin.constants import Page
 from autoapply.linkedin.inputs import SECONDS_TO_TRY_FOR, JOB_NUMBER_FILENAME, STATS_FILENAME, \
-    DO_NOT_APPLY_AT_THESE_COMPANIES, BASE_URLS, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, APPLIED_FOR_FILE, ERROR_FILE, \
-    JOB_MUST_CONTAIN, USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
+    QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, ERROR_FILE, \
+    USE_MAX_TIMER, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.job_details import get_last_job_applied_for_page_number
-from autoapply.linkedin.utils import click_sidebar_top_result, get_questions_df, \
-    keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
-    write_to_file, get_pct_success_str, StatsManager, get_short_href_from_job_title, \
-    have_applied_for_too_many_jobs_today, x_in_job_title_or_description
+from autoapply.linkedin.utils import get_questions_df, \
+    keep_trying_to_submit_form, should_skip_company, should_pause, \
+    get_pct_success_str, StatsManager, have_applied_for_too_many_jobs_today
+from autoapply.linkedin.answers import answer_questions
 from autoapply.linkedin.utils import use_latest_resume
 from autoapply.misc.utils import create_logger
 
@@ -100,7 +100,7 @@ try:
                 # Check if "Applied X time ago" element exists, if so, we already applied
                 stats_manager.increment('already_applied')
                 DM.driver.find_element('xpath', DM.xpath('span', 'class', 'artdeco-inline-feedback__message'))
-                logger.info(f'\tskipping: already applied at {company_name} - {job_title}')
+                # logger.info(f'\tskipping: already applied at {company_name} - {job_title}')
                 continue
             except NoSuchElementException:
                 pass

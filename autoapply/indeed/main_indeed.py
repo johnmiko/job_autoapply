@@ -13,8 +13,9 @@ from autoapply.indeed.constants import JOB_NUMBER_FILENAME, INDEED_DIR, Page, ST
 from autoapply.linkedin.inputs import ONLY_PYTHON_JOBS, QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE, USE_MAX_TIMER, \
     APPLIED_FOR_FILE, ERROR_FILE, STOP_AFTER_EVERY_JOB
 from autoapply.linkedin.utils import python_part_of_job, click_sidebar_top_result, get_questions_df, \
-    keep_trying_to_submit_form, answer_questions, should_skip_company, should_pause, \
+    keep_trying_to_submit_form, should_skip_company, should_pause, \
     write_to_file, get_pct_success_str, StatsManager, QuestionManager
+from autoapply.linkedin.answers import answer_questions
 from autoapply.misc.utils import create_logger
 
 logger, c_handler = create_logger(__name__)

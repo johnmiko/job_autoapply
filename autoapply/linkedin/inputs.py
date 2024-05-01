@@ -3,9 +3,9 @@ import ast
 
 from dotenv import dotenv_values
 
-from autoapply.linkedin.constants import LINKEDIN_DIR
+from autoapply.linkedin.constants import LINKEDIN_DIR, PROJ_DIR
 
-config = dotenv_values(".env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
+config = dotenv_values(f"{PROJ_DIR}/.env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
 USE_MAX_TIMER: bool = ast.literal_eval(config["USE_MAX_TIMER"])
 STOP_AFTER_EVERY_JOB: bool = ast.literal_eval(config["STOP_AFTER_EVERY_JOB"])
 PAUSE_AFTER_FAILURE: bool = ast.literal_eval(config["PAUSE_AFTER_FAILURE"])

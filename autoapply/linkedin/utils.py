@@ -1,3 +1,4 @@
+import difflib
 import os
 import random
 import time
@@ -6,16 +7,16 @@ from datetime import datetime, timedelta
 from timeit import default_timer as timer
 
 import pandas as pd
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, InvalidElementStateException
+from more_itertools import always_iterable
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 
-from autoapply.linkedin.answers_broad import question_is_generic, question_mapper
 from autoapply.linkedin.constants import QUESTION_FLUFF
 from autoapply.linkedin.constants import QuestionType
-from autoapply.linkedin.inputs import UNANSWERED_QUESTIONS_FILE, PAUSE_AFTER_ANSWERING_QUESTIONS, PAUSE_AFTER_FAILURE, \
-    APPLIED_FOR_FILE, GUESS_0_FOR_UNANSWERED, REFERENCES_FILE
+from autoapply.linkedin.inputs import PAUSE_AFTER_FAILURE, \
+    APPLIED_FOR_FILE
 # https://stackoverflow.com/questions/38634988/check-if-program-runs-in-debug-mode
 # def debugger_is_active():
 #     gettrace = getattr(sys, 'gettrace')
@@ -52,156 +53,6 @@ def get_questions_df(QUESTIONS_FILE, UNANSWERED_QUESTIONS_FILE):
 
 def is_radio_button_question(question):
     return len(question.find_elements('xpath', ".//input")) > 1
-
-
-def answer_questions(dm, questions, tried_to_answer_questions, q_and_as_df, QUESTIONS_FILE, old_questions, url):
-    if not tried_to_answer_questions:
-        for question in questions:
-            # if not question_is_required(question.text):
-            #     continue
-            # Drop down menu question/select
-            # Issue if question is side by side
-            logger.debug('\n' + question.text.replace("\n", " - "))
-            logger.debug(f'{question.tag_name=}')
-            q_m = QuestionManager(question)
-            q_text = q_m.q_text
-            question_type = q_m.question_type
-            question_is_new = True
-            q_text = remove_fluff_from_sentence(q_text)
-            logger.debug(question.text)
-            question_mapped = question_mapper(question.text)
-            if question_mapped != question.text:
-                q_text = question_mapped
-            generic_question, generic_answer = question_is_generic(question.text)
-            if generic_answer != 'answer not found':
-                q_m.answer_question(generic_answer)
-                continue
-            if 'by checking this box' in question.text.lower():
-                options = question.find_elements('xpath', ".//label")
-                options[0].click()  # Just check the box
-                continue
-            if ("references" in q_text) and ("preferences" not in q_text):
-                with open(REFERENCES_FILE, "r") as f:
-                    references = f.read()
-                q_m.answer_question(references)
-            # q_text cn be "citycity" for some reason
-            if (q_text == "city") or (q_text == "citycity"):
-                put_answer_in_question_textbox('Montreal, Quebec, Canada', question)
-                # For city question, need to click the box to continue
-                with suppress():
-                    dm.find_element('jobs-easy-apply-content').click()
-                    time.sleep(0.5)
-                continue
-                # try:
-                #     questions = WebDriverWait(question, 1).until(
-                #         lambda question: question.find_elements('xpath', '//div[@role="listbox")]'))
-                #     dropdown = WebDriverWait(question, 1).until(
-                #         lambda question: question.find_element('xpath', "//ul"))
-                #     # select first choice
-                #     ActionChains(dm.driver).move_to_element(dropdown).click(button).perform()
-                #     WebDriverWait(dropdown, 1).until(
-                #         EC.element_to_be_clickable((By.XPATH, "//li"))).click()
-                # except (TimeoutException, StaleElementReferenceException, ElementClickInterceptedException):
-                #     continue
-            question_formatted = q_text.split(':')[0].replace('"', '')
-            for index, row in q_and_as_df.iterrows():
-                existing_question, existing_answer, times_asked = row[['question', 'answer', 'times_asked']]
-                existing_question_formatted = str(existing_question).lower().split(':')[0].replace('"', '')
-                if existing_question_formatted == question_formatted:
-                    # Can switch to this now
-                    logger.debug("q_and_as_df[q_and_as_df['question'] == question_formatted]")
-                    logger.debug(q_and_as_df[q_and_as_df['question'] == question_formatted])
-                    q_and_as_df.at[index, 'times_asked'] += 1
-                    # https://www.linkedin.com/jobs/search/?currentJobId=3294737126&f_AL=true&f_E=2&f_JT=P%2CC%2CT%2CF&f_WT=1%2C2%2C3&geoId=101330853&keywords=it%20support&location=Montreal%2C%20Quebec%2C%20Canada&refresh=true&start=6
-                    if (pd.isna(existing_answer)) or (existing_answer == ''):
-                        logger.info(f'\tquestion found but no answer: "{existing_question}"')
-                        break
-                    answer = existing_answer.strip().lower()
-                    # Answers are being recorded as floats, so convert to ints if we can
-                    # Floats are not accepted
-                    with suppress(ValueError):
-                        answer = int(float(answer))
-                    q_m.answer_question(answer)
-                    # if question_type == QuestionType.text:
-                    #     put_answer_in_question_textbox(answer, question)
-                    # elif question_type == QuestionType.dropdown:
-                    #     put_answer_in_question_dropdown(answer, text_options)
-                    #     try:
-                    #         index = text_options.index(answer)
-                    #     except ValueError:  # ("if it's not found in the list")
-                    #         continue
-                    #     select.select_by_index(index)
-                    # elif question_type == QuestionType.radio:
-                    #     options = question.find_elements('xpath', ".//label")
-                    #     answer_found = False
-                    #     for option in options:
-                    #         option_text = option.text.lower()
-                    #         for fluff in QUESTION_FLUFF:
-                    #             option_text = option_text.replace(fluff, '')
-                    #         if ('oui' in option_text) or ('non' in option_text):
-                    #             answer = translate_answer_to_french(answer)
-                    #         if option.text.lower() == str(answer).lower():
-                    #             answer_found = True
-                    #             break
-                    #     if not answer_found:
-                    #         logger.info(f'\tdid not find answer for radio question {q_text}')
-                    #     else:
-                    #         option.click()
-                    # else:
-                    #     raise ValueError('question type unknown ' + question_type)
-                    # # Unique case of textbox + dropdown
-                    question_is_new = False
-                    break
-            if question_is_new:
-                if (question_type == QuestionType.dropdown) or (question_type == QuestionType.radio):
-                    if question_type == QuestionType.dropdown:
-                        select = Select(question.find_elements('xpath', ".//select")[0])
-                        text_options = [option.text.lower() for option in select.options]
-                    elif question_type == QuestionType.radio:
-                        options = question.find_elements('xpath', ".//label")
-                        text_options = [option.text.lower() for option in options]
-                    q_text = q_text + ':' + "^".join(text_options)
-                else:
-                    # if question_type == QuestionType.text:
-                    try:
-                        text_box = question.find_element('xpath', ".//input")
-                    except NoSuchElementException:
-                        text_box = question.find_element('xpath', ".//textarea")
-                    with suppress(InvalidElementStateException):
-                        text_box.clear()
-                    if GUESS_0_FOR_UNANSWERED:
-                        text_box.send_keys(0)
-                try:
-                    q_text2 = q_text.encode('latin1', 'ignore').decode("latin1").replace('"', '\"')
-                    q_and_as_df = pd.concat([q_and_as_df, pd.DataFrame({'question': [q_text2]})])
-                    logger.info(f'\tnew question: "{q_text2}"')
-                    logger.info(f'\tnew question: "{question.text}"')
-                except UnicodeEncodeError:
-                    # Got error when question was in arabic
-                    continue
-        # Check that old_questions are not [], and questions don't match
-        # We failed to answer questions if the page of questions is the same
-        tried_to_answer_questions = old_questions and (questions == old_questions)
-        if tried_to_answer_questions:
-            old_questions = []
-        else:
-            old_questions = questions
-    # update questions files
-    q_and_as_df = q_and_as_df.sort_values('times_asked', ascending=False)
-    df4 = q_and_as_df[q_and_as_df['answer'].isna()]
-    df5 = q_and_as_df[~q_and_as_df['answer'].isna()]
-    try:
-        df4.to_csv(UNANSWERED_QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
-    except PermissionError:
-        time.sleep(2)
-        df4.to_csv(UNANSWERED_QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
-    try:
-        df5.to_csv(QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
-    except PermissionError:
-        time.sleep(1)
-        df5.to_csv(QUESTIONS_FILE, sep=',', header=True, index=False, encoding='latin1')
-    should_pause(PAUSE_AFTER_ANSWERING_QUESTIONS, "pause after answering questions")
-    return tried_to_answer_questions, old_questions
 
 
 def keep_trying_to_submit_form(tried_to_answer_questions, loop_timer_start, seconds_to_try_for,
@@ -387,10 +238,19 @@ def translate_answer_to_french(answer):
     return answer_lower
 
 
-def put_answer_in_question_dropdown(answer, text_options, select):
-    with suppress(ValueError):  # ("if it's not found in the list")
-        index = text_options.index(answer)
-        select.select_by_index(index)
+def put_answer_in_question_dropdown(correct_answers, text_options, select):
+    answer_found = False
+    closest_matches = []
+    for correct_answer in always_iterable(correct_answers):
+        try:
+            index = text_options.index(correct_answer)
+            select.select_by_index(index)
+            answer_found = True
+        except ValueError as e:  # ("if it's not found in the list")
+            # difflib.get_close_matches(correct_answer, text_options, n=3, cutoff=0.6)
+            phrase = "apple pie"
+            possible_matches = ["apple", "apple cider", "banana", "apple pie with ice cream"]
+            closest_phrase, similarity = find_closest_phrase(correct_answer, possible_matches)
 
 
 class QuestionManager:
@@ -406,7 +266,9 @@ class QuestionManager:
             q_text = q_text.split('select an option')[0].strip()
         self.q_text = q_text
 
-    def answer_question(self, answer):
+    def answer_question(self, answers: list | str):
+        if not isinstance(answers, list):
+            answer = answers
         if self.question_type == QuestionType.text:
             put_answer_in_question_textbox(answer, self.element)
         elif self.question_type == QuestionType.dropdown:
@@ -417,6 +279,10 @@ class QuestionManager:
                 index = text_options.index(answer)
                 select.select_by_index(index)
         elif self.question_type == QuestionType.radio:
+            if isinstance(answers, str):
+                answers = [answer]
+            else:
+                answers = [str(answer).lower() for answer in answers]
             options = self.element.find_elements('xpath', ".//label")
             answer_found = False
             for option in options:
@@ -425,7 +291,7 @@ class QuestionManager:
                     option_text = option_text.replace(fluff, '')
                 if ('oui' in option_text) or ('non' in option_text):
                     answer = translate_answer_to_french(answer)
-                if option.text.lower() == str(answer).lower():
+                if option.text.lower() in answers:
                     answer_found = True
                     break
             if not answer_found:
@@ -454,8 +320,8 @@ def clean_question_text(text):
 
 
 def get_short_href_from_job_title(dm):
-    def inner_func(job_title_el):
-        job_title = job_title_el.text
+    def _inner_func(job_title_el):
+        job_title = job_title_el.text.strip()
         job_title = job_title.encode('latin1', 'ignore').decode("latin1")
         try:
             href = job_title_el.get_attribute('href')
@@ -465,19 +331,28 @@ def get_short_href_from_job_title(dm):
         return job_title, short_href
 
     try:
-        # Element containing the href is an "a"
-        job_title_el = dm.find_element(name="disabled ember-view job-card-container__link job-card-list__title",
-                                       element="a")
-        return inner_func(job_title_el)
+        # Find first element where href has text /jobs/view
+        # https://stackoverflow.com/questions/51370650/finding-an-element-by-partial-href-python-selenium
+        job_title_el = dm.driver.find_element(by=By.XPATH, value="//a[contains(@href, '/jobs/view')]")
+        return _inner_func(job_title_el)
     except TimeoutException:
         try:
             # Get job title from large description section and not sidebar if things fail
             h2_job_title_el = dm.find_element(name="t-24 t-bold job-details-jobs-unified-top-card__job-title",
                                               element="h2")
             h2_job_title_el_child = h2_job_title_el.find_element(by=By.XPATH, value='./*')
-            return inner_func(h2_job_title_el_child)
+            return _inner_func(h2_job_title_el_child)
         except TimeoutException:
+            logger.error("unable to find job title and posting link")
             return '', ''
+
+
+def get_jobs_applied_for_in_past_24_hours():
+    df = pd.read_csv(APPLIED_FOR_FILE, on_bad_lines="skip", encoding='latin1')
+    df['date'] = pd.to_datetime(df['date'])
+    mask = df['date'] > (datetime.now() - timedelta(hours=24))
+    num_jobs_applied_for = mask.sum()
+    return num_jobs_applied_for
 
 
 def have_applied_for_too_many_jobs_today():
@@ -486,13 +361,10 @@ def have_applied_for_too_many_jobs_today():
     Linkedin will give an error saying "no results found" and you have to wait 24 hours to apply for more jobs
     To prevent account from being suspicous, stop applying for jobs after 90-95 jobs have been applied for
     """
-    df = pd.read_csv(APPLIED_FOR_FILE, on_bad_lines="skip", encoding='latin1')
-    df['date'] = pd.to_datetime(df['date'])
-    mask = df['date'] > (datetime.now() - timedelta(hours=24))
-    num_jobs_applied_for = mask.sum()
-    logger.info(f"jobs applied for in past 24 hours {num_jobs_applied_for}")
+    num_jobs_applied_for = get_jobs_applied_for_in_past_24_hours()
     max_jobs = random.randint(70, 75)
     if num_jobs_applied_for > max_jobs:
         logger.info(f"applied for {num_jobs_applied_for} jobs in past 24 hours. Stopping")
         return True
     return False
+
